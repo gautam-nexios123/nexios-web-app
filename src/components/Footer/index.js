@@ -12,7 +12,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <div className="bg-[#1B1C30]">
-      <div className="flex gap-[80px] mx-20 py-12">
+      <div className="flex flex-wrap lg:flex-nowrap gap-[80px] lg:mx-20 mx-10 py-12">
         <div className="">
           <Image src={logo} alt="logo" className="w-[179px] h-[43px] mb-8" />
           <div className="font-MuseoSans font-normal text-[18px] text-[#9BA9B4] mb-10">
