@@ -1,6 +1,13 @@
-const CustomButton = ({ bgColor, textColor, btnWidth, text }) => {
+const CustomButton = ({
+  onSubmitButton,
+  bgColor,
+  textColor,
+  btnWidth,
+  text,
+}) => {
   return (
     <button
+      onClick={(e) => onSubmitButton(e)}
       style={{
         backgroundColor: bgColor,
         color: textColor,

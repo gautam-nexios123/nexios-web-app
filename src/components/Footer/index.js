@@ -11,7 +11,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="bg-[#1B1C30]">
+    <div className="bg-[#1B1C30] my-auto">
       <div className="flex flex-wrap lg:flex-nowrap gap-[80px] lg:mx-20 mx-10 py-12">
         <div className="">
           <Image src={logo} alt="logo" className="w-[179px] h-[43px] mb-8" />

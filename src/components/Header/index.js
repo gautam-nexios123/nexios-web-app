@@ -6,6 +6,7 @@ import closeIcon from "../../assets/images/close.svg";
 import CustomButton from "../../common/CustomButton";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
+import { Drawer } from "@mui/material";
 
 const Header = () => {
   const location = usePathname();
@@ -110,6 +111,7 @@ const Header = () => {
           Contact Us
         </div>
         <CustomButton
+          onSubmitButton={() => {}}
           bgColor="#399EFD"
           textColor="white"
           btnWidth="151px"
@@ -124,54 +126,55 @@ const Header = () => {
         height={25}
         onClick={toggleDrawer}
       />
-      {isDrawerOpen && (
-        <div className="fixed top-0 left-0 w-64 h-full bg-white shadow-2xl z-50 transition-transform duration-500">
-          <Image
-            onClick={() => setIsDrawerOpen(false)}
-            className="ml-auto mr-6 my-6 cursor-pointer"
-            src={closeIcon}
-            alt="close"
-            width={30}
-            height={30}
-          />
-          <div className="ml-10">
-            <div
-              onClick={() => router.push("/")}
-              className={`font-MuseoSans font-normal pb-2 text-lg ${
-                currentPath === "home" ? "text-[#399EFD]" : "text-[#121212]"
-              } cursor-pointer`}
-            >
-              Home
-            </div>
-            <div
-              onClick={() => router.push("/about")}
-              className={`font-MuseoSans font-normal pb-2 text-lg ${
-                currentPath === "about" ? "text-[#399EFD]" : "text-[#121212]"
-              } cursor-pointer`}
-            >
-              About Us
-            </div>
-            <div
-              className={`font-MuseoSans font-normal pb-2 text-lg text-[#121212] cursor-pointer`}
-            >
-              Portfolio
-            </div>
-            <div
-              className={`font-MuseoSans font-normal pb-2 text-lg text-[#121212] cursor-pointer`}
-            >
-              Services
-            </div>
-            <div
-              className={`font-MuseoSans font-normal pb-2 text-lg text-[#121212] cursor-pointer`}
-            >
-              Career
-            </div>
-            <div
-              className={`font-MuseoSans font-normal pb-4 text-lg text-[#121212] cursor-pointer`}
-            >
-              Contact Us
-            </div>
+      <Drawer open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
+        <Image
+          onClick={() => setIsDrawerOpen(false)}
+          className="ml-auto mr-6 my-6 cursor-pointer"
+          src={closeIcon}
+          alt="close"
+          width={30}
+          height={30}
+        />
+        <div className="mx-10">
+          <div
+            onClick={() => router.push("/")}
+            className={`font-MuseoSans font-normal pb-2 text-lg ${
+              currentPath === "home" ? "text-[#399EFD]" : "text-[#121212]"
+            } cursor-pointer`}
+          >
+            Home
+          </div>
+          <div
+            onClick={() => router.push("/about")}
+            className={`font-MuseoSans font-normal pb-2 text-lg ${
+              currentPath === "about" ? "text-[#399EFD]" : "text-[#121212]"
+            } cursor-pointer`}
+          >
+            About Us
+          </div>
+          <div
+            className={`font-MuseoSans font-normal pb-2 text-lg text-[#121212] cursor-pointer`}
+          >
+            Portfolio
+          </div>
+          <div
+            className={`font-MuseoSans font-normal pb-2 text-lg text-[#121212] cursor-pointer`}
+          >
+            Services
+          </div>
+          <div
+            className={`font-MuseoSans font-normal pb-2 text-lg text-[#121212] cursor-pointer`}
+          >
+            Career
+          </div>
+          <div
+            className={`font-MuseoSans font-normal pb-4 text-lg text-[#121212] cursor-pointer`}
+          >
+            Contact Us
+          </div>
+          <div className="">
             <CustomButton
+              onSubmitButton={() => {}}
               bgColor="#399EFD"
               textColor="white"
               btnWidth="151px"
@@ -179,7 +182,7 @@ const Header = () => {
             />
           </div>
         </div>
-      )}
+      </Drawer>
     </div>
   );
 };
