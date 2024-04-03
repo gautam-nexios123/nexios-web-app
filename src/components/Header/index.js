@@ -20,7 +20,10 @@ const Header = () => {
       setCurrentPath("home");
     } else if (location === "/about") {
       setCurrentPath("about");
+    } else if (location === "/portfolio") {
+      setCurrentPath("portfolio");
     }
+    setIsDrawerOpen(false);
   };
 
   useEffect(() => {
@@ -37,7 +40,7 @@ const Header = () => {
       <div className="hidden lg:flex items-center gap-6">
         <div
           onClick={() => router.push("/")}
-          className={`font-MuseoSans font-normal text-lg ${
+          className={`font-MuseoSans font-normal text-base ${
             currentPath === "home" ? "text-[#399EFD]" : "text-[#121212]"
           } cursor-pointer`}
         >
@@ -45,11 +48,19 @@ const Header = () => {
         </div>
         <div
           onClick={() => router.push("/about")}
-          className={`font-MuseoSans font-normal text-lg ${
+          className={`font-MuseoSans font-normal text-base ${
             currentPath === "about" ? "text-[#399EFD]" : "text-[#121212]"
           } cursor-pointer`}
         >
           About Us
+        </div>
+        <div
+          onClick={() => router.push("/portfolio")}
+          className={`font-MuseoSans font-normal text-base ${
+            currentPath === "portfolio" ? "text-[#399EFD]" : "text-[#121212]"
+          } cursor-pointer`}
+        >
+          Portfolio
         </div>
         <div
           className="relative"
@@ -57,7 +68,7 @@ const Header = () => {
           onMouseLeave={() => setIsServicesDropdownOpen(false)}
         >
           <div
-            className={`font-MuseoSans font-normal text-lg ${
+            className={`font-MuseoSans font-normal text-base ${
               isServicesDropdownOpen ? "text-[#399EFD]" : "text-[#121212]"
             } cursor-pointer`}
           >
@@ -101,12 +112,12 @@ const Header = () => {
           )}
         </div>
         <div
-          className={`font-MuseoSans font-normal text-lg text-[#121212] cursor-pointer`}
+          className={`font-MuseoSans font-normal text-base text-[#121212] cursor-pointer`}
         >
           Career
         </div>
         <div
-          className={`font-MuseoSans font-normal text-lg text-[#121212] cursor-pointer`}
+          className={`font-MuseoSans font-normal text-base text-[#121212] cursor-pointer`}
         >
           Contact Us
         </div>
@@ -153,14 +164,60 @@ const Header = () => {
             About Us
           </div>
           <div
-            className={`font-MuseoSans font-normal pb-2 text-lg text-[#121212] cursor-pointer`}
+            onClick={() => router.push("/portfolio")}
+            className={`font-MuseoSans font-normal pb-2 text-lg ${
+              currentPath === "portfolio" ? "text-[#399EFD]" : "text-[#121212]"
+            } cursor-pointer`}
           >
             Portfolio
           </div>
           <div
-            className={`font-MuseoSans font-normal pb-2 text-lg text-[#121212] cursor-pointer`}
+            className="relative"
+            onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
           >
-            Services
+            <div
+              className={`font-MuseoSans font-normal pb-2 text-lg ${
+                isServicesDropdownOpen ? "text-[#399EFD]" : "text-[#121212]"
+              } cursor-pointer`}
+            >
+              Services
+            </div>
+            {isServicesDropdownOpen && (
+              <div className="absolute top-full left-0 w-[160px] bg-white border border-gray-200 shadow-lg z-50">
+                <div className="py-2">
+                  <div
+                    className="px-4 py-2 text-black font-medium text-[14px] cursor-pointer hover:bg-gray-100"
+                    // onClick={() => router.push("/service1")}
+                  >
+                    Mobile App Development
+                  </div>
+                  <div
+                    className="px-4 py-2 font-medium text-base cursor-pointer hover:bg-gray-100"
+                    // onClick={() => router.push("/service2")}
+                  >
+                    Website Development
+                  </div>
+                  <div
+                    className="px-4 py-2 font-medium text-base cursor-pointer hover:bg-gray-100"
+                    // onClick={() => router.push("/service2")}
+                  >
+                    UI & UX
+                  </div>
+                  <div
+                    className="px-4 py-2 font-medium text-base cursor-pointer hover:bg-gray-100"
+                    // onClick={() => router.push("/service2")}
+                  >
+                    Internet of Things
+                  </div>
+                  <div
+                    className="px-4 py-2 font-medium text-base cursor-pointer hover:bg-gray-100"
+                    // onClick={() => router.push("/service2")}
+                  >
+                    QA
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
           <div
             className={`font-MuseoSans font-normal pb-2 text-lg text-[#121212] cursor-pointer`}

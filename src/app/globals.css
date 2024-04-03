@@ -31,3 +31,12 @@ body {
     text-wrap: balance;
   }
 }
+
+.ourvision-bg{
+  background-image: url("../assets/images/about/bg-cerver.svg");
+}
+
+/* .{
+      background:
+        "linear-gradient(to bottom, rgba(57, 158, 253, 0.5), rgba(57, 158, 253, 1))",
+ } */

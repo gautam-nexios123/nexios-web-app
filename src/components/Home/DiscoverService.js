@@ -7,14 +7,7 @@ import softImg from "../../assets/images/home/Layer-1-soft-1.png";
 import uiUXImg from "../../assets/images/home/uiux.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
-const customDotStyles = {
-  width: "10px",
-  height: "10px",
-  margin: "0 5px",
-  borderRadius: "50%",
-  display: "inline-block",
-};
+import { CustomDot } from "@/utils";
 
 const responsive = {
   superLargeDesktop: {
@@ -28,7 +21,7 @@ const responsive = {
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 2,
+    items: 3,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
@@ -64,6 +57,7 @@ const DiscoverService = () => {
     <div className="mt-11">
       <div className="text-center font-MuseoSans font-light text-[26px]">
         Discover Our <span className="font-semibold">Services</span>
+        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[268px] mx-auto mt-[-15px]"></div>
       </div>
 
       <div className="mx-8">
@@ -93,7 +87,7 @@ export default DiscoverService;
 
 const Card = ({ data }) => {
   return (
-    <div className="bg-white shadow-xl px-2 py-4 rounded-[20px] sm:w-[310px] h-[280px] flex flex-col justify-between items-center mt-5 mb-9 cursor-pointer">
+    <div className="bg-white shadow-xl px-2 py-4 rounded-[20px] md:w-[200px] lg:w-[260px] h-[280px] flex flex-col justify-between items-center mt-5 mb-9 cursor-pointer">
       <Image
         src={data?.image}
         alt="focusInnoImg"
@@ -105,20 +99,5 @@ const Card = ({ data }) => {
         {data?.name}
       </p>
     </div>
-  );
-};
-
-const CustomDot = ({ onClick, ...rest }) => {
-  const {
-    onMove,
-    active,
-    carouselState: { currentSlide, deviceType },
-  } = rest;
-  return (
-    <button
-      className={active ? "bg-[#399EFD]" : "bg-white border border-[black]"}
-      style={{ ...customDotStyles }}
-      onClick={() => onClick()}
-    />
   );
 };

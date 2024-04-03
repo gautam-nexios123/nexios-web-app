@@ -1,19 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
 import dotImg from "../../assets/images/home/dot-dot.svg";
 import manImg from "../../assets/images/home/man.svg";
 import quateIcon from "../../assets/images/home/quateIcon.svg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
-const customDotStyles = {
-  width: "10px",
-  height: "10px",
-  margin: "0 5px",
-  borderRadius: "50%",
-  display: "inline-block",
-};
+import { CustomDot } from "@/utils";
 
 const data = [
   {
@@ -59,7 +51,7 @@ const OurClient = () => {
 
   return (
     <div className="relative bg-[#F2F8FA] ">
-      <div className="text-[#121212] font-MuseoSans font-semibold text-[26px] text-center py-7 mt-16">
+      <div className="text-[#121212] font-MuseoSans font-semibold text-[22px] md:text-[26px] text-center py-7 mt-16">
         What our clients have to say
       </div>
       <div className="mx-8 lg:mx-[150px] py-4">
@@ -92,7 +84,7 @@ const OurClient = () => {
               </div>
               <div className="w-full lg:w-[60%] mt-[90px] lg:mt-0">
                 <Image src={quateIcon} alt="quate" width={45} height={45} />
-                <div className="text-[#121212] font-MuseoSans font-normal text-lg py-6 line-clamp-4">
+                <div className="text-[#121212] mb-2 text-justify font-MuseoSans font-normal text-lg py-6 line-clamp-4">
                   {item?.description}
                 </div>
                 <div className="text-[#121212] font-MuseoSans font-semibold text-lg pb-2">
@@ -111,18 +103,3 @@ const OurClient = () => {
 };
 
 export default OurClient;
-
-const CustomDot = ({ onClick, ...rest }) => {
-  const {
-    onMove,
-    active,
-    carouselState: { currentSlide, deviceType },
-  } = rest;
-  return (
-    <button
-      className={active ? "bg-[#399EFD]" : "bg-white border border-[black]"}
-      style={{ ...customDotStyles }}
-      onClick={() => onClick()}
-    />
-  );
-};

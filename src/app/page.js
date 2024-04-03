@@ -20,7 +20,7 @@ export default function Home() {
           For Your Complex Business Task
         </h2>
         <div className="w-full">
-          <p className="font-MuseoSans text-[18px] text-[#9BA9B4] font-normal text-center lg:mx-auto lg:w-[60%] mx-5 pt-4">
+          <p className="font-MuseoSans text-[18px] text-[#9BA9B4] font-normal md:text-center text-justify lg:mx-auto lg:w-[60%] mx-5 pt-4">
             Nexios is a global technology partner that enables long-lasting
             value for businesses via the latest technologies. It provides a
             complete solution from concept to reality. We've worked with
@@ -60,7 +60,7 @@ export default function Home() {
           <Image
             src={settingGif}
             alt="bgBannerOne"
-            className="absolute bottom-[38%] left-[10%]"
+            className="hidden sm:block absolute bottom-[38%] left-[10%]"
             width={100}
             height={100}
           />

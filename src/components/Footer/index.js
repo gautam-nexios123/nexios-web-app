@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import logo from "../../assets/images/footer-Logo.svg";
 import fbImg from "../../assets/images/facebook.svg";
@@ -8,14 +9,17 @@ import locationImg from "../../assets/images/location.svg";
 import phoneImg from "../../assets/images/phone.svg";
 import mailImg from "../../assets/images/mail.svg";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
+  const router = useRouter();
+
   return (
     <div className="bg-[#1B1C30] my-auto">
       <div className="flex flex-wrap lg:flex-nowrap gap-[80px] lg:mx-20 mx-10 py-12">
         <div className="">
           <Image src={logo} alt="logo" className="w-[179px] h-[43px] mb-8" />
-          <div className="font-MuseoSans font-normal text-[18px] text-[#9BA9B4] mb-10">
+          <div className="font-MuseoSans text-justify font-normal text-[18px] text-[#9BA9B4] mb-10">
             nexios allows businesses to narrow the technology gap in their
             organization and get a competitive edge through innovative software
             development solutions tailored to their goals.
@@ -42,19 +46,28 @@ const Footer = () => {
           <div className="text-white font-MuseoSans font-semibold text-xl pb-4">
             Company
           </div>
-          <div className="font-MuseoSans font-normal text-[18px] text-[#9BA9B4]">
+          <div
+            onClick={() => router.push("/")}
+            className="font-MuseoSans font-normal text-[18px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer"
+          >
             Home
           </div>
-          <div className="font-MuseoSans font-normal text-[18px] text-[#9BA9B4]">
+          <div
+            onClick={() => router.push("/about")}
+            className="font-MuseoSans font-normal text-[18px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer"
+          >
             About Us
           </div>
-          <div className="font-MuseoSans font-normal text-[18px] text-[#9BA9B4]">
+          <div
+            onClick={() => router.push("/portfolio")}
+            className="font-MuseoSans font-normal text-[18px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer"
+          >
             Portfolio
           </div>
-          <div className="font-MuseoSans font-normal text-[18px] text-[#9BA9B4]">
+          <div className="font-MuseoSans font-normal text-[18px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer">
             Careers
           </div>
-          <div className="font-MuseoSans font-normal text-[18px] text-[#9BA9B4]">
+          <div className="font-MuseoSans font-normal text-[18px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer">
             Contact Us
           </div>
         </div>

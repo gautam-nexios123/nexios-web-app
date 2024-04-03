@@ -20,6 +20,7 @@ const Technology = () => {
     <div className="relative mt-11">
       <div className="absolute top-[30px] w-full text-center font-MuseoSans font-light text-[26px]">
         We Use <span className="font-semibold">Technologies</span>
+        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[268px] mx-auto mt-[-15px]"></div>
       </div>
       <div className="">
         <Image src={pattern} alt="" className="w-[100%] h-[600px] " />
