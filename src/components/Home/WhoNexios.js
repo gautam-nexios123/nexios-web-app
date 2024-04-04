@@ -1,8 +1,14 @@
 import CustomButton from "@/common/CustomButton";
 import Image from "next/image";
 import frame from "../../assets/images/home/Frame.svg";
+import { scrollToBottom } from "@/utils";
+import { useRef } from "react";
+import { useRouter } from "next/navigation";
 
 const WhoNexios = () => {
+  const scrollButtonRef = useRef(null);
+  const router = useRouter();
+
   return (
     <div className="flex flex-col lg:flex-row justify-center gap-14 w-full px-7 sm:px-[100px] mt-12">
       <div className="w-[100%] lg:w-[40%]">
@@ -18,19 +24,22 @@ const WhoNexios = () => {
           faster and more efficiently. Over the last 8 years, Nexios has worked
           with over 50+ overseas clients..
         </div>
-        <div className="flex flex-col sm:flex-row items-center gap-5 my-5">
+        <div
+          ref={scrollButtonRef}
+          className="flex flex-col sm:flex-row items-center gap-5 my-5"
+        >
           <CustomButton
-            onSubmitButton={() => {}}
+            onSubmitButton={() => router.push("/about")}
             bgColor="#399EFD"
             textColor="white"
-            btnWidth="187px"
+            btnWidth="120px"
             text="Know More"
           />
           <CustomButton
-            onSubmitButton={() => {}}
+            onSubmitButton={() => scrollToBottom()}
             bgColor="#121212"
             textColor="white"
-            btnWidth="240px"
+            btnWidth="160px"
             text="Free Quote"
           />
         </div>

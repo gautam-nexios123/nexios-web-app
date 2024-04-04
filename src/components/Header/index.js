@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logo from "../../assets/images/Logo.svg";
 import menuIcon from "../../assets/images/menu-icon.png";
 import closeIcon from "../../assets/images/close.svg";
@@ -7,8 +7,10 @@ import CustomButton from "../../common/CustomButton";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Drawer } from "@mui/material";
+import { scrollToBottom } from "@/utils";
 
 const Header = () => {
+  const scrollButtonRef = useRef(null);
   const location = usePathname();
   const router = useRouter();
   const [currentPath, setCurrentPath] = useState("");
@@ -22,6 +24,8 @@ const Header = () => {
       setCurrentPath("about");
     } else if (location === "/portfolio") {
       setCurrentPath("portfolio");
+    } else {
+      setCurrentPath("");
     }
     setIsDrawerOpen(false);
   };
@@ -69,7 +73,9 @@ const Header = () => {
         >
           <div
             className={`font-MuseoSans font-normal text-base ${
-              isServicesDropdownOpen ? "text-[#399EFD]" : "text-[#121212]"
+              isServicesDropdownOpen || currentPath === "services"
+                ? "text-[#399EFD]"
+                : "text-[#121212]"
             } cursor-pointer`}
           >
             Services
@@ -79,31 +85,31 @@ const Header = () => {
               <div className="py-2">
                 <div
                   className="px-4 py-2 text-black font-medium text-base whitespace-nowrap cursor-pointer hover:bg-gray-100"
-                  // onClick={() => router.push("/service1")}
+                  onClick={() => router.push("/mobile-app-development")}
                 >
                   Mobile App Development
                 </div>
                 <div
                   className="px-4 py-2 font-medium text-base whitespace-nowrap cursor-pointer hover:bg-gray-100"
-                  // onClick={() => router.push("/service2")}
+                  onClick={() => router.push("/web-development")}
                 >
                   Website Development
                 </div>
                 <div
                   className="px-4 py-2 font-medium text-base whitespace-nowrap cursor-pointer hover:bg-gray-100"
-                  // onClick={() => router.push("/service2")}
+                  onClick={() => router.push("/ui-ux")}
                 >
                   UI & UX
                 </div>
                 <div
                   className="px-4 py-2 font-medium text-base whitespace-nowrap cursor-pointer hover:bg-gray-100"
-                  // onClick={() => router.push("/service2")}
+                  onClick={() => router.push("/internet-of-things")}
                 >
                   Internet of Things
                 </div>
                 <div
                   className="px-4 py-2 font-medium text-base whitespace-nowrap cursor-pointer hover:bg-gray-100"
-                  // onClick={() => router.push("/service2")}
+                  onClick={() => router.push("/qa")}
                 >
                   QA
                 </div>
@@ -121,13 +127,15 @@ const Header = () => {
         >
           Contact Us
         </div>
-        <CustomButton
-          onSubmitButton={() => {}}
-          bgColor="#399EFD"
-          textColor="white"
-          btnWidth="151px"
-          text="Free Quote"
-        />
+        <div ref={scrollButtonRef}>
+          <CustomButton
+            onSubmitButton={() => scrollToBottom()}
+            bgColor="#399EFD"
+            textColor="white"
+            btnWidth="110px"
+            text="Free Quote"
+          />
+        </div>
       </div>
       <Image
         className="lg:hidden cursor-pointer"
@@ -187,31 +195,31 @@ const Header = () => {
                 <div className="py-2">
                   <div
                     className="px-4 py-2 text-black font-medium text-[14px] cursor-pointer hover:bg-gray-100"
-                    // onClick={() => router.push("/service1")}
+                    onClick={() => router.push("/mobile-app-development")}
                   >
                     Mobile App Development
                   </div>
                   <div
                     className="px-4 py-2 font-medium text-base cursor-pointer hover:bg-gray-100"
-                    // onClick={() => router.push("/service2")}
+                    onClick={() => router.push("/web-development")}
                   >
                     Website Development
                   </div>
                   <div
                     className="px-4 py-2 font-medium text-base cursor-pointer hover:bg-gray-100"
-                    // onClick={() => router.push("/service2")}
+                    onClick={() => router.push("/ui-ux")}
                   >
                     UI & UX
                   </div>
                   <div
                     className="px-4 py-2 font-medium text-base cursor-pointer hover:bg-gray-100"
-                    // onClick={() => router.push("/service2")}
+                    onClick={() => router.push("/internet-of-things")}
                   >
                     Internet of Things
                   </div>
                   <div
                     className="px-4 py-2 font-medium text-base cursor-pointer hover:bg-gray-100"
-                    // onClick={() => router.push("/service2")}
+                    onClick={() => router.push("/qa")}
                   >
                     QA
                   </div>
@@ -231,10 +239,10 @@ const Header = () => {
           </div>
           <div className="">
             <CustomButton
-              onSubmitButton={() => {}}
+              onSubmitButton={() => scrollToBottom()}
               bgColor="#399EFD"
               textColor="white"
-              btnWidth="151px"
+              btnWidth="130px"
               text="Free Quote"
             />
           </div>

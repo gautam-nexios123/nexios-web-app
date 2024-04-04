@@ -106,7 +106,7 @@ const ShedualeCall = () => {
               onSubmitButton={formSubmit}
               bgColor="#FFFF"
               textColor="#399EFD"
-              btnWidth="150px"
+              btnWidth="100px"
               text="Submit"
             />
           </div>

@@ -10,8 +10,14 @@ import DiscoverService from "@/components/Home/DiscoverService";
 import Technology from "@/components/Home/Technology";
 import OurClient from "@/components/Home/OurClient";
 import ShedualeCall from "@/components/ShedualeCall";
+import { useRef } from "react";
+import { scrollToBottom } from "@/utils";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const scrollButtonRef = useRef(null);
+  const router = useRouter();
+
   return (
     <div className="relative">
       <div className="">
@@ -30,19 +36,22 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-5 my-5">
+        <div
+          ref={scrollButtonRef}
+          className="flex flex-col sm:flex-row items-center justify-center gap-5 my-5"
+        >
           <CustomButton
-            onSubmitButton={() => {}}
+            onSubmitButton={() => router.push("/portfolio")}
             bgColor="#399EFD"
             textColor="white"
-            btnWidth="240px"
+            btnWidth="180px"
             text="Explore Our Portfolio"
           />
           <CustomButton
-            onSubmitButton={() => {}}
+            onSubmitButton={() => scrollToBottom()}
             bgColor="#121212"
             textColor="white"
-            btnWidth="240px"
+            btnWidth="180px"
             text="Free Quote"
           />
         </div>
