@@ -40,3 +40,34 @@ body {
       background:
         "linear-gradient(to bottom, rgba(57, 158, 253, 0.5), rgba(57, 158, 253, 1))",
  } */
+
+
+ @keyframes slide {
+   0% {
+     width: 0%;
+     left: 0%;
+   }
+
+   100% {
+     width: 100%;
+     left: 0%;
+   }
+ }
+
+ .animate-horizontalLine-show {
+   animation: slide 5s forwards;
+ }
+
+ @keyframes line-show {
+   0% {
+     height: 0;
+   }
+
+   100% {
+     height: 100%;
+   }
+ }
+
+ .animate-verticalLine-show {
+   animation: line-show 4s ease-out forwards;
+ }

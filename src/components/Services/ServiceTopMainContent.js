@@ -1,9 +1,7 @@
 import Image from "next/image";
 import squreImg from "../../assets/images/about/squere.svg";
 import circleBlank from "../../assets/images/about/circle-blank.svg";
-import tringleDark from "../../assets/images/about/tringle-dark.svg";
 import tringleLight from "../../assets/images/about/tringle-light.svg";
-import dotImg from "../../assets/images/home/dot-dot.svg";
 import squreLight from "../../assets/images/about/squre-light.svg";
 import circleSolid from "../../assets/images/about/circle-solid.svg";
 import lineThree from "../../assets/images/about/line-three.svg";
@@ -20,7 +18,7 @@ const ServiceTopMainContent = ({ text, description, banner }) => {
               {text}
             </p>
             <p
-              className={`font-MuseoSans font-normal text-[12px] text-[#9BA9B4]`}
+              className={`font-MuseoSans font-normal text-[14px] text-[#9BA9B4]`}
             >
               {description}
             </p>

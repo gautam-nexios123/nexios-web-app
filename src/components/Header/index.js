@@ -8,6 +8,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Drawer } from "@mui/material";
 import { scrollToBottom } from "@/utils";
+import ServicesDropDown from "./ServicesDropDown";
 
 const Header = () => {
   const scrollButtonRef = useRef(null);
@@ -24,6 +25,8 @@ const Header = () => {
       setCurrentPath("about");
     } else if (location === "/portfolio") {
       setCurrentPath("portfolio");
+    } else if (location === "/career") {
+      setCurrentPath("career");
     } else {
       setCurrentPath("");
     }
@@ -81,44 +84,18 @@ const Header = () => {
             Services
           </div>
           {isServicesDropdownOpen && (
-            <div className="absolute top-full left-0 w-56 bg-white border border-gray-200 shadow-lg z-50">
-              <div className="py-2">
-                <div
-                  className="px-4 py-2 text-black font-medium text-base whitespace-nowrap cursor-pointer hover:bg-gray-100"
-                  onClick={() => router.push("/mobile-app-development")}
-                >
-                  Mobile App Development
-                </div>
-                <div
-                  className="px-4 py-2 font-medium text-base whitespace-nowrap cursor-pointer hover:bg-gray-100"
-                  onClick={() => router.push("/web-development")}
-                >
-                  Website Development
-                </div>
-                <div
-                  className="px-4 py-2 font-medium text-base whitespace-nowrap cursor-pointer hover:bg-gray-100"
-                  onClick={() => router.push("/ui-ux")}
-                >
-                  UI & UX
-                </div>
-                <div
-                  className="px-4 py-2 font-medium text-base whitespace-nowrap cursor-pointer hover:bg-gray-100"
-                  onClick={() => router.push("/internet-of-things")}
-                >
-                  Internet of Things
-                </div>
-                <div
-                  className="px-4 py-2 font-medium text-base whitespace-nowrap cursor-pointer hover:bg-gray-100"
-                  onClick={() => router.push("/qa")}
-                >
-                  QA
-                </div>
-              </div>
+            <div className="absolute top-full left-0 bg-white border border-gray-200 shadow-lg z-50">
+              <ServicesDropDown
+                setIsServicesDropdownOpen={setIsServicesDropdownOpen}
+              />
             </div>
           )}
         </div>
         <div
-          className={`font-MuseoSans font-normal text-base text-[#121212] cursor-pointer`}
+          onClick={() => router.push("/career")}
+          className={`font-MuseoSans font-normal text-base ${
+            currentPath === "career" ? "text-[#399EFD]" : "text-[#121212]"
+          } cursor-pointer`}
         >
           Career
         </div>
@@ -154,7 +131,7 @@ const Header = () => {
           width={30}
           height={30}
         />
-        <div className="mx-10">
+        <div className="px-11">
           <div
             onClick={() => router.push("/")}
             className={`font-MuseoSans font-normal pb-2 text-lg ${
@@ -191,44 +168,18 @@ const Header = () => {
               Services
             </div>
             {isServicesDropdownOpen && (
-              <div className="absolute top-full left-0 w-[160px] bg-white border border-gray-200 shadow-lg z-50">
-                <div className="py-2">
-                  <div
-                    className="px-4 py-2 text-black font-medium text-[14px] cursor-pointer hover:bg-gray-100"
-                    onClick={() => router.push("/mobile-app-development")}
-                  >
-                    Mobile App Development
-                  </div>
-                  <div
-                    className="px-4 py-2 font-medium text-base cursor-pointer hover:bg-gray-100"
-                    onClick={() => router.push("/web-development")}
-                  >
-                    Website Development
-                  </div>
-                  <div
-                    className="px-4 py-2 font-medium text-base cursor-pointer hover:bg-gray-100"
-                    onClick={() => router.push("/ui-ux")}
-                  >
-                    UI & UX
-                  </div>
-                  <div
-                    className="px-4 py-2 font-medium text-base cursor-pointer hover:bg-gray-100"
-                    onClick={() => router.push("/internet-of-things")}
-                  >
-                    Internet of Things
-                  </div>
-                  <div
-                    className="px-4 py-2 font-medium text-base cursor-pointer hover:bg-gray-100"
-                    onClick={() => router.push("/qa")}
-                  >
-                    QA
-                  </div>
-                </div>
+              <div className="absolute top-full left-0 w-[165px] bg-white border border-gray-200 shadow-lg z-50">
+                <ServicesDropDown
+                  setIsServicesDropdownOpen={setIsServicesDropdownOpen}
+                />
               </div>
             )}
           </div>
           <div
-            className={`font-MuseoSans font-normal pb-2 text-lg text-[#121212] cursor-pointer`}
+            onClick={() => router.push("/career")}
+            className={`font-MuseoSans font-normal pb-2 text-lg ${
+              currentPath === "career" ? "text-[#399EFD]" : "text-[#121212]"
+            } cursor-pointer`}
           >
             Career
           </div>

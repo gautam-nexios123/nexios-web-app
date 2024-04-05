@@ -1,5 +1,5 @@
 import React from "react";
-import portTopBanner from "../../assets/images/services/top-banner.png";
+import TopBanner from "../../assets/images/services/top-banner.png";
 import CountingBanner from "@/common/CountingBanner";
 import ServiceTopMainContent from "@/components/Services/ServiceTopMainContent";
 import mobilePic from "../../assets/images/services/mobile1.png";
@@ -11,7 +11,7 @@ const MobileAppDevelopment = () => {
       <ServiceTopMainContent
         text="Mobile App Development"
         description="Mobile application development is one of the most exciting and growing fields in the tech industry today. With so many people using mobile devices to access the internet, there’s never been a better time to develop a mobile app."
-        banner={portTopBanner}
+        banner={TopBanner}
       />
       <div className="w-full mt-16">
         <div className="font-MuseoSans font-normal text-[14px] text-[#9BA9B4] w-[80%] md:w-[75%] lg:w-[60%] mx-auto text-justify md:text-center">
@@ -29,7 +29,7 @@ const MobileAppDevelopment = () => {
       </div>
 
       <div className="w-full mt-20">
-        <div className="w-[80%] lg:w-[70%] mx-auto flex flex-col md:flex-row">
+        <div className="w-[80%] lg:w-[70%] mx-auto flex flex-col md:flex-row gap-8">
           <div className="w-full md:w-[50%]">
             <Image src={mobilePic} alt="pic" width={380} className="mx-auto" />
           </div>
@@ -37,7 +37,7 @@ const MobileAppDevelopment = () => {
             <div className="font-MuseoSans text-[#121212] font-semibold text-[24px] pb-3">
               What We Provides
             </div>
-            <div className="font-MuseoSans text-[#9BA9B4] font-normal text-[16px] text-justify pb-2">
+            <div className="font-MuseoSans text-[#9BA9B4] font-normal text-[14px] text-justify pb-2">
               There are a variety of different mobile app development platforms
               to choose from, and each has its own strengths and weaknesses. For
               example, iOS apps are usually more user-friendly and sophisticated
@@ -45,12 +45,12 @@ const MobileAppDevelopment = () => {
               and can be used to create applications that run on a wider range
               of devices, including smart TVs and vehicles.
             </div>
-            <div className="font-MuseoSans text-[#9BA9B4] font-normal text-[16px] text-justify pb-2">
+            <div className="font-MuseoSans text-[#9BA9B4] font-normal text-[14px] text-justify pb-2">
               Regardless of which platform you choose, we’ll be able to help you
               choose the right platform and develop your app to meet your
               specific needs.
             </div>
-            <div className="font-MuseoSans text-[#9BA9B4] font-normal text-[16px] text-justify pb-2">
+            <div className="font-MuseoSans text-[#9BA9B4] font-normal text-[14px] text-justify pb-2">
               If you follow our tips, you’ll have a successful business.
             </div>
           </div>

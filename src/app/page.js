@@ -55,11 +55,11 @@ export default function Home() {
             text="Free Quote"
           />
         </div>
-        <div className="relative">
+        <div className="relative mt-12">
           <Image
             src={bgBannerOne}
             alt="bgBannerOne"
-            className="mx-auto w-[70%]"
+            className="mx-auto w-[60%] sm:w-[40%]"
           />
           <Image
             src={bgBannertwo}

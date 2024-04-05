@@ -55,9 +55,9 @@ const carouselData = [
 const DiscoverService = () => {
   return (
     <div className="mt-11">
-      <div className="text-center font-MuseoSans font-light text-[26px]">
+      <div className="text-center font-MuseoSans font-light text-[22px] sm:text-[26px]">
         Discover Our <span className="font-semibold">Services</span>
-        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[268px] mx-auto mt-[-15px]"></div>
+        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[225px] sm:w-[268px] mx-auto mt-[-12px] sm:mt-[-15px]"></div>
       </div>
 
       <div className="mx-8">
