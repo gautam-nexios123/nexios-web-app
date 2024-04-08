@@ -57,7 +57,7 @@ const ChooseNexios = () => {
       <div className="w-[100%] lg:w-[40%]">
         <div className="font-MuseoSans font-normal text-[22px] xs:text-[26px] text-[#121212] pb-3">
           Why Choose <span className="font-semibold"> nexios?</span>
-          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[210px] sm:w-[252px] mt-[-12px] sm:mt-[-15px]"></div>
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[210px] sm:w-[215px] mt-[-12px] sm:mt-[-15px]"></div>
         </div>
         <div className="font-MuseoSans text-justify font-normal text-[16px] text-[#9BA9B4]">
           We take care of your projects from brainstorming an idea to handing it

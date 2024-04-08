@@ -43,7 +43,7 @@ const InterViewProcess = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center mt-12 pr-[40%] sm:pr-0">
+      <div className="relative flex flex-col sm:flex-row items-center w-fit mx-auto mt-12 pr-[40%] sm:pr-0">
         <div className="relative">
           <div className="border-[6px] border-[#399EFD] rounded-full w-[140px] h-[140px] flex justify-center items-center">
             <Image
@@ -52,12 +52,9 @@ const InterViewProcess = () => {
               className="w-[100px] h-[100px]"
             />
           </div>
-          {/* <div className="absolute left-[20px] py-3 text-[#121212] font-MuseoSans font-semibold text-[16px]">
-            HR Interview
-          </div> */}
         </div>
 
-        <div className="hidden sm:block relative h-2 w-[100px]  bg-[#E8F3FE]">
+        <div className="hidden sm:block relative h-[5px] w-[100px]  bg-[#E8F3FE]">
           <div
             className={`h-full bg-[#399EFD] ${
               active && "animate-horizontalLine-show"
@@ -65,7 +62,7 @@ const InterViewProcess = () => {
           ></div>
         </div>
 
-        <div className="sm:hidden relative h-[80px] w-[6px]  bg-[#E8F3FE]">
+        <div className="sm:hidden relative h-[80px] w-[5px]  bg-[#E8F3FE]">
           <div
             className={`h-full bg-[#399EFD] ${
               active && "animate-verticalLine-show"
@@ -83,7 +80,7 @@ const InterViewProcess = () => {
           </div>
         </div>
 
-        <div className="hidden sm:block relative h-2 w-[100px]  bg-[#E8F3FE]">
+        <div className="hidden sm:block relative h-[5px] w-[100px]  bg-[#E8F3FE]">
           <div
             className={`h-full bg-[#399EFD] ${
               active && "animate-horizontalLine-show"
@@ -91,7 +88,7 @@ const InterViewProcess = () => {
           ></div>
         </div>
 
-        <div className="sm:hidden relative h-[80px] w-[6px]  bg-[#E8F3FE]">
+        <div className="sm:hidden relative h-[80px] w-[5px]  bg-[#E8F3FE]">
           <div
             className={`h-full bg-[#399EFD] ${
               active && "animate-verticalLine-show"
@@ -108,11 +105,17 @@ const InterViewProcess = () => {
             />
           </div>
         </div>
-      </div>
 
-      {/* <div className="relative h-[100px] w-[6px]  bg-[#E8F3FE]">
-        <div className="h-full bg-[#399EFD] animate-verticalLine-show"></div>
-      </div> */}
+        <div className="absolute top-[8%] right-0 sm:top-[100%] sm:left-[3%] py-3 text-[#121212] font-MuseoSans font-semibold text-[16px]">
+          HR Interview
+        </div>
+        <div className="absolute top-[46%] right-0 sm:top-[100%] sm:left-[39%] py-3 text-[#121212] font-MuseoSans font-semibold text-[16px]">
+          Personal Interview
+        </div>
+        <div className="absolute top-[85%] right-0 sm:top-[100%] sm:right-[2%] py-3 text-[#121212] font-MuseoSans font-semibold text-[16px]">
+          Practical Round
+        </div>
+      </div>
     </div>
   );
 };
