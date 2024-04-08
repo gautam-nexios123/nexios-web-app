@@ -14,41 +14,47 @@ const ChooseNexios = () => {
 
   return (
     <div className="flex flex-col lg:flex-row justify-center gap-14 w-full px-7 sm:px-[100px] mt-12">
-      <div className="w-[100%] lg:w-[40%]">
-        <div className="flex gap-8 sm:gap-12">
-          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] h-fit">
-            <Image src={expertTeam} alt="expertTeam" width={180} height={150} />
-            <p className="text-[#121212] font-MuseoSans font-semibold text-lg text-center pt-3">
+      <div className="">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 sm:gap-10">
+          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] w-[180px] h-[200px]">
+            <Image
+              src={expertTeam}
+              alt="expertTeam"
+              className="w-full h-[100px]"
+            />
+            <p className="text-[#121212] px-[50px] font-MuseoSans font-semibold text-lg text-center pt-4 ">
               Experts Team
             </p>
           </div>
-          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] h-fit mt-10">
-            <Image src={yearExpImg} alt="yearExpImg" width={180} height={150} />
+          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] w-[180px] h-[200px] md:mt-10">
+            <Image
+              src={yearExpImg}
+              alt="yearExpImg"
+              className="w-full h-[100px]"
+            />
             <p className="text-[#121212] font-MuseoSans font-semibold text-lg text-center pt-3">
               Years of Experience
             </p>
           </div>
         </div>
-        <div className="flex gap-8 sm:gap-12 lg:ml-9">
-          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] h-fit">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 sm:gap-10 md:ml-9 mt-[32px] sm:mt-0">
+          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] w-[180px] h-[200px]">
             <Image
               src={focusInnoImg}
               alt="focusInnoImg"
-              width={180}
-              height={150}
+              className="w-full h-[100px]"
             />
-            <p className="text-[#121212] font-MuseoSans font-semibold text-lg text-center pt-3">
+            <p className="text-[#121212]  font-MuseoSans font-semibold text-lg text-center pt-3">
               Focus on innovation
             </p>
           </div>
-          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] h-fit mt-10">
+          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] w-[180px] h-[200px] md:mt-10">
             <Image
               src={businessServeImg}
               alt="businessServeImg"
-              width={180}
-              height={150}
+              className="w-full h-[100px]"
             />
-            <p className="text-[#121212] font-MuseoSans font-semibold text-lg text-center pt-3">
+            <p className="text-[#121212] px-[50px] font-MuseoSans font-semibold text-lg text-center pt-3">
               Business savvy
             </p>
           </div>
