@@ -19,15 +19,15 @@ const ShedualeCall = () => {
     let newErrors = {};
 
     if (!formData?.name) {
-      newErrors.name = "Name is required !";
+      newErrors.name = "Name is required*";
       isValid = true;
     }
     if (!formData?.email) {
-      newErrors.email = "Email is required !";
+      newErrors.email = "Email is required*";
       isValid = true;
     }
     if (!formData?.phone) {
-      newErrors.phone = "Phone is required !";
+      newErrors.phone = "Phone is required*";
       isValid = true;
     }
     setError(newErrors);
@@ -67,7 +67,7 @@ const ShedualeCall = () => {
           />
           {error?.name && (
             <div className="font-MuseoSans font-normal text-red-600 text-sm">
-              Please enter name*
+              {error?.name}
             </div>
           )}
           <input
@@ -79,7 +79,7 @@ const ShedualeCall = () => {
           />
           {error?.email && (
             <div className="font-MuseoSans font-normal text-red-600 text-sm">
-              Please enter email*
+              {error?.email}
             </div>
           )}
           <input
@@ -91,7 +91,7 @@ const ShedualeCall = () => {
           />
           {error?.phone && (
             <div className="font-MuseoSans font-normal text-red-600 text-sm">
-              Please enter phone*
+              {error?.phone}
             </div>
           )}
           <input

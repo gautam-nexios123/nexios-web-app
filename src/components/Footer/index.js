@@ -64,10 +64,16 @@ const Footer = () => {
           >
             Portfolio
           </div>
-          <div className="font-MuseoSans font-normal text-[14px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer">
+          <div
+            onClick={() => router.push("/career")}
+            className="font-MuseoSans font-normal text-[14px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer"
+          >
             Careers
           </div>
-          <div className="font-MuseoSans font-normal text-[14px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer">
+          <div
+            onClick={() => router.push("/contact-us")}
+            className="font-MuseoSans font-normal text-[14px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer"
+          >
             Contact Us
           </div>
         </div>

@@ -7,6 +7,7 @@ import serviceFour from "../../assets/images/portfolio/s4.svg";
 import serviceFive from "../../assets/images/portfolio/s5.svg";
 import serviceSix from "../../assets/images/portfolio/s6.svg";
 import Image from "next/image";
+import { Fade_Left_Animation, Fade_Right_Animation } from "../Animations";
 
 const servicesData = [
   {
@@ -58,11 +59,13 @@ const Services = () => {
           {index % 2 === 0 ? (
             <>
               <div className="w-full lg:w-[50%] pb-4 md:pb-0 lg:pb-0">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  className="w-fit h-full"
-                />
+                <Fade_Left_Animation>
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    className="w-fit h-full"
+                  />
+                </Fade_Left_Animation>
               </div>
               <div className="w-full lg:w-[50%] m-auto  pb-4 md:pb-0 lg:pb-0">
                 <div className="font-MuseoSans font-semibold text-[#121212] text-[24px] text-center pb-3">
@@ -84,11 +87,13 @@ const Services = () => {
                 </div>
               </div>
               <div className="w-full lg:w-[50%] pb-4 md:pb-0 lg:pb-0">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  className="w-fit h-full"
-                />
+                <Fade_Right_Animation>
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    className="w-fit h-full"
+                  />
+                </Fade_Right_Animation>
               </div>
             </>
           )}

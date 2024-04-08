@@ -1,8 +1,12 @@
 "use client";
 import CustomButton from "@/common/CustomButton";
+import { useRouter } from "next/navigation";
 import React from "react";
+import { Zoom_In_Animation } from "../Animations";
 
 const OpeningPosition = () => {
+  const router = useRouter();
+
   const openPositionData = [
     {
       name: "Laravel Developer",
@@ -23,11 +27,12 @@ const OpeningPosition = () => {
 
   return (
     <div className="w-full mb-[80px]">
-      <div className="font-MuseoSans font-normal text-[18px] sm:text-[24px] text-[#121212] pb-4 text-center">
-        Opening <span className="font-semibold">Position</span>
-        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[145px] mx-auto sm:w-[190px] mt-[-12px] sm:mt-[-15px]"></div>
-      </div>
-
+      <Zoom_In_Animation>
+        <div className="font-MuseoSans font-normal text-[18px] sm:text-[24px] text-[#121212] pb-4 text-center">
+          Opening <span className="font-semibold">Position</span>
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[145px] mx-auto sm:w-[190px] mt-[-12px] sm:mt-[-15px]"></div>
+        </div>
+      </Zoom_In_Animation>
       <div className="flex w-full  flex-wrap justify-center gap-6 px-[30px] md:px-[50px] lg:px-[80px] xl:px-[160px]">
         {openPositionData?.map((item, index) => {
           return (
@@ -74,7 +79,7 @@ const OpeningPosition = () => {
               </div>
               <div className="flex justify-center mt-2">
                 <CustomButton
-                  onSubmitButton={() => {}}
+                  onSubmitButton={() => router.push("/applynow")}
                   bgColor={index % 2 !== 0 ? "white" : "#399EFD"}
                   textColor={index % 2 !== 0 ? "#399EFD" : "white"}
                   btnWidth="110px"

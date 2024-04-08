@@ -4,6 +4,7 @@ import frame from "../../assets/images/home/Frame.svg";
 import { scrollToBottom } from "@/utils";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
+import { Zoom_In_Animation } from "../Animations";
 
 const WhoNexios = () => {
   const scrollButtonRef = useRef(null);
@@ -28,20 +29,25 @@ const WhoNexios = () => {
           ref={scrollButtonRef}
           className="flex flex-col sm:flex-row items-center gap-5 my-5"
         >
-          <CustomButton
-            onSubmitButton={() => router.push("/about")}
-            bgColor="#399EFD"
-            textColor="white"
-            btnWidth="120px"
-            text="Know More"
-          />
-          <CustomButton
-            onSubmitButton={() => scrollToBottom()}
-            bgColor="#121212"
-            textColor="white"
-            btnWidth="160px"
-            text="Free Quote"
-          />
+          <Zoom_In_Animation>
+            <CustomButton
+              onSubmitButton={() => router.push("/about")}
+              bgColor="#399EFD"
+              textColor="white"
+              btnWidth="120px"
+              text="Know More"
+            />
+          </Zoom_In_Animation>
+
+          <Zoom_In_Animation>
+            <CustomButton
+              onSubmitButton={() => scrollToBottom()}
+              bgColor="#121212"
+              textColor="white"
+              btnWidth="160px"
+              text="Free Quote"
+            />
+          </Zoom_In_Animation>
         </div>
       </div>
       <div className="w-[100%] lg:w-[40%]">

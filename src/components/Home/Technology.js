@@ -14,14 +14,17 @@ import mySqlIcon from "../../assets/images/home/mySql.svg";
 import bootstrapIcon from "../../assets/images/home/bootstrap.svg";
 import phpIcon from "../../assets/images/home/php.svg";
 import tFour from "../../assets/images/home/t4.svg";
+import { Zoom_In_Animation } from "../Animations";
 
 const Technology = () => {
   return (
     <div className="relative mt-11">
-      <div className="absolute top-[30px] w-full text-center font-MuseoSans font-light text-[22px] sm:text-[26px]">
-        We Use <span className="font-semibold">Technologies</span>
-        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[220px] sm:w-[268px] mx-auto mt-[-12px] sm:mt-[-15px]"></div>
-      </div>
+      <Zoom_In_Animation>
+        <div className="absolute top-[30px] w-full text-center font-MuseoSans font-light text-[22px] sm:text-[26px]">
+          We Use <span className="font-semibold">Technologies</span>
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[220px] sm:w-[268px] mx-auto mt-[-12px] sm:mt-[-15px]"></div>
+        </div>
+      </Zoom_In_Animation>
       <div className="">
         <Image src={pattern} alt="" className="w-[100%] h-[600px] " />
       </div>

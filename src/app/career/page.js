@@ -1,8 +1,10 @@
+"use client";
 import React from "react";
 import TopBanner from "../../assets/images/career/career-banner.svg";
 import CareerTopMain from "@/components/Career/CareerTopMain";
 import OpeningPosition from "@/components/Career/OpeningPosition";
 import InterViewProcess from "@/components/Career/InterViewProcess";
+import { Zoom_In_Animation } from "@/components/Animations";
 
 const Career = () => {
   return (
@@ -13,10 +15,12 @@ const Career = () => {
         banner={TopBanner}
       />
       <div className="w-[80%] lg:w-[60%] mx-auto my-12">
-        <div className="font-MuseoSans font-normal text-[18px] sm:text-[24px] text-[#121212] pb-4 text-center">
-          Career & Culture at <span className="font-semibold">nexios</span>
-          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[210px] sm:w-[290px] mt-[-12px] sm:mt-[-15px] mx-auto"></div>
-        </div>
+        <Zoom_In_Animation>
+          <div className="font-MuseoSans font-normal text-[18px] sm:text-[24px] text-[#121212] pb-4 text-center">
+            Career & Culture at <span className="font-semibold">nexios</span>
+            <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[210px] sm:w-[290px] mt-[-12px] sm:mt-[-15px] mx-auto"></div>
+          </div>
+        </Zoom_In_Animation>
         <div className="font-MuseoSans font-normal text-[12px] sm:text-[14px] text-[#9BA9B4] text-justify md:text-center">
           We are one of the best places to work. nexios makes an atmosphere
           where you can grow your inner self and outer self, show your talent

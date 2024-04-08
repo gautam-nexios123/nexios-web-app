@@ -3,6 +3,7 @@ import Image from "next/image";
 import hrInterviewPic from "../../assets/images/career/hr-interview.svg";
 import practicalRoundPic from "../../assets/images/career/practical-round.svg";
 import { useEffect, useState } from "react";
+import { Zoom_In_Animation } from "../Animations";
 const InterViewProcess = () => {
   const [active, setActive] = useState(false);
 
@@ -27,10 +28,12 @@ const InterViewProcess = () => {
   return (
     <div id="process-interview" className="w-full mb-[80px]">
       <div className="w-[80%] lg:w-[60%] mx-auto">
-        <div className="font-MuseoSans font-normal text-[18px] sm:text-[24px] text-[#121212] pb-4 text-center">
-          Process of <span className="font-semibold">Interview</span>
-          <div className="bg-[#399EFD] opacity-[25%] h-[6px] w-[180px] sm:w-[235px] mt-[-12px] sm:mt-[-15px] mx-auto"></div>
-        </div>
+        <Zoom_In_Animation>
+          <div className="font-MuseoSans font-normal text-[18px] sm:text-[24px] text-[#121212] pb-4 text-center">
+            Process of <span className="font-semibold">Interview</span>
+            <div className="bg-[#399EFD] opacity-[25%] h-[6px] w-[180px] sm:w-[235px] mt-[-12px] sm:mt-[-15px] mx-auto"></div>
+          </div>
+        </Zoom_In_Animation>
         <div className="font-MuseoSans font-normal text-[12px] sm:text-[14px] text-[#9BA9B4] text-justify md:text-center">
           We are one of the best places to work. nexios makes an atmosphere
           where you can grow your inner self and outer self, show your talent

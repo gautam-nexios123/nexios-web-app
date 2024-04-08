@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import "animate.css/animate.min.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +41,10 @@ export default function RootLayout({ children }) {
     } else if (pathName === "/career") {
       title = "Career - Nexios Technologies";
     } else if (pathName === "/contact") {
+      title = "Contact Us - Nexios Technologies";
+    } else if (pathName === "/applynow") {
+      title = "Apply Now - Nexios Technologies";
+    } else if (pathName === "/contact-us") {
       title = "Contact Us - Nexios Technologies";
     }
     setAppTitle(title);

@@ -7,8 +7,8 @@ import CustomButton from "../../common/CustomButton";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Drawer } from "@mui/material";
-import { scrollToBottom } from "@/utils";
 import ServicesDropDown from "./ServicesDropDown";
+import { scrollToBottom } from "@/utils";
 
 const Header = () => {
   const scrollButtonRef = useRef(null);
@@ -19,17 +19,28 @@ const Header = () => {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
 
   const getCurrentPath = () => {
-    if (location === "/") {
-      setCurrentPath("home");
-    } else if (location === "/about") {
-      setCurrentPath("about");
-    } else if (location === "/portfolio") {
-      setCurrentPath("portfolio");
-    } else if (location === "/career") {
-      setCurrentPath("career");
-    } else {
-      setCurrentPath("");
+    let path;
+    switch (location) {
+      case "/":
+        path = "home";
+        break;
+      case "/about":
+        path = "about";
+        break;
+      case "/portfolio":
+        path = "portfolio";
+        break;
+      case "/career":
+        path = "career";
+        break;
+      case "/contact-us":
+        path = "contact-us";
+        break;
+      default:
+        path = "";
+        break;
     }
+    setCurrentPath(path);
     setIsDrawerOpen(false);
   };
 
@@ -37,73 +48,35 @@ const Header = () => {
     getCurrentPath();
   }, [location]);
 
+  const handleMenuClick = (path) => {
+    router.push(path);
+  };
+
   const toggleDrawer = () => {
-    setIsDrawerOpen(true);
+    setIsDrawerOpen(!isDrawerOpen);
   };
 
   return (
     <div className="bg-white w-full flex items-center justify-between lg:justify-around py-3 px-10 lg:px-0">
       <Image src={logo} alt="logo" className="w-[95px] h-[65px]" />
       <div className="hidden lg:flex items-center gap-6">
-        <div
-          onClick={() => router.push("/")}
-          className={`font-MuseoSans font-normal text-base ${
-            currentPath === "home" ? "text-[#399EFD]" : "text-[#121212]"
-          } cursor-pointer`}
-        >
-          Home
-        </div>
-        <div
-          onClick={() => router.push("/about")}
-          className={`font-MuseoSans font-normal text-base ${
-            currentPath === "about" ? "text-[#399EFD]" : "text-[#121212]"
-          } cursor-pointer`}
-        >
-          About Us
-        </div>
-        <div
-          onClick={() => router.push("/portfolio")}
-          className={`font-MuseoSans font-normal text-base ${
-            currentPath === "portfolio" ? "text-[#399EFD]" : "text-[#121212]"
-          } cursor-pointer`}
-        >
-          Portfolio
-        </div>
-        <div
-          className="relative"
-          onMouseEnter={() => setIsServicesDropdownOpen(true)}
-          onMouseLeave={() => setIsServicesDropdownOpen(false)}
-        >
-          <div
-            className={`font-MuseoSans font-normal text-base ${
-              isServicesDropdownOpen || currentPath === "services"
-                ? "text-[#399EFD]"
-                : "text-[#121212]"
-            } cursor-pointer`}
-          >
-            Services
-          </div>
-          {isServicesDropdownOpen && (
-            <div className="absolute top-full left-0 bg-white border border-gray-200 shadow-lg z-50">
-              <ServicesDropDown
-                setIsServicesDropdownOpen={setIsServicesDropdownOpen}
-              />
-            </div>
-          )}
-        </div>
-        <div
-          onClick={() => router.push("/career")}
-          className={`font-MuseoSans font-normal text-base ${
-            currentPath === "career" ? "text-[#399EFD]" : "text-[#121212]"
-          } cursor-pointer`}
-        >
-          Career
-        </div>
-        <div
-          className={`font-MuseoSans font-normal text-base text-[#121212] cursor-pointer`}
-        >
-          Contact Us
-        </div>
+        {[
+          "home",
+          "about",
+          "portfolio",
+          "services",
+          "career",
+          "contact-us",
+        ]?.map((path) => (
+          <MenuItem
+            key={path}
+            path={path}
+            currentPath={currentPath}
+            handleMenuClick={handleMenuClick}
+            isServicesDropdownOpen={isServicesDropdownOpen}
+            setIsServicesDropdownOpen={setIsServicesDropdownOpen}
+          />
+        ))}
         <div ref={scrollButtonRef}>
           <CustomButton
             onSubmitButton={() => scrollToBottom()}
@@ -116,89 +89,104 @@ const Header = () => {
       </div>
       <Image
         className="lg:hidden cursor-pointer"
-        src={menuIcon}
+        src={isDrawerOpen ? closeIcon : menuIcon}
         alt="menu"
         width={25}
         height={25}
         onClick={toggleDrawer}
       />
-      <Drawer open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
+      <Drawer open={isDrawerOpen} onClose={toggleDrawer}>
         <Image
-          onClick={() => setIsDrawerOpen(false)}
+          onClick={toggleDrawer}
           className="ml-auto mr-6 my-6 cursor-pointer"
           src={closeIcon}
           alt="close"
           width={30}
           height={30}
         />
-        <div className="px-11">
-          <div
-            onClick={() => router.push("/")}
-            className={`font-MuseoSans font-normal pb-2 text-lg ${
-              currentPath === "home" ? "text-[#399EFD]" : "text-[#121212]"
-            } cursor-pointer`}
-          >
-            Home
-          </div>
-          <div
-            onClick={() => router.push("/about")}
-            className={`font-MuseoSans font-normal pb-2 text-lg ${
-              currentPath === "about" ? "text-[#399EFD]" : "text-[#121212]"
-            } cursor-pointer`}
-          >
-            About Us
-          </div>
-          <div
-            onClick={() => router.push("/portfolio")}
-            className={`font-MuseoSans font-normal pb-2 text-lg ${
-              currentPath === "portfolio" ? "text-[#399EFD]" : "text-[#121212]"
-            } cursor-pointer`}
-          >
-            Portfolio
-          </div>
-          <div
-            className="relative"
-            onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-          >
-            <div
-              className={`font-MuseoSans font-normal pb-2 text-lg ${
-                isServicesDropdownOpen ? "text-[#399EFD]" : "text-[#121212]"
-              } cursor-pointer`}
-            >
-              Services
+        <DrawerContent
+          currentPath={currentPath}
+          handleMenuClick={handleMenuClick}
+          isServicesDropdownOpen={isServicesDropdownOpen}
+          setIsServicesDropdownOpen={setIsServicesDropdownOpen}
+        />
+      </Drawer>
+    </div>
+  );
+};
+
+const MenuItem = ({
+  path,
+  currentPath,
+  handleMenuClick,
+  isServicesDropdownOpen,
+  setIsServicesDropdownOpen,
+}) => {
+  const formattedPath = path.replace("-", " ");
+  const isServices = path === "services";
+
+  const handleClick = () => {
+    handleMenuClick(`/${path === "home" ? "" : path}`);
+  };
+
+  return (
+    <div
+      onClick={!isServices ? handleClick : () => {}}
+      onMouseEnter={() => isServices && setIsServicesDropdownOpen(true)}
+      onMouseLeave={() => isServices && setIsServicesDropdownOpen(false)}
+      className={`font-MuseoSans font-normal text-base capitalize ${
+        currentPath === path ? "text-[#399EFD]" : "text-[#121212]"
+      } cursor-pointer`}
+    >
+      {isServices ? (
+        <>
+          <div>{formattedPath}</div>
+          {isServicesDropdownOpen && (
+            <div className="absolute bg-white border border-gray-200 shadow-lg z-50">
+              <ServicesDropDown
+                setIsServicesDropdownOpen={setIsServicesDropdownOpen}
+              />
             </div>
-            {isServicesDropdownOpen && (
-              <div className="absolute top-full left-0 w-[165px] bg-white border border-gray-200 shadow-lg z-50">
-                <ServicesDropDown
-                  setIsServicesDropdownOpen={setIsServicesDropdownOpen}
-                />
-              </div>
-            )}
-          </div>
-          <div
-            onClick={() => router.push("/career")}
-            className={`font-MuseoSans font-normal pb-2 text-lg ${
-              currentPath === "career" ? "text-[#399EFD]" : "text-[#121212]"
-            } cursor-pointer`}
-          >
-            Career
-          </div>
-          <div
-            className={`font-MuseoSans font-normal pb-4 text-lg text-[#121212] cursor-pointer`}
-          >
-            Contact Us
-          </div>
-          <div className="">
-            <CustomButton
-              onSubmitButton={() => scrollToBottom()}
-              bgColor="#399EFD"
-              textColor="white"
-              btnWidth="130px"
-              text="Free Quote"
+          )}
+        </>
+      ) : (
+        formattedPath
+      )}
+    </div>
+  );
+};
+
+const DrawerContent = ({
+  currentPath,
+  handleMenuClick,
+  isServicesDropdownOpen,
+  setIsServicesDropdownOpen,
+}) => {
+  return (
+    <div className="px-11">
+      {["home", "about", "portfolio", "services", "career", "contact-us"]?.map(
+        (path) => (
+          <div className="pb-2">
+            <MenuItem
+              key={path}
+              path={path}
+              currentPath={currentPath}
+              handleMenuClick={handleMenuClick}
+              isServicesDropdownOpen={isServicesDropdownOpen}
+              setIsServicesDropdownOpen={setIsServicesDropdownOpen}
             />
           </div>
-        </div>
-      </Drawer>
+        )
+      )}
+      <div className="">
+        <CustomButton
+          onSubmitButton={() => scrollToBottom()}
+          bgColor="#399EFD"
+          textColor="white"
+          btnWidth="130px"
+          text="Free Quote"
+        />
+      </div>
     </div>
   );
 };
