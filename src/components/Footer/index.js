@@ -3,7 +3,7 @@ import React from "react";
 import logo from "../../assets/images/footer-Logo.svg";
 import fbImg from "../../assets/images/facebook.svg";
 import instagramImg from "../../assets/images/instagram.svg";
-import twiterImg from "../../assets/images/twiter.svg";
+import linkDinIcon from "../../assets/images/icons8-linkedin.svg";
 
 import locationImg from "../../assets/images/location.svg";
 import phoneImg from "../../assets/images/phone.svg";
@@ -35,11 +35,16 @@ const Footer = () => {
               alt="instagramImg"
               className="w-[25px] h-[25px] cursor-pointer"
             />
-            <Image
-              src={twiterImg}
-              alt="twiterImg"
-              className="w-[25px] h-[25px] cursor-pointer"
-            />
+            <a
+              href="https://www.linkedin.com/company/nexiostechnologies/"
+              target="_blank"
+            >
+              <Image
+                src={linkDinIcon}
+                alt="linkDinIcon"
+                className="w-[30px] h-[30px] cursor-pointer"
+              />
+            </a>
           </div>
         </div>
         <div className="">
