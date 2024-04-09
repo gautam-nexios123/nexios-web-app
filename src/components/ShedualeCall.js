@@ -54,7 +54,7 @@ const ShedualeCall = () => {
         <Image src={logo} alt="" width={350} height={200} className="mx-auto" />
       </div>
       <div className="bg-[#399EFD] w-full md:w-[50%] pl-6 pt-8">
-        <div className="text-[#FFFFFF] font-MuseoSans font-semibold underline text-[24px] pb-3">
+        <div className="text-[#FFFFFF] font-MuseoSans font-semibold underline text-[32px] pb-3">
           Schedule a Call
         </div>
         <div className="flex flex-col w-[70%]">

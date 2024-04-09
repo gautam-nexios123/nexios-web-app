@@ -59,10 +59,10 @@ const OurClient = () => {
         <div
           className={`${
             isVisible ? "animation-zoomIn" : ""
-          } text-[#121212] font-MuseoSans font-semibold text-[18px] sm:text-[26px] text-center py-7 mt-16`}
+          } text-[#121212] font-MuseoSans font-semibold text-[22px] sm:text-[40px] text-center py-7 mt-16`}
         >
           What our clients have to say
-          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[245px] sm:w-[350px] mt-[-12px] sm:mt-[-15px] mx-auto"></div>
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[300px] sm:w-[530px] mt-[-12px] sm:mt-[-15px] mx-auto"></div>
         </div>
       </AnimationOnScroll>
 
@@ -96,13 +96,13 @@ const OurClient = () => {
               </div>
               <div className="w-full lg:w-[60%] mt-[90px] lg:mt-0">
                 <Image src={quateIcon} alt="quate" width={45} height={45} />
-                <div className="text-[#121212] mb-2 text-justify font-MuseoSans font-normal text-lg py-6 line-clamp-4">
+                <div className="text-[#121212] mb-2 text-justify font-MuseoSans font-normal text-[21px] py-6 line-clamp-4 italic">
                   {item?.description}
                 </div>
-                <div className="text-[#121212] font-MuseoSans font-semibold text-lg pb-2">
+                <div className="text-[#121212] font-MuseoSans font-semibold text-lg pb-2 italic">
                   {item?.name}
                 </div>
-                <div className="text-[#9BA9B4] font-MuseoSans font-normal text-lg pb-2">
+                <div className="text-[#9BA9B4] font-MuseoSans font-normal text-lg pb-2 italic">
                   {item?.desgnation}
                 </div>
               </div>

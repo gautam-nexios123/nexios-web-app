@@ -14,7 +14,7 @@ const CustomButton = ({
         width: btnWidth,
         borderRadius: "27px",
       }}
-      className={`py-[6px] bg-black font-MuseoSans font-normal text-[14px] shadow-xl`}
+      className={`py-[8px] bg-black font-MuseoSans font-normal text-[15px] shadow-xl`}
     >
       {text}
     </button>

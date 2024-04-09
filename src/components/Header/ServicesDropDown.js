@@ -26,7 +26,7 @@ const ServicesDropDown = ({ setIsServicesDropdownOpen }) => {
           key={service.path}
           className={`px-4 py-2 ${
             location === service.path ? "text-[#399EFD]" : "text-[#121212]"
-          } font-normal text-xs whitespace-nowrap cursor-pointer hover:bg-gray-100`}
+          } font-normal text-[14px] whitespace-nowrap cursor-pointer hover:bg-gray-100`}
           onClick={() => handleServiceClick(service.path)}
         >
           {service.label}

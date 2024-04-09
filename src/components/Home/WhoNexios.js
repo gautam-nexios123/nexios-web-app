@@ -16,18 +16,21 @@ const WhoNexios = () => {
     <div className="flex flex-col lg:flex-row justify-center gap-14 w-full px-7 sm:px-[100px] mt-12">
       <div className="w-[100%] lg:w-[40%]">
         <div
-          className={`font-MuseoSans font-normal text-[26px] text-[#121212] pb-3`}
+          className={`font-MuseoSans font-normal text-[22px] sm:text-[32px] text-[#121212] pb-3`}
         >
           Who is <span className="font-semibold">nexios?</span>
-          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[180px] mt-[-15px]"></div>
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[160px] sm:w-[220px] mt-[-12px] sm:mt-[-15px]"></div>
         </div>
-        <div className="font-MuseoSans text-justify font-normal text-[16px] text-[#9BA9B4] pb-3">
+        <div className="font-MuseoSans text-justify font-normal text-[16px] sm:text-[18px] text-[#9BA9B4] pb-3">
           From expertise-based services and product development services to
           becoming a one-stop solution for all talent needs, Nexios has indeed
           come a long way. We make it easy for businesses to find the most
           talented developers, designers, and marketers as per their needs
-          faster and more efficiently. Over the last 8 years, Nexios has worked
-          with over 50+ overseas clients..
+          faster and more efficiently.
+        </div>
+        <div className="font-MuseoSans text-justify font-normal text-[16px] sm:text-[18px] text-[#9BA9B4] pb-3">
+          Over the last 8 years, Nexios has worked with over 50+ overseas
+          clients..
         </div>
         <div
           ref={scrollButtonRef}

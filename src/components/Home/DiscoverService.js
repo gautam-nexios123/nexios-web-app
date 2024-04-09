@@ -63,10 +63,10 @@ const DiscoverService = () => {
         <div
           className={`${
             isVisible ? "animation-zoomIn" : ""
-          } text-center font-MuseoSans font-light text-[22px] sm:text-[26px]`}
+          } text-center font-MuseoSans font-light text-[22px] sm:text-[32px]`}
         >
           Discover Our <span className="font-semibold">Services</span>
-          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[225px] sm:w-[268px] mx-auto mt-[-12px] sm:mt-[-15px]"></div>
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[225px] sm:w-[325px] mx-auto mt-[-12px] sm:mt-[-15px]"></div>
         </div>
       </AnimationOnScroll>
 

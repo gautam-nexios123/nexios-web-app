@@ -134,7 +134,7 @@ const MenuItem = ({
       onClick={!isServices ? handleClick : () => {}}
       onMouseEnter={() => isServices && setIsServicesDropdownOpen(true)}
       onMouseLeave={() => isServices && setIsServicesDropdownOpen(false)}
-      className={`font-MuseoSans font-normal text-base capitalize ${
+      className={`font-MuseoSans font-normal text-[19px] capitalize ${
         currentPath === path ? "text-[#399EFD]" : "text-[#121212]"
       } cursor-pointer`}
     >
@@ -163,7 +163,7 @@ const DrawerContent = ({
   setIsServicesDropdownOpen,
 }) => {
   return (
-    <div className="px-11">
+    <div className="px-[70px]">
       {["home", "about", "portfolio", "services", "career", "contact-us"]?.map(
         (path) => (
           <div className="pb-2">
@@ -178,7 +178,7 @@ const DrawerContent = ({
           </div>
         )
       )}
-      <div className="">
+      <div className="mt-4">
         <CustomButton
           onSubmitButton={() => scrollToBottom()}
           bgColor="#399EFD"

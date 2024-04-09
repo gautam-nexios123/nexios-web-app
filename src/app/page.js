@@ -21,12 +21,12 @@ export default function Home() {
   return (
     <div className="relative">
       <div className="">
-        <h2 className="font-MuseoSans text-[30px] text-[#121212] font-normal text-center mx-8">
+        <h2 className="font-MuseoSans text-[30px] sm:text-[40px] text-[#121212] font-normal text-center mx-8">
           <span className="font-bold">We Create Simple Solution</span> <br></br>{" "}
           For Your Complex Business Task
         </h2>
         <div className="w-full">
-          <p className="font-MuseoSans text-[18px] text-[#9BA9B4] font-normal md:text-center text-justify lg:mx-auto lg:w-[60%] mx-5 pt-4">
+          <p className="font-MuseoSans text-[18px] sm:text-[20px] text-[#9BA9B4] font-normal md:text-center text-justify lg:mx-auto lg:w-[60%] mx-5 pt-4">
             Nexios is a global technology partner that enables long-lasting
             value for businesses via the latest technologies. It provides a
             complete solution from concept to reality. We've worked with
@@ -73,7 +73,7 @@ export default function Home() {
           <Image
             src={settingGif}
             alt="bgBannerOne"
-            className="hidden sm:block absolute bottom-[38%] left-[10%]"
+            className="hidden sm:block absolute bottom-[38%] left-[20%]"
             width={100}
             height={100}
           />

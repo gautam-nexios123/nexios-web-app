@@ -56,6 +56,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/nexiosIcon.png" sizes="32*32" />
         <title>{appTitle}</title>
         <meta name="description" content={"Nexios Technologies LLP"} />
       </head>
