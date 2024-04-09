@@ -4,7 +4,6 @@ import transImg from "../../assets/images/about/transImg.svg";
 import contiImg from "../../assets/images/about/conti-groth.svg";
 import serviceImg from "../../assets/images/about/service-img.svg";
 import valueImg from "../../assets/images/about/value-img.svg";
-import { Zoom_In_Animation } from "../Animations";
 
 const CoreValue = () => {
   const cardData = [
@@ -36,12 +35,10 @@ const CoreValue = () => {
 
   return (
     <div className="my-10 w-full relative">
-      <Zoom_In_Animation>
-        <div className="relative font-MuseoSans font-semibold text-[#121212] text-[24px] text-center">
-          Our Core Values
-          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[190px] mx-auto mt-[-15px]"></div>
-        </div>
-      </Zoom_In_Animation>
+      <div className="relative font-MuseoSans font-semibold text-[#121212] text-[24px] text-center">
+        Our Core Values
+        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[190px] mx-auto mt-[-15px]"></div>
+      </div>
       <div className="w-full px-[30px] lg:px-[160px] flex flex-wrap flex-col md:flex-row justify-between gap-5 mt-12">
         {cardData?.map((item, index) => (
           <div

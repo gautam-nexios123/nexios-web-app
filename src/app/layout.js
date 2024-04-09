@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import "animate.css/animate.min.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

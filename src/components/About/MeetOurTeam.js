@@ -9,7 +9,6 @@ import teemFive from "../../assets/images/about/team-5.svg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CustomDot } from "@/utils";
-import { Zoom_In_Animation } from "../Animations";
 
 const responsive = {
   superLargeDesktop: {
@@ -65,12 +64,10 @@ const MeetOurTeam = () => {
 
   return (
     <div className="mb-12">
-      <Zoom_In_Animation>
-        <div className="relative font-MuseoSans font-semibold text-[#121212] text-[24px] text-center">
-          Meet Our Team
-          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[170px] mx-auto mt-[-15px]"></div>
-        </div>
-      </Zoom_In_Animation>
+      <div className="relative font-MuseoSans font-semibold text-[#121212] text-[24px] text-center">
+        Meet Our Team
+        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[170px] mx-auto mt-[-15px]"></div>
+      </div>
       <div className="px-[30px] md:px-[160px]">
         <div className="text-[#9BA9B4] font-normal text-base text-justify lg:text-center py-5">
           At nexios, we believe in the spirit of teamwork, creativity, and

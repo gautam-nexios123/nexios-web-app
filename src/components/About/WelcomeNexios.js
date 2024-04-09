@@ -4,17 +4,14 @@ import plusyear from "../../assets/images/about/7-plus-year.png";
 import dotHalf from "../../assets/images/about/dot-half.svg";
 import leftCerve from "../../assets/images/about/left-cerve.svg";
 import rightCerve from "../../assets/images/about/right-cerve.svg";
-import { Zoom_In_Animation } from "../Animations";
 
 const WelcomeNexios = () => {
   return (
     <div className="my-11 w-full relative">
-      <Zoom_In_Animation>
-        <div className="relative font-MuseoSans font-light text-[#121212] text-[24px] text-center">
-          Welcome To <span className="font-semibold">nexios</span>
-          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[220px] mx-auto mt-[-15px]"></div>
-        </div>
-      </Zoom_In_Animation>
+      <div className="relative font-MuseoSans font-light text-[#121212] text-[24px] text-center">
+        Welcome To <span className="font-semibold">nexios</span>
+        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[220px] mx-auto mt-[-15px]"></div>
+      </div>
       <div className="lg:px-[200px] px-[50px]">
         <div className="font-MuseoSans font-normal text-[#9BA9B4] text-[16px] md:text-center text-justify py-7">
           Nexios Technologies is one of the reckoned Software Development

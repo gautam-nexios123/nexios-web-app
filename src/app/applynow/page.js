@@ -45,10 +45,6 @@ const ApplyNow = () => {
     setError({ ...error, [name]: "" });
   };
 
-  const handleChangeSubject = (event) => {
-    setSubject(event.target.value);
-  };
-
   const formSubmit = () => {
     if (handleError()) {
       console.log("Faillllllllll");

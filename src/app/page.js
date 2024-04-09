@@ -13,7 +13,6 @@ import ShedualeCall from "@/components/ShedualeCall";
 import { useRef } from "react";
 import { scrollToBottom } from "@/utils";
 import { useRouter } from "next/navigation";
-import ScrollAnimation from "react-animate-on-scroll";
 
 export default function Home() {
   const scrollButtonRef = useRef(null);
@@ -41,38 +40,20 @@ export default function Home() {
           ref={scrollButtonRef}
           className="flex flex-col sm:flex-row items-center justify-center gap-5 my-5"
         >
-          <div className="animate__animated animate__fadeInLeft animate__slow">
-            <ScrollAnimation
-              animateIn="animate__fadeInLeft"
-              animateOut="animate__fadeInLeft"
-              initiallyVisible={true}
-              duration={2}
-            >
-              <CustomButton
-                onSubmitButton={() => router.push("/portfolio")}
-                bgColor="#399EFD"
-                textColor="white"
-                btnWidth="180px"
-                text="Explore Our Portfolio"
-              />
-            </ScrollAnimation>
-          </div>
-          <div className="animate__animated animate__fadeInRight animate__slow">
-            <ScrollAnimation
-              animateIn="animate__fadeInRight"
-              animateOut="animate__fadeInRight"
-              initiallyVisible={true}
-              duration={2}
-            >
-              <CustomButton
-                onSubmitButton={() => scrollToBottom()}
-                bgColor="#121212"
-                textColor="white"
-                btnWidth="180px"
-                text="Free Quote"
-              />
-            </ScrollAnimation>
-          </div>
+          <CustomButton
+            onSubmitButton={() => router.push("/portfolio")}
+            bgColor="#399EFD"
+            textColor="white"
+            btnWidth="180px"
+            text="Explore Our Portfolio"
+          />
+          <CustomButton
+            onSubmitButton={() => scrollToBottom()}
+            bgColor="#121212"
+            textColor="white"
+            btnWidth="180px"
+            text="Free Quote"
+          />
         </div>
         <div className="relative mt-12">
           <Image
