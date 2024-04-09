@@ -40,20 +40,24 @@ export default function Home() {
           ref={scrollButtonRef}
           className="flex flex-col sm:flex-row items-center justify-center gap-5 my-5"
         >
-          <CustomButton
-            onSubmitButton={() => router.push("/portfolio")}
-            bgColor="#399EFD"
-            textColor="white"
-            btnWidth="180px"
-            text="Explore Our Portfolio"
-          />
-          <CustomButton
-            onSubmitButton={() => scrollToBottom()}
-            bgColor="#121212"
-            textColor="white"
-            btnWidth="180px"
-            text="Free Quote"
-          />
+          <div className="animation-fadeInLeft">
+            <CustomButton
+              onSubmitButton={() => router.push("/portfolio")}
+              bgColor="#399EFD"
+              textColor="white"
+              btnWidth="180px"
+              text="Explore Our Portfolio"
+            />
+          </div>
+          <div className="animation-fadeInRight">
+            <CustomButton
+              onSubmitButton={() => scrollToBottom()}
+              bgColor="#121212"
+              textColor="white"
+              btnWidth="180px"
+              text="Free Quote"
+            />
+          </div>
         </div>
         <div className="relative mt-12">
           <Image

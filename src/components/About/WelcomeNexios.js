@@ -1,17 +1,29 @@
+"use client";
 import Image from "next/image";
 import interImg from "../../assets/images/about/international.svg";
 import plusyear from "../../assets/images/about/7-plus-year.png";
 import dotHalf from "../../assets/images/about/dot-half.svg";
 import leftCerve from "../../assets/images/about/left-cerve.svg";
 import rightCerve from "../../assets/images/about/right-cerve.svg";
+import { AnimationOnScroll } from "../Animations";
+import { useState } from "react";
 
 const WelcomeNexios = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <div className="my-11 w-full relative">
-      <div className="relative font-MuseoSans font-light text-[#121212] text-[24px] text-center">
-        Welcome To <span className="font-semibold">nexios</span>
-        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[220px] mx-auto mt-[-15px]"></div>
-      </div>
+      <AnimationOnScroll id="wel-nexios" setIsVisible={setIsVisible}>
+        <div
+          className={`${
+            isVisible ? "animation-zoomIn" : ""
+          } relative font-MuseoSans font-light text-[#121212] text-[24px] text-center`}
+        >
+          Welcome To <span className="font-semibold">nexios</span>
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[220px] mx-auto mt-[-15px]"></div>
+        </div>
+      </AnimationOnScroll>
+
       <div className="lg:px-[200px] px-[50px]">
         <div className="font-MuseoSans font-normal text-[#9BA9B4] text-[16px] md:text-center text-justify py-7">
           Nexios Technologies is one of the reckoned Software Development

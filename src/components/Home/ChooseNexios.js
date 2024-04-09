@@ -1,3 +1,4 @@
+"use client";
 import CustomButton from "@/common/CustomButton";
 import Image from "next/image";
 import expertTeam from "../../assets/images/home/expert-team.svg";
@@ -5,11 +6,13 @@ import yearExpImg from "../../assets/images/home/year-exp.svg";
 import focusInnoImg from "../../assets/images/home/focus-inno.svg";
 import businessServeImg from "../../assets/images/home/business-serve.svg";
 import { scrollToBottom } from "@/utils";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { AnimationOnScroll } from "../Animations";
 const ChooseNexios = () => {
-  const scrollButtonRef = useRef(null);
   const router = useRouter();
+  const scrollButtonRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <div className="flex flex-col lg:flex-row justify-center gap-14 w-full px-7 sm:px-[100px] mt-12">
@@ -90,20 +93,28 @@ const ChooseNexios = () => {
           ref={scrollButtonRef}
           className="flex flex-col sm:flex-row items-center gap-5 my-5"
         >
-          <CustomButton
-            onSubmitButton={() => router.push("/about")}
-            bgColor="#399EFD"
-            textColor="white"
-            btnWidth="120px"
-            text="Know More"
-          />
-          <CustomButton
-            onSubmitButton={() => scrollToBottom()}
-            bgColor="#121212"
-            textColor="white"
-            btnWidth="160px"
-            text="Free Quote"
-          />
+          <AnimationOnScroll id="choose-button" setIsVisible={setIsVisible}>
+            <div className={`${isVisible ? "animation-fadeInLeft" : ""} `}>
+              <CustomButton
+                onSubmitButton={() => router.push("/about")}
+                bgColor="#399EFD"
+                textColor="white"
+                btnWidth="120px"
+                text="Know More"
+              />
+            </div>
+          </AnimationOnScroll>
+          <AnimationOnScroll id="choose-button" setIsVisible={setIsVisible}>
+            <div className={`${isVisible ? "animation-fadeInRight" : ""} `}>
+              <CustomButton
+                onSubmitButton={() => scrollToBottom()}
+                bgColor="#121212"
+                textColor="white"
+                btnWidth="160px"
+                text="Free Quote"
+              />
+            </div>
+          </AnimationOnScroll>
         </div>
       </div>
     </div>

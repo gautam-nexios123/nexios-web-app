@@ -6,6 +6,8 @@ import quateIcon from "../../assets/images/home/quateIcon.svg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CustomDot } from "@/utils";
+import { AnimationOnScroll } from "../Animations";
+import { useState } from "react";
 
 const data = [
   {
@@ -29,6 +31,8 @@ const data = [
 ];
 
 const OurClient = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -51,10 +55,17 @@ const OurClient = () => {
 
   return (
     <div className="relative bg-[#F2F8FA] ">
-      <div className="text-[#121212] font-MuseoSans font-semibold text-[18px] sm:text-[26px] text-center py-7 mt-16">
-        What our clients have to say
-        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[245px] sm:w-[350px] mt-[-12px] sm:mt-[-15px] mx-auto"></div>
-      </div>
+      <AnimationOnScroll id="whatour-client" setIsVisible={setIsVisible}>
+        <div
+          className={`${
+            isVisible ? "animation-zoomIn" : ""
+          } text-[#121212] font-MuseoSans font-semibold text-[18px] sm:text-[26px] text-center py-7 mt-16`}
+        >
+          What our clients have to say
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[245px] sm:w-[350px] mt-[-12px] sm:mt-[-15px] mx-auto"></div>
+        </div>
+      </AnimationOnScroll>
+
       <div className="mx-8 lg:mx-[150px] py-4">
         <Carousel
           arrows={false}

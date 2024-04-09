@@ -8,6 +8,8 @@ import uiUXImg from "../../assets/images/home/uiux.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CustomDot } from "@/utils";
+import { AnimationOnScroll } from "../Animations";
+import { useState } from "react";
 
 const responsive = {
   superLargeDesktop: {
@@ -53,12 +55,21 @@ const carouselData = [
 ];
 
 const DiscoverService = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <div className="mt-11">
-      <div className="text-center font-MuseoSans font-light text-[22px] sm:text-[26px]">
-        Discover Our <span className="font-semibold">Services</span>
-        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[225px] sm:w-[268px] mx-auto mt-[-12px] sm:mt-[-15px]"></div>
-      </div>
+      <AnimationOnScroll id="discover-service" setIsVisible={setIsVisible}>
+        <div
+          className={`${
+            isVisible ? "animation-zoomIn" : ""
+          } text-center font-MuseoSans font-light text-[22px] sm:text-[26px]`}
+        >
+          Discover Our <span className="font-semibold">Services</span>
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[225px] sm:w-[268px] mx-auto mt-[-12px] sm:mt-[-15px]"></div>
+        </div>
+      </AnimationOnScroll>
+
       <div className="mx-8">
         <Carousel
           arrows={false}

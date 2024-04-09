@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import pattern from "../../assets/images/home/Patern.jpg";
 import appleIcon from "../../assets/images/home/apple-icon.svg";
@@ -14,14 +15,25 @@ import mySqlIcon from "../../assets/images/home/mySql.svg";
 import bootstrapIcon from "../../assets/images/home/bootstrap.svg";
 import phpIcon from "../../assets/images/home/php.svg";
 import tFour from "../../assets/images/home/t4.svg";
+import { useState } from "react";
+import { AnimationOnScroll } from "../Animations";
 
 const Technology = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <div className="relative mt-11">
-      <div className="absolute top-[30px] w-full text-center font-MuseoSans font-light text-[22px] sm:text-[26px]">
-        We Use <span className="font-semibold">Technologies</span>
-        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[220px] sm:w-[268px] mx-auto mt-[-12px] sm:mt-[-15px]"></div>
-      </div>
+      <AnimationOnScroll id="weuse-technology" setIsVisible={setIsVisible}>
+        <div
+          className={`${
+            isVisible ? "animation-zoomIn" : ""
+          } absolute top-[30px] w-full text-center font-MuseoSans font-light text-[22px] sm:text-[26px]`}
+        >
+          We Use <span className="font-semibold">Technologies</span>
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[220px] sm:w-[268px] mx-auto mt-[-12px] sm:mt-[-15px]"></div>
+        </div>
+      </AnimationOnScroll>
+
       <div className="">
         <Image src={pattern} alt="" className="w-[100%] h-[600px] " />
       </div>

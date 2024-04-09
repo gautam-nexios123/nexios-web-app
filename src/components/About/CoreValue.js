@@ -1,11 +1,15 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import transImg from "../../assets/images/about/transImg.svg";
 import contiImg from "../../assets/images/about/conti-groth.svg";
 import serviceImg from "../../assets/images/about/service-img.svg";
 import valueImg from "../../assets/images/about/value-img.svg";
+import { AnimationOnScroll } from "../Animations";
 
 const CoreValue = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   const cardData = [
     {
       image: transImg,
@@ -35,10 +39,17 @@ const CoreValue = () => {
 
   return (
     <div className="my-10 w-full relative">
-      <div className="relative font-MuseoSans font-semibold text-[#121212] text-[24px] text-center">
-        Our Core Values
-        <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[190px] mx-auto mt-[-15px]"></div>
-      </div>
+      <AnimationOnScroll id="ourcore-value" setIsVisible={setIsVisible}>
+        <div
+          className={`${
+            isVisible ? "animation-zoomIn" : ""
+          } relative font-MuseoSans font-semibold text-[#121212] text-[24px] text-center`}
+        >
+          Our Core Values
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[190px] mx-auto mt-[-15px]"></div>
+        </div>
+      </AnimationOnScroll>
+
       <div className="w-full px-[30px] lg:px-[160px] flex flex-wrap flex-col md:flex-row justify-between gap-5 mt-12">
         {cardData?.map((item, index) => (
           <div
