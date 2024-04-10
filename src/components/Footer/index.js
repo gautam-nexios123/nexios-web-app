@@ -78,13 +78,13 @@ const Footer = () => {
             707, Silver Trade Center, near Oxygen Park, Digital Valley (Uttran),
             Surat, Gujarat 394105
           </div>
-          <div className="font-MuseoSans flex items-center gap-2 font-normal text-[16px] text-[#9BA9B4] pb-4">
+          <div className="font-MuseoSans flex items-center hover:text-[#399EFD] cursor-pointer gap-2 font-normal text-[16px] text-[#9BA9B4] pb-4">
             <Image src={phoneImg} alt="location" />
-            +91 88668 56039
+            <a href="tel:+918866856039">+91 88668 56039</a>
           </div>
-          <div className="font-MuseoSans flex items-center gap-2 font-normal text-[16px] text-[#9BA9B4]">
+          <div className="font-MuseoSans hover:text-[#399EFD] cursor-pointer flex items-center gap-2 font-normal text-[16px] text-[#9BA9B4]">
             <Image src={mailImg} alt="location" />
-            info@nexios.in
+            <a href="mailto:info@nexios.in">info@nexios.in</a>
           </div>
         </div>
       </div>

@@ -96,7 +96,7 @@ const ChooseNexios = () => {
           <AnimationOnScroll id="choose-button" setIsVisible={setIsVisible}>
             <div className={`${isVisible ? "animation-fadeInLeft" : ""} `}>
               <CustomButton
-                onSubmitButton={() => router.push("/about")}
+                onSubmitButton={() => router.push("/about-us")}
                 bgColor="#399EFD"
                 textColor="white"
                 btnWidth="120px"

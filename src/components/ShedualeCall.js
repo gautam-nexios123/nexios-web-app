@@ -58,49 +58,57 @@ const ShedualeCall = () => {
           Schedule a Call
         </div>
         <div className="flex flex-col w-[70%]">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name*"
-            className="bg-transparent mb-8 text-white border-b placeholder-white p-2"
-            onChange={(e) => handleOnChange(e)}
-          />
-          {error?.name && (
-            <div className="font-MuseoSans font-normal text-red-600 text-sm">
-              {error?.name}
-            </div>
-          )}
-          <input
-            type="text"
-            name="email"
-            placeholder="Work Email"
-            className="bg-transparent mb-8 text-white border-b placeholder-white p-2"
-            onChange={(e) => handleOnChange(e)}
-          />
-          {error?.email && (
-            <div className="font-MuseoSans font-normal text-red-600 text-sm">
-              {error?.email}
-            </div>
-          )}
-          <input
-            type="text"
-            name="phone"
-            placeholder="Phone"
-            className="bg-transparent mb-8 text-white border-b placeholder-white p-2"
-            onChange={(e) => handleOnChange(e)}
-          />
-          {error?.phone && (
-            <div className="font-MuseoSans font-normal text-red-600 text-sm">
-              {error?.phone}
-            </div>
-          )}
-          <input
-            type="text"
-            name="brif"
-            placeholder="Share your requirements in brief"
-            className="bg-transparent mb-8 text-white border-b placeholder-white p-2"
-            onChange={(e) => handleOnChange(e)}
-          />
+          <div className="mb-8">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name*"
+              className="bg-transparent text-white border-b placeholder-white p-2"
+              onChange={(e) => handleOnChange(e)}
+            />
+            {error?.name && (
+              <div className="font-MuseoSans font-normal text-red-600 text-sm">
+                {error?.name}
+              </div>
+            )}
+          </div>
+          <div className="mb-8">
+            <input
+              type="text"
+              name="email"
+              placeholder="Work Email"
+              className="bg-transparent text-white border-b placeholder-white p-2"
+              onChange={(e) => handleOnChange(e)}
+            />
+            {error?.email && (
+              <div className="font-MuseoSans font-normal text-red-600 text-sm">
+                {error?.email}
+              </div>
+            )}
+          </div>
+          <div className="mb-8">
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone"
+              className="bg-transparent text-white border-b placeholder-white p-2"
+              onChange={(e) => handleOnChange(e)}
+            />
+            {error?.phone && (
+              <div className="font-MuseoSans font-normal text-red-600 text-sm">
+                {error?.phone}
+              </div>
+            )}
+          </div>
+          <div className="mb-8">
+            <input
+              type="text"
+              name="brif"
+              placeholder="Share your requirements in brief"
+              className="bg-transparent text-white border-b placeholder-white p-2"
+              onChange={(e) => handleOnChange(e)}
+            />
+          </div>
           <div className="mt-5 mb-11">
             <CustomButton
               onSubmitButton={formSubmit}
