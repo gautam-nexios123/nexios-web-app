@@ -70,22 +70,22 @@ const MeetOurTeam = () => {
         <div
           className={`${
             isVisible ? "animation-zoomIn" : ""
-          } relative font-MuseoSans font-semibold text-[#121212] text-[24px] text-center`}
+          } relative font-MuseoSans font-semibold text-[#121212] text-[32px] sm:text-[48px] text-center`}
         >
           Meet Our Team
-          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[170px] mx-auto mt-[-15px]"></div>
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[240px] sm:w-[350px] mx-auto mt-[-16px] sm:mt-[-24px]"></div>
         </div>
       </AnimationOnScroll>
 
       <div className="px-[30px] md:px-[160px]">
-        <div className="text-[#9BA9B4] font-normal text-base text-justify lg:text-center py-5">
+        <div className="text-[#9BA9B4] font-normal text-[20px] text-justify lg:text-center py-5">
           At nexios, we believe in the spirit of teamwork, creativity, and
           innovation to accomplish tasks quickly, seamlessly, and effectively.
           We are dedicated to creating work environments for our employees that
           encourage diversity in skill, talent, and culture, allowing us to come
           up with products ideated from different perspectives.
         </div>
-        <div className="text-[#9BA9B4] font-normal text-base text-justify lg:text-center">
+        <div className="text-[#9BA9B4] font-normal text-[20px] text-justify lg:text-center">
           From concept to product release, our team of experienced professionals
           delivers intelligent, highly functional, interoperable, and scalable
           technology solutions that not only bring our clients' vision to life

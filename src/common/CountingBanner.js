@@ -76,26 +76,26 @@ const CountingBanner = () => {
     >
       <div className="flex flex-col md:flex-row justify-center items-center h-full gap-6 py-6 md:py-0 md:gap-[205px] md:mx-10">
         <div className="50">
-          <div className="font-MuseoSans font-semibold text-white text-[48px]">
+          <div className="font-MuseoSans font-semibold text-white text-[69px]">
             {employeeCount}+
           </div>
-          <div className="font-MuseoSans font-semibold text-white text-[16px]">
+          <div className="font-MuseoSans font-semibold text-white text-[19px]">
             Employees
           </div>
         </div>
         <div className="">
-          <div className="font-MuseoSans font-semibold text-white text-[48px]">
+          <div className="font-MuseoSans font-semibold text-white text-[69px]">
             {projectCount}+
           </div>
-          <div className="font-MuseoSans font-semibold text-white text-[16px]">
+          <div className="font-MuseoSans font-semibold text-white text-[19px]">
             Successful Projects
           </div>
         </div>
         <div className="">
-          <div className="font-MuseoSans font-semibold text-white text-[48px]">
+          <div className="font-MuseoSans font-semibold text-white text-[69px]">
             {yearsCount}+
           </div>
-          <div className="font-MuseoSans font-semibold text-white text-[16px]">
+          <div className="font-MuseoSans font-semibold text-white text-[19px]">
             Years
           </div>
         </div>

@@ -43,30 +43,29 @@ const CoreValue = () => {
         <div
           className={`${
             isVisible ? "animation-zoomIn" : ""
-          } relative font-MuseoSans font-semibold text-[#121212] text-[24px] text-center`}
+          } relative font-MuseoSans font-semibold text-[#121212] text-[32px] sm:text-[48px] text-center`}
         >
           Our Core Values
-          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[190px] mx-auto mt-[-15px]"></div>
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[250px] sm:w-[380px] mx-auto mt-[-16px] sm:mt-[-24px]"></div>
         </div>
       </AnimationOnScroll>
 
-      <div className="w-full px-[30px] lg:px-[160px] flex flex-wrap flex-col md:flex-row justify-between gap-5 mt-12">
+      <div className="w-full px-[30px] lg:px-[120px] flex flex-wrap flex-col md:flex-row justify-between gap-5 mt-12">
         {cardData?.map((item, index) => (
           <div
             key={index}
-            className="bg-white shadow-3xl flex flex-col md:flex-row gap-6 w-full md:w-[48%] p-6 rounded-2xl"
+            className="bg-white shadow-3xl flex flex-col xl:flex-row gap-6 w-full md:w-[48%] p-6 rounded-2xl"
           >
             <Image
               src={item?.image}
               alt="trans"
-              width={100}
-              className="mx-auto"
+              className="mx-auto w-[168px] h-[166px]"
             />
             <div className="">
-              <div className="font-MuseoSans font-semibold text-center md:text-start text-xl text-black pb-2">
+              <div className="font-MuseoSans font-semibold text-center md:text-start text-[28px] text-black pb-2">
                 {item?.title}
               </div>
-              <div className="font-MuseoSans font-normal text-sm text-[#9BA9B4] text-justify">
+              <div className="font-MuseoSans font-normal text-[16px] text-[#9BA9B4] text-justify">
                 {item?.description}
               </div>
             </div>

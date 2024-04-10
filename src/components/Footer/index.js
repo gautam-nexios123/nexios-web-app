@@ -51,53 +51,23 @@ const Footer = () => {
           <div className="text-white font-MuseoSans font-semibold text-[18px] pb-4">
             Company
           </div>
-          <div
-            onClick={() => router.push("/")}
-            className="font-MuseoSans font-normal text-[16px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer pb-3"
-          >
-            Home
-          </div>
-          <div
-            onClick={() => router.push("/about")}
-            className="font-MuseoSans font-normal text-[16px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer pb-3"
-          >
-            About Us
-          </div>
-          <div
-            onClick={() => router.push("/portfolio")}
-            className="font-MuseoSans font-normal text-[16px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer pb-3"
-          >
-            Portfolio
-          </div>
-          <div
-            onClick={() => router.push("/career")}
-            className="font-MuseoSans font-normal text-[16px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer pb-3"
-          >
-            Careers
-          </div>
-          <div
-            onClick={() => router.push("/contact-us")}
-            className="font-MuseoSans font-normal text-[16px] text-[#9BA9B4] hover:text-[#399EFD] cursor-pointer pb-3"
-          >
-            Contact Us
-          </div>
+          <NavItem path={"/"}>Home</NavItem>
+          <NavItem path={"/about-us"}>About Us</NavItem>
+          <NavItem path={"/portfolio"}>Portfolio</NavItem>
+          <NavItem path={"/career"}>Careers</NavItem>
+          <NavItem path={"/contact-us"}>Contact Us</NavItem>
         </div>
         <div className="">
           <div className="text-white font-MuseoSans font-semibold text-[18px] pb-4">
             Services
           </div>
-          <div className="font-MuseoSans whitespace-nowrap font-normal text-[16px] text-[#9BA9B4] pb-3">
+          <NavItem path={"/mobile-app-development"}>
             Mobile App Development
-          </div>
-          <div className="font-MuseoSans whitespace-nowrap font-normal text-[16px] text-[#9BA9B4] pb-3">
-            Web Development UI &
-          </div>
-          <div className="font-MuseoSans whitespace-nowrap font-normal text-[16px] text-[#9BA9B4] pb-3">
-            UX Internet Of Things
-          </div>
-          <div className="font-MuseoSans whitespace-nowrap font-normal text-[16px] text-[#9BA9B4] pb-3">
-            Quality Assurance
-          </div>
+          </NavItem>
+          <NavItem path={"/web-development"}>Web Development</NavItem>
+          <NavItem path={"/ui-ux"}>UI & UX</NavItem>
+          <NavItem path={"/internet-of-things"}>Internet Of Things</NavItem>
+          <NavItem path={"/qa"}>Quality Assurance</NavItem>
         </div>
         <div className="">
           <div className="text-white font-MuseoSans font-semibold text-[18px] pb-4">
@@ -119,7 +89,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full h-[1px] bg-[#9BA9B4]"></div>
-      <div className="text-[#9BA9B4] font-MuseoSans font-normal text-[12px] text-center py-4">
+      <div className="text-[#9BA9B4] font-MuseoSans font-normal text-[14px] text-center py-4">
         ©2024 nexios technologies, | All right reserved Terms of Services |
         Privacy Policy
       </div>
@@ -128,3 +98,16 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const NavItem = ({ path, children }) => {
+  const router = useRouter();
+
+  return (
+    <div
+      onClick={() => router.push(path)}
+      className="font-MuseoSans whitespace-nowrap font-normal text-[16px] hover:text-[#399EFD] cursor-pointer text-[#9BA9B4] pb-3"
+    >
+      {children}
+    </div>
+  );
+};

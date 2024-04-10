@@ -9,16 +9,16 @@ import lineThree from "../../assets/images/about/line-three.svg";
 const ServiceTopMainContent = ({ text, description, banner }) => {
   return (
     <div className="w-full bg-[#F8FBFF]">
-      <div className="w-full lg:w-[80%] flex md:flex-row flex-col mx-auto">
-        <div className="w-full md:w-[50%] relative h-[300px] md:h-[380px]">
-          <div className="w-[70%] mx-auto flex flex-col justify-center h-full">
+      <div className="w-full lg:w-[85%] flex md:flex-row flex-col mx-auto">
+        <div className="w-full md:w-[50%] my-[30px] sm:my-0 relative h-[300px] md:h-[380px]">
+          <div className="px-[40px] lg:px-0 mx-auto flex flex-col justify-center h-full">
             <p
-              className={`font-MuseoSans font-semibold text-[26px] pb-4  text-[#121212]`}
+              className={`font-MuseoSans font-semibold text-[30px] md:text-[46px] pb-4  text-[#121212]`}
             >
               {text}
             </p>
             <p
-              className={`font-MuseoSans font-normal text-[14px] text-[#9BA9B4]`}
+              className={`font-MuseoSans font-normal text-[19px] text-[#9BA9B4] text-justify`}
             >
               {description}
             </p>
@@ -32,7 +32,7 @@ const ServiceTopMainContent = ({ text, description, banner }) => {
           <Image
             src={circleBlank}
             alt="circle"
-            className="absolute top-[50%] left-[10%]"
+            className="absolute top-[50%] left-[-50px]"
             width={15}
           />
           <Image
@@ -56,12 +56,12 @@ const ServiceTopMainContent = ({ text, description, banner }) => {
           <Image
             src={lineThree}
             alt="lineThree"
-            className="absolute top-[66%] right-[2%]"
+            className="absolute top-[75%] right-[2%]"
             width={80}
           />
         </div>
         <div className="w-full md:w-[50%] relative flex items-center pl-10">
-          <Image src={banner} alt="banner" width={350} className="" />
+          <Image src={banner} alt="banner" className="w-[380px] mx-auto" />
           <Image
             src={squreLight}
             alt="squreLight"
@@ -71,7 +71,7 @@ const ServiceTopMainContent = ({ text, description, banner }) => {
           <Image
             src={circleSolid}
             alt="circleSolid"
-            className="absolute top-[74%] right-[15%]"
+            className="absolute top-[74%] right-[5%]"
             width={15}
           />
         </div>

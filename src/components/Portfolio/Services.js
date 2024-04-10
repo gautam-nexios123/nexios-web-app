@@ -49,7 +49,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <div className="mt-10 w-full px-[30px] md:px-[60px] lg:px-[150px] xl:px-[220px]">
+    <div className="mt-10 w-full px-[30px] md:px-[60px] lg:px-[150px]">
       {servicesData?.map((service, index) => (
         <div
           key={index}
@@ -65,10 +65,10 @@ const Services = () => {
                 />
               </div>
               <div className="w-full lg:w-[50%] m-auto  pb-4 md:pb-0 lg:pb-0">
-                <div className="font-MuseoSans font-semibold text-[#121212] text-[24px] text-center pb-3">
+                <div className="font-MuseoSans font-semibold text-[#121212] text-[24px] md:text-[26px] lg:text-[32px] text-center pb-3">
                   {service.title}
                 </div>
-                <div className="px-10 font-MuseoSans font-semibold text-[#9BA9B4] text-[12px] text-justify lg:text-center md:line-clamp-6 lg:line-clamp-none">
+                <div className="px-10 font-MuseoSans font-semibold text-[#9BA9B4] text-[16px] text-justify lg:text-center md:line-clamp-6 lg:line-clamp-none">
                   {service.description}
                 </div>
               </div>
@@ -76,10 +76,10 @@ const Services = () => {
           ) : (
             <>
               <div className="w-full lg:w-[50%] m-auto  pb-4 md:pb-0 lg:pb-0">
-                <div className="font-MuseoSans font-semibold text-[#121212] text-[24px] text-center pb-3">
+                <div className="font-MuseoSans font-semibold text-[#121212] text-[24px] md:text-[26px] lg:text-[32px] text-center pb-3">
                   {service.title}
                 </div>
-                <div className="px-10 font-MuseoSans font-semibold text-[#9BA9B4] text-[12px] text-justify lg:text-center md:line-clamp-6 lg:line-clamp-none">
+                <div className="px-10 font-MuseoSans font-semibold text-[#9BA9B4] text-[16px] text-justify lg:text-center md:line-clamp-6 lg:line-clamp-none">
                   {service.description}
                 </div>
               </div>

@@ -33,54 +33,54 @@ const OpeningPosition = () => {
         <div
           className={`${
             isVisible ? "animation-zoomIn" : ""
-          } font-MuseoSans font-normal text-[18px] sm:text-[24px] text-[#121212] pb-4 text-center`}
+          } font-MuseoSans font-normal text-[22px] sm:text-[32px] text-[#121212] pb-4 text-center`}
         >
           Opening <span className="font-semibold">Position</span>
-          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[145px] mx-auto sm:w-[190px] mt-[-12px] sm:mt-[-15px]"></div>
+          <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[180px] mx-auto sm:w-[260px] mt-[-12px] sm:mt-[-15px]"></div>
         </div>
       </AnimationOnScroll>
 
-      <div className="flex w-full  flex-wrap justify-center gap-6 px-[30px] md:px-[50px] lg:px-[80px] xl:px-[160px]">
+      <div className="flex w-full  flex-wrap justify-center gap-6 ">
         {openPositionData?.map((item, index) => {
           return (
             <div
               key={index}
-              className={`w-[90%] md:w-[260px] ${
+              className={`w-[80%] md:w-[330px] ${
                 index % 2 !== 0 ? "bg-[#399EFD]" : "bg-[#F2F8FA]"
               }  py-6 shadow-3xl mt-8 px-3 rounded-2xl`}
             >
               <div
                 className={`text-center ${
                   index % 2 !== 0 ? "text-white" : "text-[#121212]"
-                } font-MuseoSans font-semibold text-[22px] pb-6`}
+                } font-MuseoSans font-semibold text-[28px] sm:text-[32px] pb-6`}
               >
                 {item?.name}
               </div>
               <div
                 className={`text-center ${
                   index % 2 !== 0 ? "text-white" : "text-[#9BA9B4]"
-                } font-MuseoSans font-normal text-[16px]`}
+                } font-MuseoSans font-normal text-[22px]`}
               >
                 Openings Position
               </div>
               <div
                 className={`text-center ${
                   index % 2 !== 0 ? "text-white" : "text-[#121212]"
-                } font-MuseoSans font-normal text-[22px] pb-3`}
+                } font-MuseoSans font-normal text-[30px] pb-3`}
               >
                 {item?.vacancy}
               </div>
               <div
                 className={`text-center ${
                   index % 2 !== 0 ? "text-white" : "text-[#9BA9B4]"
-                } font-MuseoSans font-normal text-[16px]`}
+                } font-MuseoSans font-normal text-[22px]`}
               >
                 Experience in Year
               </div>
               <div
                 className={`text-center ${
                   index % 2 !== 0 ? "text-white" : "text-[#121212]"
-                } font-MuseoSans font-normal text-[22px] pb-3`}
+                } font-MuseoSans font-normal text-[30px] pb-3`}
               >
                 {item?.experience}
               </div>
@@ -89,7 +89,7 @@ const OpeningPosition = () => {
                   onSubmitButton={() => router.push("/applynow")}
                   bgColor={index % 2 !== 0 ? "white" : "#399EFD"}
                   textColor={index % 2 !== 0 ? "#399EFD" : "white"}
-                  btnWidth="110px"
+                  btnWidth="130px"
                   text="Apply Now"
                 />
               </div>

@@ -15,11 +15,11 @@ const Portfolio = () => {
         banner={portTopBanner}
       />
 
-      <div className="relative md:flex md:gap-16 lg:gap-24 w-full px-[30px] md:px-[60px] lg:px-[220px] py-[60px] my-6">
-        <div className="font-MuseoSans text-[24px] text-[#121212] font-semibold pb-3 md:pb-0">
-          Outwor,Successful client products
+      <div className="relative md:flex md:gap-16 lg:gap-24 w-full px-[30px] md:px-[60px] lg:px-[150px] py-[60px] my-6">
+        <div className="font-MuseoSans text-[36px] sm:text-[46px] text-[#121212] font-semibold pb-3 md:pb-0">
+          Our,Successful client products
         </div>
-        <div className="font-MuseoSans text-sm text-[#9BA9B4] font-normal text-justify">
+        <div className="font-MuseoSans text-[16px] sm:text-[19px] text-[#9BA9B4] font-normal text-justify">
           nexios Technologies is one of the reckoned Software Development
           Company in Surat. Rapidly changing business state of affairs and
           latest technologies being introduced day by day, always raises the

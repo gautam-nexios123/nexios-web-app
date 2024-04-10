@@ -50,11 +50,11 @@ const ShedualeCall = () => {
 
   return (
     <div className="w-full md:flex">
-      <div className="w-full md:w-[50%] flex items-center justify-center">
-        <Image src={logo} alt="" width={350} height={200} className="mx-auto" />
+      <div className="w-full md:w-[50%] flex items-center justify-center py-[50px]">
+        <Image src={logo} alt="" className="mx-auto w-[520px] h-[450px]" />
       </div>
-      <div className="bg-[#399EFD] w-full md:w-[50%] pl-6 pt-8">
-        <div className="text-[#FFFFFF] font-MuseoSans font-semibold underline text-[32px] pb-3">
+      <div className="bg-[#399EFD] w-full md:w-[50%] pl-6 pt-12">
+        <div className="text-[#FFFFFF] font-MuseoSans font-semibold underline text-[42px] pb-8">
           Schedule a Call
         </div>
         <div className="flex flex-col w-[70%]">
@@ -62,7 +62,7 @@ const ShedualeCall = () => {
             type="text"
             name="name"
             placeholder="Name*"
-            className="bg-transparent mb-3 text-white border-b placeholder-white p-2"
+            className="bg-transparent mb-8 text-white border-b placeholder-white p-2"
             onChange={(e) => handleOnChange(e)}
           />
           {error?.name && (
@@ -74,7 +74,7 @@ const ShedualeCall = () => {
             type="text"
             name="email"
             placeholder="Work Email"
-            className="bg-transparent mb-3 text-white border-b placeholder-white p-2"
+            className="bg-transparent mb-8 text-white border-b placeholder-white p-2"
             onChange={(e) => handleOnChange(e)}
           />
           {error?.email && (
@@ -86,7 +86,7 @@ const ShedualeCall = () => {
             type="text"
             name="phone"
             placeholder="Phone"
-            className="bg-transparent mb-3 text-white border-b placeholder-white p-2"
+            className="bg-transparent mb-8 text-white border-b placeholder-white p-2"
             onChange={(e) => handleOnChange(e)}
           />
           {error?.phone && (
@@ -98,7 +98,7 @@ const ShedualeCall = () => {
             type="text"
             name="brif"
             placeholder="Share your requirements in brief"
-            className="bg-transparent mb-3 text-white border-b placeholder-white p-2"
+            className="bg-transparent mb-8 text-white border-b placeholder-white p-2"
             onChange={(e) => handleOnChange(e)}
           />
           <div className="mt-5 mb-11">

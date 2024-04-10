@@ -13,40 +13,28 @@ const inter = Inter({ subsets: ["latin"] });
 //   description: "Nexios Technologies LLP",
 // };
 
+const titleMap = {
+  "/": "Nexios-Mobile & Web development",
+  "/about-us": "About Us",
+  "/portfolio": "Portfolio",
+  "/mobile-app-development": "Mobile App Development",
+  "/web-development": "Web Development",
+  "/ui-ux": "UI/UX",
+  "/internet-of-things": "Internet of Things",
+  "/qa": "QA",
+  "/career": "Career",
+  "/contact": "Contact Us",
+  "/applynow": "Apply Now",
+  "/contact-us": "Contact Us",
+};
+
 export default function RootLayout({ children }) {
   const pathName = usePathname();
-
   const [appTitle, setAppTitle] = useState("Nexios-Mobile & Web development");
 
   const handleRouteChange = () => {
-    let title = "";
-
-    if (pathName === "/") {
-      title = "Nexios-Mobile & Web development";
-    } else if (pathName === "/about") {
-      title = "About Us - Nexios Technologies";
-    } else if (pathName === "/portfolio") {
-      title = "Portfolio - Nexios Technologies";
-    } else if (pathName === "/mobile-app-development") {
-      title = "Mobile App Development - Nexios Technologies";
-    } else if (pathName === "/web-development") {
-      title = "Wev Development - Nexios Technologies";
-    } else if (pathName === "/ui-ux") {
-      title = "UI/UX - Nexios Technologies";
-    } else if (pathName === "/internet-of-things") {
-      title = "Internet of things - Nexios Technologies";
-    } else if (pathName === "/qa") {
-      title = "QA - Nexios Technologies";
-    } else if (pathName === "/career") {
-      title = "Career - Nexios Technologies";
-    } else if (pathName === "/contact") {
-      title = "Contact Us - Nexios Technologies";
-    } else if (pathName === "/applynow") {
-      title = "Apply Now - Nexios Technologies";
-    } else if (pathName === "/contact-us") {
-      title = "Contact Us - Nexios Technologies";
-    }
-    setAppTitle(title);
+    const title = titleMap[pathName] || "Nexios-Mobile & Web development";
+    setAppTitle(`${title} - Nexios Technologies`);
   };
 
   useEffect(() => {

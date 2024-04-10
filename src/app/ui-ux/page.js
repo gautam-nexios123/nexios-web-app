@@ -14,7 +14,7 @@ const UiAndUx = () => {
         banner={TopBanner}
       />
       <div className="w-full mt-16">
-        <div className="font-MuseoSans font-normal text-[14px] text-[#9BA9B4] w-[80%] md:w-[75%] lg:w-[60%] mx-auto text-justify md:text-center">
+        <div className="font-MuseoSans font-normal text-[20px] text-[#9BA9B4] w-[80%] mx-auto text-justify md:text-center">
           Whether you’re looking for a designer to create a new user interface
           or improve existing ones, we have a talented professional in-house who
           can help. One of the most popular tools for UI/UX designers are Figma
@@ -30,21 +30,25 @@ const UiAndUx = () => {
       </div>
 
       <div className="w-full mt-20">
-        <div className="w-[80%] lg:w-[70%] mx-auto flex flex-col md:flex-row gap-8">
+        <div className="w-[80%] mx-auto flex flex-col md:flex-row gap-8">
           <div className="w-full md:w-[50%] ">
-            <Image src={mobilePic} alt="pic" width={380} className="mx-auto" />
+            <Image
+              src={mobilePic}
+              alt="pic"
+              className="mx-auto w-[520px] sm:h-[470px]"
+            />
           </div>
           <div className="w-full md:w-[50%]">
-            <div className="font-MuseoSans text-[#121212] font-semibold text-[24px] pb-3">
+            <div className="font-MuseoSans text-[#121212] font-semibold text-[28px] sm:text-[32px] pb-3">
               What We Provides
             </div>
-            <div className="font-MuseoSans text-[#9BA9B4] font-normal text-[14px] text-justify pb-2">
+            <div className="font-MuseoSans text-[#9BA9B4] font-normal text-[19px] text-justify pb-2">
               UI/UX is a field that’s growing more and more in popularity, and
               for good reason. It’s an important part of any web or mobile
               application, and it can make a big difference in how users feel
               about your site or app.
             </div>
-            <div className="font-MuseoSans text-[#9BA9B4] font-normal text-[14px] text-justify pb-2">
+            <div className="font-MuseoSans text-[#9BA9B4] font-normal text-[19px] text-justify pb-2">
               Another great tool for UI/UX design is Figma. It’s a web-based
               design platform that lets you create user interfaces and user
               experience designs in a drag-and-drop format. It also has built-in

@@ -62,7 +62,7 @@ const ApplyNow = () => {
       />
       <div className="bg-[#EDF5FF] w-full py-[50px]">
         <div className="w-[80%] md:w-[70%] lg:w-[50%] bg-white rounded-md shadow p-[35px] mx-auto">
-          <div className="font-MuseoSans font-semibold text-[#121212] text-2xl">
+          <div className="font-MuseoSans font-semibold text-[#121212] text-[30px]">
             Apply Now
           </div>
           <div className="mt-3">
@@ -149,7 +149,7 @@ const ApplyNow = () => {
               </FormControl>
             </div>
             <div className="mt-9 mb-4 md:mb-0">
-              <div className="font-MuseoSans font-normal text-[#121212] text-sm pb-2">
+              <div className="font-MuseoSans font-normal text-[#9BA9B4] text-[16px] pb-2">
                 Attach resume (required)
               </div>
               <input

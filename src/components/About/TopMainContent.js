@@ -15,9 +15,9 @@ const TopMainContent = ({ text, banner, page }) => {
         <p
           className={`font-MuseoSans font-semibold ${
             page === "portfolio"
-              ? "text-[32px]  w-[200px]"
-              : "text-[22px]  w-[280px]"
-          } text-[#121212] mx-auto flex items-center h-full`}
+              ? "text-[42px]  w-[300px]"
+              : "text-[28px] md:text-[32px] md:w-[420px] lg:w-[490px]"
+          } text-[#121212] mx-auto flex items-center h-full px-10`}
         >
           {text}
         </p>
@@ -89,7 +89,7 @@ const TopMainContent = ({ text, banner, page }) => {
         />
       </div>
       <div className="w-full md:w-[50%] relative">
-        <Image src={banner} alt="banner" width={410} className="" />
+        <Image src={banner} alt="banner" width={520} className="" />
         <Image
           src={squreLight}
           alt="squreLight"

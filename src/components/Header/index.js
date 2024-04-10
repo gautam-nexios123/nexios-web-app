@@ -24,8 +24,8 @@ const Header = () => {
       case "/":
         path = "home";
         break;
-      case "/about":
-        path = "about";
+      case "/about-us":
+        path = "about-us";
         break;
       case "/portfolio":
         path = "portfolio";
@@ -62,7 +62,7 @@ const Header = () => {
       <div className="hidden lg:flex items-center gap-6">
         {[
           "home",
-          "about",
+          "about-us",
           "portfolio",
           "services",
           "career",
@@ -164,20 +164,25 @@ const DrawerContent = ({
 }) => {
   return (
     <div className="px-[70px]">
-      {["home", "about", "portfolio", "services", "career", "contact-us"]?.map(
-        (path) => (
-          <div className="pb-2">
-            <MenuItem
-              key={path}
-              path={path}
-              currentPath={currentPath}
-              handleMenuClick={handleMenuClick}
-              isServicesDropdownOpen={isServicesDropdownOpen}
-              setIsServicesDropdownOpen={setIsServicesDropdownOpen}
-            />
-          </div>
-        )
-      )}
+      {[
+        "home",
+        "about-us",
+        "portfolio",
+        "services",
+        "career",
+        "contact-us",
+      ]?.map((path) => (
+        <div className="pb-2">
+          <MenuItem
+            key={path}
+            path={path}
+            currentPath={currentPath}
+            handleMenuClick={handleMenuClick}
+            isServicesDropdownOpen={isServicesDropdownOpen}
+            setIsServicesDropdownOpen={setIsServicesDropdownOpen}
+          />
+        </div>
+      ))}
       <div className="mt-4">
         <CustomButton
           onSubmitButton={() => scrollToBottom()}

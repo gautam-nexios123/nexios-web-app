@@ -63,7 +63,7 @@ export default function Home() {
           <Image
             src={bgBannerOne}
             alt="bgBannerOne"
-            className="mx-auto w-[60%] sm:w-[40%]"
+            className="mx-auto w-[260px] h-[140px] md:w-[501px] md:h-[270px] lg:w-[750px] lg:h-[405px]"
           />
           <Image
             src={bgBannertwo}
@@ -73,7 +73,7 @@ export default function Home() {
           <Image
             src={settingGif}
             alt="bgBannerOne"
-            className="hidden sm:block absolute bottom-[38%] left-[20%]"
+            className="hidden sm:block absolute bottom-[38%] left-[8%] xl:left-[14%]"
             width={100}
             height={100}
           />
