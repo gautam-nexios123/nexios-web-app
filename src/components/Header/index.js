@@ -58,7 +58,12 @@ const Header = () => {
 
   return (
     <div className="bg-white w-full flex items-center justify-between lg:justify-around py-3 px-10 lg:px-0">
-      <Image src={logo} alt="logo" className="w-[95px] h-[65px]" />
+      <Image
+        onClick={() => router.push("/")}
+        src={logo}
+        alt="logo"
+        className="w-[95px] h-[65px] cursor-pointer"
+      />
       <div className="hidden lg:flex items-center gap-6">
         {[
           "home",
