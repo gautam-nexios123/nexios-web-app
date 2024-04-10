@@ -66,7 +66,7 @@ const OurClient = () => {
         </div>
       </AnimationOnScroll>
 
-      <div className="mx-8 lg:mx-[150px] py-4">
+      <div className="main-container w-[60%] mx-auto py-4">
         <Carousel
           arrows={false}
           swipeable={true}
@@ -83,18 +83,16 @@ const OurClient = () => {
               className="flex lg:flex-row flex-col  w-full mb-5 cursor-pointer"
               key={index}
             >
-              <div className="flex lg:block justify-center relative lg:w-[30%] w-full ">
-                <Image src={dotImg} alt="" width={180} height={180} />
-                <div className="bg-[#399EFD] w-[120px] h-[140px] absolute top-[62px] lg:left-[62px] left-[48%]"></div>
+              <div className="w-[360px] flex lg:block justify-center relative ">
+                <Image src={dotImg} alt="" className="w-[180px] h-[180px]" />
+                <div className="bg-[#399EFD] w-[160px] h-[190px] absolute top-[62px] lg:left-[62px] left-[48%]"></div>
                 <Image
                   src={manImg}
                   alt=""
-                  width={160}
-                  height={150}
-                  className="absolute top-[72px] lg:left-[70px] left-[48%]"
+                  className="absolute top-[72px] lg:left-[70px] left-[48%] w-[200px] h-[210px]"
                 />
               </div>
-              <div className="w-full lg:w-[60%] mt-[90px] lg:mt-0">
+              <div className="w-[70%] mt-[90px] lg:mt-0">
                 <Image src={quateIcon} alt="quate" width={45} height={45} />
                 <div className="text-[#121212] mb-2 text-justify font-MuseoSans font-normal text-[21px] py-6 line-clamp-4 italic">
                   {item?.description}

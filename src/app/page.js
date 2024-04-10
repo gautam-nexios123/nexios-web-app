@@ -20,13 +20,13 @@ export default function Home() {
 
   return (
     <div className="relative">
-      <div className="">
+      <div className="main-container px-[40px]">
         <h2 className="font-MuseoSans text-[30px] sm:text-[40px] text-[#121212] font-normal text-center mx-8">
           <span className="font-bold">We Create Simple Solution</span> <br></br>{" "}
           For Your Complex Business Task
         </h2>
         <div className="w-full">
-          <p className="font-MuseoSans text-[18px] sm:text-[20px] text-[#9BA9B4] font-normal md:text-center text-justify lg:mx-auto lg:w-[60%] mx-5 pt-4">
+          <p className="font-MuseoSans text-[18px] sm:text-[20px] text-[#9BA9B4] font-normal md:text-center text-justify lg:mx-auto lg:w-[80%] pt-4">
             Nexios is a global technology partner that enables long-lasting
             value for businesses via the latest technologies. It provides a
             complete solution from concept to reality. We've worked with
@@ -35,56 +35,59 @@ export default function Home() {
             operations.
           </p>
         </div>
+      </div>
 
-        <div
-          ref={scrollButtonRef}
-          className="flex flex-col sm:flex-row items-center justify-center gap-5 my-5"
-        >
-          <div className="animation-fadeInLeft">
-            <CustomButton
-              onSubmitButton={() => router.push("/portfolio")}
-              bgColor="#399EFD"
-              textColor="white"
-              btnWidth="180px"
-              text="Explore Our Portfolio"
-            />
-          </div>
-          <div className="animation-fadeInRight">
-            <CustomButton
-              onSubmitButton={() => scrollToBottom()}
-              bgColor="#121212"
-              textColor="white"
-              btnWidth="180px"
-              text="Free Quote"
-            />
-          </div>
+      <div
+        ref={scrollButtonRef}
+        className="flex flex-col sm:flex-row items-center justify-center gap-5 my-5"
+      >
+        <div className="animation-fadeInLeft">
+          <CustomButton
+            onSubmitButton={() => router.push("/portfolio")}
+            bgColor="#399EFD"
+            textColor="white"
+            btnWidth="180px"
+            text="Explore Our Portfolio"
+          />
         </div>
-        <div className="relative mt-12">
+        <div className="animation-fadeInRight">
+          <CustomButton
+            onSubmitButton={() => scrollToBottom()}
+            bgColor="#121212"
+            textColor="white"
+            btnWidth="180px"
+            text="Free Quote"
+          />
+        </div>
+      </div>
+
+      <div className="w-full relative mt-12">
+        <div className="main-container relative">
           <Image
             src={bgBannerOne}
             alt="bgBannerOne"
             className="mx-auto w-[260px] h-[140px] md:w-[501px] md:h-[270px] lg:w-[750px] lg:h-[405px]"
           />
           <Image
-            src={bgBannertwo}
-            alt="bgBannerOne"
-            className="absolute bottom-0"
-          />
-          <Image
             src={settingGif}
             alt="bgBannerOne"
-            className="hidden sm:block absolute bottom-[38%] left-[8%] xl:left-[14%]"
+            className="hidden sm:block absolute bottom-[38%] left-[8%] xl:left-[10%]"
             width={100}
             height={100}
           />
         </div>
-        <WhoNexios />
-        <ChooseNexios />
-        <DiscoverService />
-        <Technology />
-        <OurClient />
-        <ShedualeCall />
+        <Image
+          src={bgBannertwo}
+          alt="bgBannerOne"
+          className="absolute bottom-0 w-full"
+        />
       </div>
+      <WhoNexios />
+      <ChooseNexios />
+      <DiscoverService />
+      <Technology />
+      <OurClient />
+      <ShedualeCall />
     </div>
   );
 }

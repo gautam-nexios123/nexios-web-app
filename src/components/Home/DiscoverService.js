@@ -19,7 +19,7 @@ const responsive = {
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 4,
+    items: 5,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -97,7 +97,7 @@ export default DiscoverService;
 
 const Card = ({ data }) => {
   return (
-    <div className="bg-white shadow-xl px-2 py-4 rounded-[20px] md:w-[200px] lg:w-[260px] h-[280px] flex flex-col justify-between items-center mt-5 mb-9 cursor-pointer">
+    <div className="mx-3 bg-white shadow-3xl px-2 py-4 rounded-[20px] h-[280px] flex flex-col justify-between items-center mt-5 mb-9 cursor-pointer">
       <Image
         src={data?.image}
         alt="focusInnoImg"

@@ -95,7 +95,7 @@ const MeetOurTeam = () => {
         </div>
       </div>
 
-      <div className="mt-11 mx-9">
+      <div className="mt-11 w-[70%] mx-auto">
         <Carousel
           arrows={true}
           swipeable={false}
@@ -109,7 +109,7 @@ const MeetOurTeam = () => {
           {caurselData?.map((item, index) => (
             <div key={index} className="mb-8 w-full">
               <div
-                className="relative cursor-pointer w-[200px] h-[280px] mx-auto"
+                className="relative cursor-pointer h-[340px] mx-[12px]"
                 onMouseEnter={() => {
                   setIsHovered(true);
                   setIsHoveredID(index);
@@ -120,13 +120,13 @@ const MeetOurTeam = () => {
                 }}
               >
                 <Image
-                  className="h-full w-[200px] object-cover"
+                  className="h-full w-[100%] object-cover"
                   src={item?.photo}
                   alt="teemOne"
                 />
-                <div className="absolute top-0 w-[200px] h-full bg-transparent hover:bg-[rgba(57,158,253,0.5)] transition-all duration-500"></div>
+                <div className="absolute top-0 w-full h-full bg-transparent hover:bg-[rgba(57,158,253,0.5)] transition-all duration-500"></div>
                 {isHovered && isHoveredID === index && (
-                  <div className="absolute bottom-[30px] w-full ">
+                  <div className="absolute bottom-[30px] w-full">
                     <div className="text-white text-center font-MuseoSans font-semibold text-lg">
                       {item?.name}
                     </div>

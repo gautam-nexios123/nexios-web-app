@@ -15,10 +15,10 @@ const ChooseNexios = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center gap-14 w-full px-7 sm:px-[100px] mt-12">
+    <div className="main-container px-[40px] flex flex-col lg:flex-row justify-between gap-14 w-full mt-12">
       <div className="">
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 sm:gap-10">
-          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] w-[180px] h-[210px]">
+          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] w-full sm:w-[180px] h-[210px] flex flex-col justify-between">
             <Image
               src={expertTeam}
               alt="expertTeam"
@@ -28,7 +28,7 @@ const ChooseNexios = () => {
               Experts Team
             </p>
           </div>
-          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] w-[180px] h-[210px] md:mt-10">
+          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] w-full sm:w-[180px] h-[210px] flex flex-col justify-between md:mt-10">
             <Image
               src={yearExpImg}
               alt="yearExpImg"
@@ -40,7 +40,7 @@ const ChooseNexios = () => {
           </div>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 sm:gap-10 md:ml-9 mt-[32px] sm:mt-0">
-          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] w-[180px] h-[210px]">
+          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] w-full sm:w-[180px] h-[210px] flex flex-col justify-between">
             <Image
               src={focusInnoImg}
               alt="focusInnoImg"
@@ -50,7 +50,7 @@ const ChooseNexios = () => {
               Focus on innovation
             </p>
           </div>
-          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] w-[180px] h-[210px] md:mt-10">
+          <div className="bg-white shadow-3xl px-2 py-4 rounded-[20px] w-full sm:w-[180px] h-[210px] flex flex-col justify-between md:mt-10">
             <Image
               src={businessServeImg}
               alt="businessServeImg"
@@ -62,7 +62,7 @@ const ChooseNexios = () => {
           </div>
         </div>
       </div>
-      <div className="w-[100%] lg:w-[40%]">
+      <div className="w-[100%] lg:w-[50%]">
         <div className="font-MuseoSans font-normal text-[22px] sm:text-[32px] text-[#121212] pb-3">
           Why Choose <span className="font-semibold"> nexios?</span>
           <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[210px] sm:w-[310px] mt-[-12px] sm:mt-[-15px]"></div>

@@ -13,8 +13,8 @@ const WhoNexios = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center gap-14 w-full px-7 sm:px-[100px] mt-12">
-      <div className="w-[100%] lg:w-[40%]">
+    <div className="main-container px-[40px] flex flex-col lg:flex-row justify-between mt-12">
+      <div className="w-[100%] lg:w-[50%]">
         <div
           className={`font-MuseoSans font-normal text-[22px] sm:text-[32px] text-[#121212] pb-3`}
         >

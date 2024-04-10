@@ -57,7 +57,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-white w-full flex items-center justify-between lg:justify-around py-3 px-10 lg:px-0">
+    <div className="main-container px-[40px] w-full flex items-center justify-between py-3">
       <Image
         onClick={() => router.push("/")}
         src={logo}
