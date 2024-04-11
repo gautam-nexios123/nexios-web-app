@@ -72,9 +72,9 @@ const DiscoverService = () => {
 
       <div className="mx-8">
         <Carousel
-          arrows={false}
+          arrows={true}
           swipeable={true}
-          draggable={true}
+          draggable={false}
           showDots={true}
           responsive={responsive}
           infinite={true}
@@ -97,7 +97,7 @@ export default DiscoverService;
 
 const Card = ({ data }) => {
   return (
-    <div className="mx-3 bg-white shadow-3xl px-2 py-4 rounded-[20px] h-[370px] flex flex-col justify-between items-center mt-5 mb-9 cursor-pointer">
+    <div className="mx-3 bg-white shadow-3xl select-none px-2 py-4 rounded-[20px] h-[370px] flex flex-col justify-between items-center mt-5 mb-9 cursor-pointer">
       <Image
         src={data?.image}
         alt="focusInnoImg"

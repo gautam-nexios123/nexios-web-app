@@ -38,7 +38,7 @@ const CoreValue = () => {
   ];
 
   return (
-    <div className="my-10 w-full relative">
+    <div className="main-container px-[40px] my-10 w-full relative">
       <AnimationOnScroll id="ourcore-value" setIsVisible={setIsVisible}>
         <div
           className={`${
@@ -50,7 +50,7 @@ const CoreValue = () => {
         </div>
       </AnimationOnScroll>
 
-      <div className="w-full px-[30px] lg:px-[120px] flex flex-wrap flex-col md:flex-row justify-between gap-5 mt-12">
+      <div className="w-full flex flex-wrap flex-col md:flex-row justify-between gap-5 mt-12">
         {cardData?.map((item, index) => (
           <div
             key={index}

@@ -27,8 +27,11 @@ const InterViewProcess = () => {
   }, []);
 
   return (
-    <div id="process-interview" className="w-full mb-[150px]">
-      <div className="w-[70%] mx-auto">
+    <div
+      id="process-interview"
+      className="w-full main-container px-[40px] mb-[150px]"
+    >
+      <div className="">
         <AnimationOnScroll id="process-interview" setIsVisible={setIsVisible}>
           <div
             className={`${
@@ -52,7 +55,7 @@ const InterViewProcess = () => {
         </div>
       </div>
 
-      <div className="relative flex flex-col lg:flex-row items-center w-[70%] mx-auto mt-12 pr-[40%] lg:pr-0">
+      <div className="relative flex flex-col lg:flex-row items-center mt-12 pr-[40%] lg:pr-0">
         <div className="relative">
           <div className="border-[8px] border-[#399EFD] rounded-full w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] flex justify-center items-center">
             <Image
@@ -105,7 +108,7 @@ const InterViewProcess = () => {
           ></div>
         </div>
 
-        <div className="relative">
+        <div className="relative lg:mr-[28px]">
           <div className="border-[8px] border-[#399EFD] rounded-full w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] flex justify-center items-center">
             <Image
               src={practicalRoundPic}
@@ -115,13 +118,13 @@ const InterViewProcess = () => {
           </div>
         </div>
 
-        <div className="absolute top-[8%] right-0 lg:top-[100%] lg:left-[0%] py-3 text-[#121212] font-MuseoSans font-semibold text-[16px] md:text-[28px] xl:text-[30px]">
+        <div className="w-[80px] sm:w-auto text-center sm:text-left absolute top-[8%] right-0 lg:top-[100%] lg:left-[0%] py-3 text-[#121212] font-MuseoSans font-semibold text-[16px] md:text-[28px] xl:text-[30px]">
           HR Interview
         </div>
-        <div className="absolute top-[46%] right-0 lg:top-[100%] lg:left-[35%] py-3 text-[#121212] font-MuseoSans font-semibold text-[16px] md:text-[28px] xl:text-[30px]">
+        <div className="w-[80px] sm:w-auto text-center sm:text-left absolute top-[46%] right-0 lg:top-[100%] lg:left-[38%] py-3 text-[#121212] font-MuseoSans font-semibold text-[16px] md:text-[28px] xl:text-[30px]">
           Personal Interview
         </div>
-        <div className="absolute top-[85%] right-0 lg:top-[100%] lg:right-[-35px] py-3 text-[#121212] font-MuseoSans font-semibold text-[16px] md:text-[28px] xl:text-[30px]">
+        <div className="w-[80px] sm:w-auto text-center sm:text-left absolute top-[85%] right-0 lg:top-[100%] lg:right-[0px] py-3 text-[#121212] font-MuseoSans font-semibold text-[16px] md:text-[28px] xl:text-[30px]">
           Practical Round
         </div>
       </div>

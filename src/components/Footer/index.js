@@ -12,15 +12,13 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const Footer = () => {
-  const router = useRouter();
-
   return (
-    <div className="w-full bg-[#1B1C30]">
+    <div className="w-full bg-[#1B1C30] mt-auto">
       <div className="main-container px-[40px]">
         <div className="flex flex-wrap lg:flex-nowrap gap-[40px] lg:gap-[60px] py-12">
           <div className="">
-            <Image src={logo} alt="logo" className="w-[140px] h-[43px] mb-4" />
-            <div className="font-MuseoSans text-justify font-normal text-[16px] text-[#9BA9B4] mb-10 lg:w-[80%]">
+            <Image src={logo} alt="logo" className="w-[180px] h-[44px] mb-4" />
+            <div className="font-MuseoSans text-justify font-normal text-[16px] leading-[30px] text-[#9BA9B4] mb-10 lg:w-[80%]">
               nexios allows businesses to narrow the technology gap in their
               organization and get a competitive edge through innovative
               software development solutions tailored to their goals.

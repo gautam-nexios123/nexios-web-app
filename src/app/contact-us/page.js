@@ -15,13 +15,15 @@ import mentop from "../../assets/images/contact-us/men-top.svg";
 const ContactUs = () => {
   return (
     <div className="relative bg-[#EDF5FF] w-full pt-[50px] md:pt-[100px] pb-[80px]">
-      <div className="text-center pb-3 text-[#9BA9B4] font-MuseoSans font-semibold text-[20px]">
-        Contact Us
+      <div className="main-container relative">
+        <div className="text-center pb-3 text-[#9BA9B4] font-MuseoSans font-semibold text-[20px]">
+          Contact Us
+        </div>
+        <div className="text-center pb-6 text-[#121212] font-MuseoSans font-semibold text-[24px]">
+          Lets Get In Touch Now
+        </div>
+        <ContactForm />
       </div>
-      <div className="text-center pb-6 text-[#121212] font-MuseoSans font-semibold text-[24px]">
-        Lets Get In Touch Now
-      </div>
-      <ContactForm />
       <Image
         src={squreBig}
         alt="squre"

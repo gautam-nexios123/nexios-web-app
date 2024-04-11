@@ -74,8 +74,8 @@ const CountingBanner = () => {
       id="counting-banner"
       className="relative w-full bg-[#399EFD] h-auto md:h-[200px] my-[50px]"
     >
-      <div className="flex flex-col md:flex-row justify-center items-center h-full gap-6 py-6 md:py-0 md:gap-[205px] md:mx-10">
-        <div className="50">
+      <div className="flex flex-col md:flex-row justify-center items-center h-full gap-6 py-6 md:py-0 md:gap-[100px] lg:gap-[205px] md:mx-10">
+        <div className="">
           <div className="font-MuseoSans font-semibold text-white text-[69px]">
             {employeeCount}+
           </div>

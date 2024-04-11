@@ -40,7 +40,7 @@ const OpeningPosition = () => {
         </div>
       </AnimationOnScroll>
 
-      <div className="flex w-full  flex-wrap justify-center gap-6 ">
+      <div className="flex w-full flex-wrap justify-center gap-6 ">
         {openPositionData?.map((item, index) => {
           return (
             <div

@@ -60,8 +60,9 @@ const ApplyNow = () => {
         description="We attract the accurate kind of people like us with Creative Minds and Committed to their Dreams. We offer you to start a transcendent career by joining Webvolty IT Solution."
         banner={TopBanner}
       />
-      <div className="bg-[#EDF5FF] w-full py-[50px]">
-        <div className="w-[80%] md:w-[70%] lg:w-[50%] bg-white rounded-md shadow p-[35px] mx-auto">
+
+      <div className="bg-[#EDF5FF] w-full py-[100px]">
+        <div className="main-container w-[80%] md:w-[70%] lg:w-[50%] bg-white rounded-md shadow p-[35px] mx-auto">
           <div className="font-MuseoSans font-semibold text-[#121212] text-[30px]">
             Apply Now
           </div>

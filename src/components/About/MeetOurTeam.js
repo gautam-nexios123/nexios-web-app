@@ -65,7 +65,7 @@ const MeetOurTeam = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <div className="mb-12">
+    <div className="main-container px-[40px] mb-12">
       <AnimationOnScroll id="meet-team" setIsVisible={setIsVisible}>
         <div
           className={`${
@@ -77,7 +77,7 @@ const MeetOurTeam = () => {
         </div>
       </AnimationOnScroll>
 
-      <div className="px-[30px] md:px-[160px]">
+      <div className="">
         <div className="text-[#9BA9B4] font-normal text-[20px] text-justify lg:text-center py-5">
           At nexios, we believe in the spirit of teamwork, creativity, and
           innovation to accomplish tasks quickly, seamlessly, and effectively.
@@ -95,7 +95,7 @@ const MeetOurTeam = () => {
         </div>
       </div>
 
-      <div className="mt-11 w-[70%] mx-auto">
+      <div className="mt-11 mx-auto">
         <Carousel
           arrows={true}
           swipeable={false}
@@ -109,7 +109,7 @@ const MeetOurTeam = () => {
           {caurselData?.map((item, index) => (
             <div key={index} className="mb-8 w-full">
               <div
-                className="relative cursor-pointer h-[340px] mx-[12px]"
+                className="relative cursor-pointer h-[340px] sm:mx-[12px]"
                 onMouseEnter={() => {
                   setIsHovered(true);
                   setIsHoveredID(index);
