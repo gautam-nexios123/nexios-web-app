@@ -92,7 +92,7 @@ const OurClient = () => {
                   className="absolute top-[72px] lg:left-[70px] left-[48%] w-[200px] h-[210px]"
                 />
               </div>
-              <div className="w-[70%] mt-[90px] lg:mt-0">
+              <div className="w-full lg:w-[70%] mt-[90px] lg:mt-0">
                 <Image src={quateIcon} alt="quate" width={45} height={45} />
                 <div className="text-[#121212] mb-2 text-justify font-MuseoSans font-normal text-[21px] py-6 line-clamp-4 italic">
                   {item?.description}

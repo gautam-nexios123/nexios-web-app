@@ -37,7 +37,7 @@ const carouselData = [
     image: webDevImg,
   },
   {
-    name: "UI/UX Design",
+    name: "UI & UX Design",
     image: uiUXImg,
   },
   {
@@ -45,7 +45,7 @@ const carouselData = [
     image: mobileDevImg,
   },
   {
-    name: "Software Developing and Management",
+    name: "Software Developing",
     image: softImg,
   },
   {
@@ -63,7 +63,7 @@ const DiscoverService = () => {
         <div
           className={`${
             isVisible ? "animation-zoomIn" : ""
-          } text-center font-MuseoSans font-light text-[22px] sm:text-[32px]`}
+          } text-center font-MuseoSans font-light text-[22px] sm:text-[32px] mt-[60px] mb-[30px]`}
         >
           Discover Our <span className="font-semibold">Services</span>
           <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[225px] sm:w-[325px] mx-auto mt-[-12px] sm:mt-[-15px]"></div>
@@ -97,15 +97,13 @@ export default DiscoverService;
 
 const Card = ({ data }) => {
   return (
-    <div className="mx-3 bg-white shadow-3xl px-2 py-4 rounded-[20px] h-[280px] flex flex-col justify-between items-center mt-5 mb-9 cursor-pointer">
+    <div className="mx-3 bg-white shadow-3xl px-2 py-4 rounded-[20px] h-[370px] flex flex-col justify-between items-center mt-5 mb-9 cursor-pointer">
       <Image
         src={data?.image}
         alt="focusInnoImg"
-        className="my-4"
-        width={180}
-        height={100}
+        className="my-4 w-[260px] h-[210px]"
       />
-      <p className="text-[#121212] font-MuseoSans font-semibold text-lg text-center ">
+      <p className="text-[#121212] font-MuseoSans font-semibold text-[20px] text-center w-[40%] mx-auto ">
         {data?.name}
       </p>
     </div>
