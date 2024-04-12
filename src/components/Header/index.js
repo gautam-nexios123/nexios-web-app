@@ -17,6 +17,7 @@ const Header = () => {
   const [currentPath, setCurrentPath] = useState("");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   const getCurrentPath = () => {
     let path;
@@ -46,7 +47,17 @@ const Header = () => {
 
   useEffect(() => {
     getCurrentPath();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [location]);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
 
   const handleMenuClick = (path) => {
     router.push(path);
@@ -57,65 +68,71 @@ const Header = () => {
   };
 
   return (
-    <div className="main-container px-[40px] w-full flex items-center justify-between py-3">
-      <Image
-        onClick={() => router.push("/")}
-        src={logo}
-        alt="logo"
-        className="w-[95px] h-[65px] cursor-pointer"
-      />
-      <div className="hidden lg:flex items-center gap-6">
-        {[
-          "home",
-          "about-us",
-          "portfolio",
-          "services",
-          "career",
-          "contact-us",
-        ]?.map((path) => (
-          <MenuItem
-            key={path}
-            path={path}
+    <div
+      className={`w-full bg-white ${
+        isSticky ? "sticky top-0  z-10 shadow-lg" : ""
+      } transition-all duration-500`}
+    >
+      <div className="main-container px-[40px] flex items-center justify-between py-3">
+        <Image
+          onClick={() => router.push("/")}
+          src={logo}
+          alt="logo"
+          className="w-[95px] h-[65px] cursor-pointer"
+        />
+        <div className="hidden lg:flex items-center gap-6">
+          {[
+            "home",
+            "about-us",
+            "portfolio",
+            "services",
+            "career",
+            "contact-us",
+          ]?.map((path) => (
+            <MenuItem
+              key={path}
+              path={path}
+              currentPath={currentPath}
+              handleMenuClick={handleMenuClick}
+              isServicesDropdownOpen={isServicesDropdownOpen}
+              setIsServicesDropdownOpen={setIsServicesDropdownOpen}
+            />
+          ))}
+          <div ref={scrollButtonRef}>
+            <CustomButton
+              onSubmitButton={() => scrollToBottom()}
+              bgColor="#399EFD"
+              textColor="white"
+              btnWidth="130px"
+              text="Free Quote"
+            />
+          </div>
+        </div>
+        <Image
+          className="lg:hidden cursor-pointer"
+          src={isDrawerOpen ? closeIcon : menuIcon}
+          alt="menu"
+          width={25}
+          height={25}
+          onClick={toggleDrawer}
+        />
+        <Drawer open={isDrawerOpen} onClose={toggleDrawer}>
+          <Image
+            onClick={toggleDrawer}
+            className="ml-auto mr-6 my-6 cursor-pointer"
+            src={closeIcon}
+            alt="close"
+            width={30}
+            height={30}
+          />
+          <DrawerContent
             currentPath={currentPath}
             handleMenuClick={handleMenuClick}
             isServicesDropdownOpen={isServicesDropdownOpen}
             setIsServicesDropdownOpen={setIsServicesDropdownOpen}
           />
-        ))}
-        <div ref={scrollButtonRef}>
-          <CustomButton
-            onSubmitButton={() => scrollToBottom()}
-            bgColor="#399EFD"
-            textColor="white"
-            btnWidth="110px"
-            text="Free Quote"
-          />
-        </div>
+        </Drawer>
       </div>
-      <Image
-        className="lg:hidden cursor-pointer"
-        src={isDrawerOpen ? closeIcon : menuIcon}
-        alt="menu"
-        width={25}
-        height={25}
-        onClick={toggleDrawer}
-      />
-      <Drawer open={isDrawerOpen} onClose={toggleDrawer}>
-        <Image
-          onClick={toggleDrawer}
-          className="ml-auto mr-6 my-6 cursor-pointer"
-          src={closeIcon}
-          alt="close"
-          width={30}
-          height={30}
-        />
-        <DrawerContent
-          currentPath={currentPath}
-          handleMenuClick={handleMenuClick}
-          isServicesDropdownOpen={isServicesDropdownOpen}
-          setIsServicesDropdownOpen={setIsServicesDropdownOpen}
-        />
-      </Drawer>
     </div>
   );
 };

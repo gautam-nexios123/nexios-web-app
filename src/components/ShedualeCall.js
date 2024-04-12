@@ -3,7 +3,7 @@ import Image from "next/image";
 import logo from "../assets/images/shedule-call.svg";
 import CustomButton from "@/common/CustomButton";
 import { useState } from "react";
-
+import toast, { Toaster } from "react-hot-toast";
 const ShedualeCall = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -44,12 +44,13 @@ const ShedualeCall = () => {
     if (handleError()) {
       console.log("Faillllllllll");
     } else {
-      console.log("Sucess");
+      toast.success("Successfully Submited!");
     }
   };
 
   return (
     <div className="w-full md:flex">
+      <Toaster />
       <div className="w-full md:w-[50%] flex items-center justify-center py-[50px]">
         <Image src={logo} alt="" className="mx-auto w-[520px] h-[450px]" />
       </div>
@@ -57,17 +58,17 @@ const ShedualeCall = () => {
         <div className="text-[#FFFFFF] font-MuseoSans font-semibold underline text-[42px] pb-8">
           Schedule a Call
         </div>
-        <div className="flex flex-col w-[70%]">
+        <div className="w-[100%]">
           <div className="mb-8">
             <input
               type="text"
               name="name"
               placeholder="Name*"
-              className="bg-transparent text-white border-b placeholder-white p-2"
+              className="bg-transparent w-[80%] lg:w-[65%] text-white text-[20px] border-b outline-none placeholder-white p-2"
               onChange={(e) => handleOnChange(e)}
             />
             {error?.name && (
-              <div className="font-MuseoSans font-normal text-red-600 text-sm">
+              <div className="font-MuseoSans font-normal text-red-600 text-[18px]">
                 {error?.name}
               </div>
             )}
@@ -77,11 +78,11 @@ const ShedualeCall = () => {
               type="text"
               name="email"
               placeholder="Work Email"
-              className="bg-transparent text-white border-b placeholder-white p-2"
+              className="bg-transparent w-[80%] lg:w-[65%] text-white text-[20px] border-b outline-none placeholder-white p-2"
               onChange={(e) => handleOnChange(e)}
             />
             {error?.email && (
-              <div className="font-MuseoSans font-normal text-red-600 text-sm">
+              <div className="font-MuseoSans font-normal text-red-600 text-[18px]">
                 {error?.email}
               </div>
             )}
@@ -91,11 +92,11 @@ const ShedualeCall = () => {
               type="text"
               name="phone"
               placeholder="Phone"
-              className="bg-transparent text-white border-b placeholder-white p-2"
+              className="bg-transparent w-[80%] lg:w-[65%] text-white text-[20px] border-b outline-none placeholder-white p-2"
               onChange={(e) => handleOnChange(e)}
             />
             {error?.phone && (
-              <div className="font-MuseoSans font-normal text-red-600 text-sm">
+              <div className="font-MuseoSans font-normal text-red-600 text-[18px]">
                 {error?.phone}
               </div>
             )}
@@ -105,16 +106,16 @@ const ShedualeCall = () => {
               type="text"
               name="brif"
               placeholder="Share your requirements in brief"
-              className="bg-transparent text-white border-b placeholder-white p-2"
+              className="bg-transparent w-[80%] lg:w-[65%] text-white text-[20px] border-b outline-none placeholder-white p-2"
               onChange={(e) => handleOnChange(e)}
             />
           </div>
-          <div className="mt-5 mb-11">
+          <div className="pt-4 pb-11">
             <CustomButton
               onSubmitButton={formSubmit}
               bgColor="#FFFF"
               textColor="#399EFD"
-              btnWidth="100px"
+              btnWidth="120px"
               text="Submit"
             />
           </div>

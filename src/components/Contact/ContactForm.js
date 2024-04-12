@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import CustomButton from "@/common/CustomButton";
+import toast, { Toaster } from "react-hot-toast";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -10,7 +11,6 @@ const ContactForm = () => {
     phone: "",
     message: "",
   });
-
   const [error, setError] = useState({});
 
   const handleError = () => {
@@ -44,12 +44,13 @@ const ContactForm = () => {
     if (handleError()) {
       console.log("Faillllllllll");
     } else {
-      console.log("Sucess");
+      toast.success("Successfully Submited!");
     }
   };
 
   return (
-    <div className="w-[80%] md:w-[70%] lg:w-[50%] bg-white rounded-md shadow p-[35px] mx-auto">
+    <div className="w-[80%] md:w-[70%] lg:w-[70%] bg-white rounded-md shadow py-[60px] px-[40px] mx-auto mt-[30px]">
+      <Toaster />
       <div className="mt-3">
         <div className="w-full flex flex-col md:flex-row md:gap-10">
           <div className="w-full md:w-[50%] mb-4 md:mb-0">
@@ -109,7 +110,7 @@ const ContactForm = () => {
 
         <div className="mt-10 w-full">
           <textarea
-            className="w-full border-b-2 p-2"
+            className="w-full border-b-2 p-2 outline-none"
             name="message"
             rows="4"
             cols="50"
@@ -123,7 +124,7 @@ const ContactForm = () => {
             onSubmitButton={() => formSubmit()}
             bgColor="#399EFD"
             textColor="white"
-            btnWidth="120px"
+            btnWidth="150px"
             text="Submit Now"
           />
         </div>

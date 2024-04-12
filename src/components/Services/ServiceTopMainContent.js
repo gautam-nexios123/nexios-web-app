@@ -25,36 +25,42 @@ const ServiceTopMainContent = ({ text, description, banner }) => {
               </p>
             </div>
             <Image
+              draggable={false}
               src={squreImg}
               alt="squre"
               className="absolute top-[10%] left-[10%]"
               width={15}
             />
             <Image
+              draggable={false}
               src={circleBlank}
               alt="circle"
               className="absolute top-[50%] left-[-50px]"
               width={15}
             />
             <Image
+              draggable={false}
               src={tringleLight}
               alt="trungle"
               className="absolute top-[14%] left-[40%]"
               width={20}
             />
             <Image
+              draggable={false}
               src={circleBlank}
               alt="circle"
               className="absolute top-[30%] left-[55%]"
               width={15}
             />
             <Image
+              draggable={false}
               src={squreLight}
               alt="squreLight"
               className="absolute top-[6%] right-0"
               width={15}
             />
             <Image
+              draggable={false}
               src={lineThree}
               alt="lineThree"
               className="absolute top-[75%] right-[2%]"
@@ -62,14 +68,21 @@ const ServiceTopMainContent = ({ text, description, banner }) => {
             />
           </div>
           <div className="w-full md:w-[45%] relative flex items-center pl-10">
-            <Image src={banner} alt="banner" className="w-[380px] mx-auto" />
             <Image
+              draggable={false}
+              src={banner}
+              alt="banner"
+              className="w-[380px] mx-auto"
+            />
+            <Image
+              draggable={false}
               src={squreLight}
               alt="squreLight"
               className="absolute top-[10%] right-[15%]"
               width={15}
             />
             <Image
+              draggable={false}
               src={circleSolid}
               alt="circleSolid"
               className="absolute top-[74%] right-[5%]"

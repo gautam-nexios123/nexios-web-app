@@ -5,9 +5,10 @@ import manImg from "../../assets/images/home/man.svg";
 import quateIcon from "../../assets/images/home/quateIcon.svg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { CustomDot } from "@/utils";
 import { AnimationOnScroll } from "../Animations";
 import { useState } from "react";
+import EastIcon from "@mui/icons-material/East";
+import WestIcon from "@mui/icons-material/West";
 
 const data = [
   {
@@ -35,7 +36,6 @@ const OurClient = () => {
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 1,
     },
@@ -53,58 +53,61 @@ const OurClient = () => {
     },
   };
 
+  const CustomLeftArrow = ({ onClick }) => (
+    <button
+      className="absolute bottom-0 left-[60%] md:left-[80%] lg:left-[70%] xl:left-[80%] bg-[#c2e1f9]  px-[10px] text-[20px] rounded-lg"
+      onClick={onClick}
+    >
+      <WestIcon
+        className="text-[#399EFD] font-semibold lg:text-[60px]"
+        fontSize="large"
+      />
+    </button>
+  );
+
+  const CustomRightArrow = ({ onClick }) => (
+    <button
+      className="absolute bottom-0 right-0 lg:right-[0%] bg-[#c2e1f9]  px-[10px] text-[20px] rounded-lg"
+      onClick={onClick}
+    >
+      <EastIcon
+        className="text-[#399EFD] font-semibold lg:text-[60px]"
+        fontSize="large"
+      />
+    </button>
+  );
+
   return (
-    <div className="relative bg-[#F2F8FA] ">
+    <div className="relative w-full bg-[#F2F8FA]">
       <AnimationOnScroll id="whatour-client" setIsVisible={setIsVisible}>
         <div
           className={`${
             isVisible ? "animation-zoomIn" : ""
-          } text-[#121212] font-MuseoSans font-semibold text-[22px] sm:text-[40px] text-center py-7 mt-16`}
+          } text-[#121212] font-MuseoSans font-semibold text-[22px] sm:text-[40px] text-center pt-[60px] mt-16`}
         >
           What our clients have to say
           <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[300px] sm:w-[530px] mt-[-12px] sm:mt-[-15px] mx-auto"></div>
         </div>
       </AnimationOnScroll>
-
-      <div className="main-container w-[60%] mx-auto py-4">
+      <Image
+        src={dotImg}
+        alt=""
+        className="w-[220px] h-[220px] absolute sm:left-[20%] sm:top-[15%] lg:left-[17%] lg:top-[18%]"
+      />
+      <div className="main-container w-[80%] lg:w-[60%] mx-auto py-[80px]">
         <Carousel
-          arrows={false}
+          arrows={true}
           swipeable={true}
           draggable={true}
-          showDots={true}
+          showDots={false}
           responsive={responsive}
           infinite={true}
           transitionDuration={500}
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          customDot={<CustomDot />}
+          customLeftArrow={<CustomLeftArrow />}
+          customRightArrow={<CustomRightArrow />}
         >
           {data?.map((item, index) => (
-            <div
-              className="flex lg:flex-row flex-col  w-full mb-5 cursor-pointer"
-              key={index}
-            >
-              <div className="w-[360px] flex lg:block justify-center relative ">
-                <Image src={dotImg} alt="" className="w-[180px] h-[180px]" />
-                <div className="bg-[#399EFD] w-[160px] h-[190px] absolute top-[62px] lg:left-[62px] left-[48%]"></div>
-                <Image
-                  src={manImg}
-                  alt=""
-                  className="absolute top-[72px] lg:left-[70px] left-[48%] w-[200px] h-[210px]"
-                />
-              </div>
-              <div className="w-full lg:w-[70%] mt-[90px] lg:mt-0">
-                <Image src={quateIcon} alt="quate" width={45} height={45} />
-                <div className="text-[#121212] mb-2 text-justify font-MuseoSans font-normal text-[21px] py-6 line-clamp-4 italic">
-                  {item?.description}
-                </div>
-                <div className="text-[#121212] font-MuseoSans font-semibold text-lg pb-2 italic">
-                  {item?.name}
-                </div>
-                <div className="text-[#9BA9B4] font-MuseoSans font-normal text-lg pb-2 italic">
-                  {item?.desgnation}
-                </div>
-              </div>
-            </div>
+            <CarouselCard item={item} key={index} />
           ))}
         </Carousel>
       </div>
@@ -113,3 +116,29 @@ const OurClient = () => {
 };
 
 export default OurClient;
+
+const CarouselCard = ({ item }) => {
+  return (
+    <div className="flex lg:flex-row flex-col items-center gap-[40px] w-full mb-[45px] cursor-pointer">
+      <div className="w-[200px] h-[200px] bg-[#399EFD] relative mr-[30px]">
+        <Image
+          src={manImg}
+          alt=""
+          className="w-full object-cover ml-[35px] mt-[20px]"
+        />
+      </div>
+      <div className="w-full lg:w-[70%]">
+        <Image src={quateIcon} alt="quate" width={45} height={45} />
+        <div className="text-[#121212] mb-2 text-justify font-MuseoSans font-normal text-[21px] py-6 line-clamp-4 italic">
+          {item?.description}
+        </div>
+        <div className="text-[#121212] font-MuseoSans font-semibold text-lg pb-2 italic">
+          {item?.name}
+        </div>
+        <div className="text-[#9BA9B4] font-MuseoSans font-normal text-lg pb-2 italic">
+          {item?.desgnation}
+        </div>
+      </div>
+    </div>
+  );
+};

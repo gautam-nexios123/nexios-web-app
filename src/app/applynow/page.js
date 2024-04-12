@@ -4,7 +4,7 @@ import TopBanner from "../../assets/images/career/career-banner.svg";
 import CareerTopMain from "@/components/Career/CareerTopMain";
 import TextField from "@mui/material/TextField";
 import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
-
+import toast, { Toaster } from "react-hot-toast";
 import CustomButton from "@/common/CustomButton";
 const ApplyNow = () => {
   const [formData, setFormData] = useState({
@@ -49,12 +49,13 @@ const ApplyNow = () => {
     if (handleError()) {
       console.log("Faillllllllll");
     } else {
-      console.log("Sucess");
+      toast.success("Successfully Applyed");
     }
   };
 
   return (
     <div className="w-full relative">
+      <Toaster />
       <CareerTopMain
         text="Join Our Team"
         description="We attract the accurate kind of people like us with Creative Minds and Committed to their Dreams. We offer you to start a transcendent career by joining Webvolty IT Solution."
@@ -164,7 +165,7 @@ const ApplyNow = () => {
                 onSubmitButton={() => formSubmit()}
                 bgColor="#399EFD"
                 textColor="white"
-                btnWidth="120px"
+                btnWidth="150px"
                 text="Submit Now"
               />
             </div>

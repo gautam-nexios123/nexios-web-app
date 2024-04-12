@@ -9,17 +9,16 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CustomDot } from "@/utils";
 import { AnimationOnScroll } from "../Animations";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const responsive = {
   superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
+    breakpoint: { max: 4000, min: 1480 },
     items: 5,
   },
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 5,
+    breakpoint: { max: 1480, min: 1024 },
+    items: 4,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -74,7 +73,7 @@ const DiscoverService = () => {
         <Carousel
           arrows={true}
           swipeable={true}
-          draggable={false}
+          draggable={true}
           showDots={true}
           responsive={responsive}
           infinite={true}
@@ -97,13 +96,16 @@ export default DiscoverService;
 
 const Card = ({ data }) => {
   return (
-    <div className="mx-3 bg-white shadow-3xl select-none px-2 py-4 rounded-[20px] h-[370px] flex flex-col justify-between items-center mt-5 mb-9 cursor-pointer">
-      <Image
-        src={data?.image}
-        alt="focusInnoImg"
-        className="my-4 w-[260px] h-[210px]"
-      />
-      <p className="text-[#121212] font-MuseoSans font-semibold text-[20px] text-center w-[40%] mx-auto ">
+    <div className="select-none mx-3 bg-white shadow-3xl  px-2 py-4 rounded-[20px] h-[350px] flex flex-col justify-between items-center mt-5 mb-9 cursor-pointer">
+      <div className="w-[90%] h-[230px]">
+        <Image
+          src={data?.image}
+          alt="focusInnoImg"
+          className="my-4 w-full h-full object-cover"
+          draggable={false}
+        />
+      </div>
+      <p className="text-[#121212] font-MuseoSans font-semibold text-[20px] text-center w-[50%] mx-auto ">
         {data?.name}
       </p>
     </div>

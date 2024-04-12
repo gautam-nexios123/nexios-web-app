@@ -35,93 +35,110 @@ const Technology = () => {
       </AnimationOnScroll>
 
       <div className="">
-        <Image src={pattern} alt="" className="w-[100%] h-auto" />
+        <Image
+          draggable={false}
+          src={pattern}
+          alt=""
+          className="w-[100%] h-auto"
+        />
       </div>
 
-      <div className="absolute left-[48%] top-[22%] bg-white shadow-3xl rounded-full w-[75px] h-[75px] xl:w-[160px] xl:h-[160px] flex items-center justify-center">
+      <div className="absolute left-[48%] top-[22%] bg-white shadow-3xl rounded-full w-[55px] h-[55px] md:w-[75px] md:h-[75px] xl:w-[160px] xl:h-[160px] flex items-center justify-center">
         <Image
+          draggable={false}
           src={appleIcon}
           alt=""
-          className="w-[45px] h-[45px] xl:w-[90px] xl:h-[90px]"
+          className="w-[35px] h-[35px] md:w-[45px] md:h-[45px] xl:w-[90px] xl:h-[90px]"
         />
       </div>
-      <div className="absolute left-[22%] top-[30%] bg-white shadow-3xl rounded-full w-[70px] h-[70px] xl:w-[140px] xl:h-[140px] flex items-center justify-center">
+      <div className="absolute left-[22%] top-[30%] bg-white shadow-3xl rounded-full w-[50px] h-[50px] md:w-[70px] md:h-[70px] xl:w-[140px] xl:h-[140px] flex items-center justify-center">
         <Image
+          draggable={false}
           src={androidIcon}
           alt=""
-          className="w-[40px] h-[40px] xl:w-[80px] xl:h-[80px]"
+          className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] xl:w-[80px] xl:h-[80px]"
         />
       </div>
-      <div className="absolute  left-[70%] top-[30%] bg-white shadow-3xl rounded-full w-[50px] h-[50px] xl:w-[120px] xl:h-[120px] flex items-center justify-center">
+      <div className="absolute  left-[70%] top-[30%] bg-white shadow-3xl rounded-full w-[40px] h-[40px] md:w-[50px] md:h-[50px] xl:w-[120px] xl:h-[120px] flex items-center justify-center">
         <Image
+          draggable={false}
           src={flutterIcon}
           alt=""
-          className="w-[30px] h-[30px] xl:w-[70px] xl:h-[70px]"
+          className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] xl:w-[70px] xl:h-[70px]"
         />
       </div>
 
-      <div className="absolute  left-[12%] top-[52%] bg-white shadow-3xl rounded-full w-[45px] h-[45px] xl:w-[110px] xl:h-[110px] flex items-center justify-center">
+      <div className="absolute  left-[12%] top-[52%] bg-white shadow-3xl rounded-full w-[35px] h-[35px] md:w-[45px] md:h-[45px] xl:w-[110px] xl:h-[110px] flex items-center justify-center">
         <Image
+          draggable={false}
           src={tOne}
           alt=""
-          className="w-[30px] h-[30px] xl:w-[70px] xl:h-[70px]"
+          className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] xl:w-[70px] xl:h-[70px]"
         />
       </div>
-      <div className="absolute  left-[38%] top-[45%] bg-white shadow-3xl rounded-full w-[50px] h-[50px] xl:w-[100px] xl:h-[100px] flex items-center justify-center">
+      <div className="absolute  left-[38%] top-[45%] bg-white shadow-3xl rounded-full w-[40px] h-[40px] md:w-[50px] md:h-[50px] xl:w-[100px] xl:h-[100px] flex items-center justify-center">
         <Image
+          draggable={false}
           src={tTwo}
           alt=""
-          className="w-[30px] h-[30px] xl:w-[60px] xl:h-[60px]"
+          className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] xl:w-[60px] xl:h-[60px]"
         />
       </div>
-      <div className="absolute  left-[55%] top-[55%] bg-white shadow-3xl rounded-full w-[60px] h-[60px] xl:w-[130px] xl:h-[130px] flex items-center justify-center">
+      <div className="absolute  left-[55%] top-[55%] bg-white shadow-3xl rounded-full w-[45px] h-[45px] md:w-[60px] md:h-[60px] xl:w-[130px] xl:h-[130px] flex items-center justify-center">
         <Image
+          draggable={false}
           src={angularIcon}
           alt=""
-          className="w-[40px] h-[40px] xl:w-[80px] xl:h-[80px]"
+          className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] xl:w-[80px] xl:h-[80px]"
         />
       </div>
-      <div className="absolute  left-[84%] top-[45%] bg-white shadow-3xl rounded-full w-[55px] h-[55px] xl:w-[110px] xl:h-[110px] flex items-center justify-center">
+      <div className="absolute  left-[84%] top-[45%] bg-white shadow-3xl rounded-full w-[40px] h-[40px] md:w-[55px] md:h-[55px] xl:w-[110px] xl:h-[110px] flex items-center justify-center">
         <Image
+          draggable={false}
           src={tThree}
           alt=""
-          className="w-[30px] h-[30px] xl:w-[70px] xl:h-[70px]"
+          className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] xl:w-[70px] xl:h-[70px]"
         />
       </div>
 
-      <div className="absolute  left-[22%] top-[75%] bg-white shadow-3xl rounded-full w-[70px] h-[70px] xl:w-[160px] xl:h-[160px] flex items-center justify-center">
+      <div className="absolute  left-[22%] top-[75%] bg-white shadow-3xl rounded-full w-[50px] h-[50px] md:w-[70px] md:h-[70px] xl:w-[160px] xl:h-[160px] flex items-center justify-center">
         <Image
+          draggable={false}
           src={laravelIcon}
           alt=""
-          className="w-[50px] h-[50px] xl:w-[110px] xl:h-[110px]"
+          className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] xl:w-[110px] xl:h-[110px]"
         />
       </div>
-      <div className="absolute  left-[38%] top-[65%] bg-white shadow-3xl rounded-full w-[60px] h-[60px] xl:w-[130px] xl:h-[130px] flex items-center justify-center">
+      <div className="absolute  left-[38%] top-[65%] bg-white shadow-3xl rounded-full w-[50px] h-[50px] md:w-[60px] md:h-[60px] xl:w-[130px] xl:h-[130px] flex items-center justify-center">
         <Image
+          draggable={false}
           src={mySqlIcon}
           alt=""
-          className="w-[50px] h-[50px] xl:w-[100px] xl:h-[100px]"
+          className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] xl:w-[100px] xl:h-[100px]"
         />
       </div>
-      <div className="absolute  left-[48%] top-[85%] bg-white shadow-3xl rounded-full w-[50px] h-[50px] xl:w-[100px] xl:h-[100px] flex items-center justify-center">
+      <div className="absolute  left-[48%] top-[85%] bg-white shadow-3xl rounded-full w-[35px] h-[35px] md:w-[50px] md:h-[50px] xl:w-[100px] xl:h-[100px] flex items-center justify-center">
         <Image
+          draggable={false}
           src={bootstrapIcon}
           alt=""
-          className="w-[30px] h-[30px] xl:w-[50px] xl:h-[50px]"
+          className="w-[20px] h-[20px] md:w-[30px] md:h-[30px] xl:w-[50px] xl:h-[50px]"
         />
       </div>
-      <div className="absolute  left-[65%] top-[72%] bg-white shadow-3xl rounded-full w-[50px] h-[50px] xl:w-[100px] xl:h-[100px] flex items-center justify-center">
+      <div className="absolute  left-[65%] top-[72%] bg-white shadow-3xl rounded-full w-[40px] h-[40px] md:w-[50px] md:h-[50px] xl:w-[100px] xl:h-[100px] flex items-center justify-center">
         <Image
+          draggable={false}
           src={phpIcon}
           alt=""
-          className="w-[40px] h-[40px] xl:w-[80px] xl:h-[80px]"
+          className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] xl:w-[80px] xl:h-[80px]"
         />
       </div>
-      <div className="absolute  left-[84%] top-[75%] bg-white shadow-3xl rounded-full w-[60px] h-[60px] xl:w-[130px] xl:h-[130px] flex items-center justify-center">
+      <div className="absolute  left-[84%] top-[75%] bg-white shadow-3xl rounded-full w-[45px] h-[45px] md:w-[60px] md:h-[60px] xl:w-[130px] xl:h-[130px] flex items-center justify-center">
         <Image
+          draggable={false}
           src={tFour}
           alt=""
-          className="w-[40px] h-[40px] xl:w-[90px] xl:h-[90px]"
+          className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] xl:w-[90px] xl:h-[90px]"
         />
       </div>
     </div>

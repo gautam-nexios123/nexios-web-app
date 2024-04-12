@@ -23,66 +23,77 @@ const TopMainContent = ({ text, banner, page }) => {
             {text}
           </p>
           <Image
+            draggable={false}
             src={squreImg}
             alt="squre"
             className="absolute top-[10%] left-[10%]"
             width={15}
           />
           <Image
+            draggable={false}
             src={circleBlank}
             alt="circle"
             className="absolute top-[50%] left-[10%]"
             width={15}
           />
           <Image
+            draggable={false}
             src={tringleDark}
             alt="tringle"
             className="absolute top-[80%] left-[15%]"
             width={15}
           />
           <Image
+            draggable={false}
             src={tringleLight}
             alt="trungle"
             className="absolute top-[14%] left-[40%]"
             width={20}
           />
           <Image
+            draggable={false}
             src={circleBlank}
             alt="circle"
             className="absolute top-[30%] left-[55%]"
             width={15}
           />
           <Image
+            draggable={false}
             src={dotImg}
             alt="dot"
             className="absolute top-[5%] left-[55%] md:!w-[180px] md:left-[65%]"
             width={120}
           />
           <Image
+            draggable={false}
             src={squreLight}
             alt="squreLight"
             className="absolute top-[6%] right-0"
             width={15}
           />
           <Image
+            draggable={false}
             src={squreLight}
             alt="squreLight"
             className="absolute top-[65%] left-[45%]"
             width={15}
           />
           <Image
+            draggable={false}
             src={circleSolid}
             alt="circleSolid"
             className="absolute top-[77%] left-[55%]"
             width={10}
           />
           <Image
+            draggable={false}
             src={circleBlank}
             alt="circleBlank"
             className="absolute top-[60%] right-[10%]"
             width={10}
           />
           <Image
+            draggable={false}
             src={lineThree}
             alt="lineThree"
             className="absolute top-[66%] right-[2%]"
@@ -90,14 +101,22 @@ const TopMainContent = ({ text, banner, page }) => {
           />
         </div>
         <div className="w-full md:w-[50%] relative">
-          <Image src={banner} alt="banner" width={520} className="" />
           <Image
+            draggable={false}
+            src={banner}
+            alt="banner"
+            width={520}
+            className=""
+          />
+          <Image
+            draggable={false}
             src={squreLight}
             alt="squreLight"
             className="absolute top-[10%] right-[15%]"
             width={15}
           />
           <Image
+            draggable={false}
             src={circleSolid}
             alt="circleSolid"
             className="absolute top-[74%] right-[15%]"

@@ -123,6 +123,7 @@ const MeetOurTeam = () => {
                   className="h-full w-[100%] object-cover"
                   src={item?.photo}
                   alt="teemOne"
+                  draggable={false}
                 />
                 <div className="absolute top-0 w-full h-full bg-transparent hover:bg-[rgba(57,158,253,0.5)] transition-all duration-500"></div>
                 {isHovered && isHoveredID === index && (
