@@ -66,7 +66,7 @@ const WhoNexios = () => {
           alt="frame"
           width={400}
           height={200}
-          className="sm:ml-5"
+          className="lg:ml-5 mx-auto"
         />
       </div>
     </div>
