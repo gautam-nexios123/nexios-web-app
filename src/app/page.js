@@ -46,7 +46,7 @@ export default function Home() {
             onSubmitButton={() => router.push("/portfolio")}
             bgColor="#399EFD"
             textColor="white"
-            btnWidth="180px"
+            btnWidth="200px"
             text="Explore Our Portfolio"
           />
         </div>
@@ -55,7 +55,7 @@ export default function Home() {
             onSubmitButton={() => scrollToBottom()}
             bgColor="#121212"
             textColor="white"
-            btnWidth="180px"
+            btnWidth="200px"
             text="Free Quote"
           />
         </div>
