@@ -24,9 +24,9 @@ export default function RootLayout({ children }) {
     .replace(/-/g, " ")
     .replace(/\b\w/g, c => c.toUpperCase());
 
-    useEffect(() => {
-      ReactGA.pageview(window.location.pathname + window.location.search);
-    }, []);
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [pathName]);
 
   return (
     <html lang="en">
@@ -34,6 +34,7 @@ export default function RootLayout({ children }) {
         <title>{`${pathName === "/" ? "Nexios-Mobile & Web development" : `${appTitle} - Nexios Technologies`}`}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/icon.png" sizes="32*32" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YESDGWM45W"></script>
       </head>
       <body className={inter.className}>
         <Header />
