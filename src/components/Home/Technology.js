@@ -38,7 +38,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={pattern}
-          alt=""
+          alt="pattern"
           className="w-[100%] h-auto"
         />
       </div>
@@ -47,7 +47,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={appleIcon}
-          alt=""
+          alt="appleIcon"
           className="w-[35px] h-[35px] md:w-[45px] md:h-[45px] xl:w-[90px] xl:h-[90px]"
         />
       </div>
@@ -55,7 +55,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={androidIcon}
-          alt=""
+          alt="androidIcon"
           className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] xl:w-[80px] xl:h-[80px]"
         />
       </div>
@@ -63,7 +63,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={flutterIcon}
-          alt=""
+          alt="flutterIcon"
           className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] xl:w-[70px] xl:h-[70px]"
         />
       </div>
@@ -72,7 +72,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={tOne}
-          alt=""
+          alt="tOne"
           className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] xl:w-[70px] xl:h-[70px]"
         />
       </div>
@@ -80,7 +80,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={tTwo}
-          alt=""
+          alt="tTwo"
           className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] xl:w-[60px] xl:h-[60px]"
         />
       </div>
@@ -88,7 +88,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={angularIcon}
-          alt=""
+          alt="angularIcon"
           className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] xl:w-[80px] xl:h-[80px]"
         />
       </div>
@@ -96,7 +96,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={tThree}
-          alt=""
+          alt="tThree"
           className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] xl:w-[70px] xl:h-[70px]"
         />
       </div>
@@ -105,7 +105,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={laravelIcon}
-          alt=""
+          alt="laravelIcon"
           className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] xl:w-[110px] xl:h-[110px]"
         />
       </div>
@@ -113,7 +113,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={mySqlIcon}
-          alt=""
+          alt="mySqlIcon"
           className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] xl:w-[100px] xl:h-[100px]"
         />
       </div>
@@ -121,7 +121,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={bootstrapIcon}
-          alt=""
+          alt="bootstrapIcon"
           className="w-[20px] h-[20px] md:w-[30px] md:h-[30px] xl:w-[50px] xl:h-[50px]"
         />
       </div>
@@ -129,7 +129,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={phpIcon}
-          alt=""
+          alt="phpIcon"
           className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] xl:w-[80px] xl:h-[80px]"
         />
       </div>
@@ -137,7 +137,7 @@ const Technology = () => {
         <Image
           draggable={false}
           src={tFour}
-          alt=""
+          alt="tFour"
           className="w-[30px] h-[30px] md:w-[40px] md:h-[40px] xl:w-[90px] xl:h-[90px]"
         />
       </div>

@@ -15,14 +15,14 @@ const WelcomeNexios = () => {
     <div className="my-11 w-full relative">
       <div className="main-container px-[40px]">
         <AnimationOnScroll id="wel-nexios" setIsVisible={setIsVisible}>
-          <div
+          <h1
             className={`${
               isVisible ? "animation-zoomIn" : ""
             } relative font-MuseoSans font-light text-[#121212] text-[32px] sm:text-[48px] text-center`}
           >
             Welcome To <span className="font-semibold">nexios</span>
             <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[280px] sm:w-[420px] mx-auto mt-[-16px] sm:mt-[-24px]"></div>
-          </div>
+          </h1>
         </AnimationOnScroll>
 
         <div className="">
@@ -72,19 +72,19 @@ const WelcomeNexios = () => {
       </div>
       <Image
         src={dotHalf}
-        alt="dot"
+        alt="dotHalf"
         className="absolute top-0 left-0"
         width={100}
       />
       <Image
         src={leftCerve}
-        alt="dot"
+        alt="leftCerve"
         className="absolute bottom-[15%] left-0"
         width={50}
       />
       <Image
         src={rightCerve}
-        alt="dot"
+        alt="rightCerve"
         className="absolute top-0 right-0"
         width={50}
       />

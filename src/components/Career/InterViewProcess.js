@@ -60,7 +60,7 @@ const InterViewProcess = () => {
           <div className="border-[8px] border-[#399EFD] rounded-full w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] flex justify-center items-center">
             <Image
               src={hrInterviewPic}
-              alt="pic"
+              alt="hrInterviewPic"
               className="w-[100px] h-[100px] sm:w-[130px] sm:h-[130px]"
             />
           </div>
@@ -86,7 +86,7 @@ const InterViewProcess = () => {
           <div className="border-[8px] border-[#399EFD] rounded-full w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] flex justify-center items-center">
             <Image
               src={hrInterviewPic}
-              alt="pic"
+              alt="hrInterviewPic"
               className="w-[100px] h-[100px] sm:w-[130px] sm:h-[130px]"
             />
           </div>
@@ -112,7 +112,7 @@ const InterViewProcess = () => {
           <div className="border-[8px] border-[#399EFD] rounded-full w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] flex justify-center items-center">
             <Image
               src={practicalRoundPic}
-              alt="pic"
+              alt="practicalRoundPic"
               className="w-[100px] h-[100px] sm:w-[130px] sm:h-[130px]"
             />
           </div>

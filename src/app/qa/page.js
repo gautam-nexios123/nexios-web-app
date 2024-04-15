@@ -29,7 +29,7 @@ const QA = () => {
             <div className="w-full md:w-[50%]">
               <Image
                 src={mobilePic}
-                alt="pic"
+                alt="mobilePic"
                 className="mx-auto w-[480px] sm:h-[450px]"
               />
             </div>
@@ -59,8 +59,9 @@ const QA = () => {
           </div>
         </div>
       </div>
-
-      <CountingBanner />
+      <div className="mt-[100px]">
+        <CountingBanner />
+      </div>
     </div>
   );
 };

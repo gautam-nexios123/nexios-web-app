@@ -72,7 +72,7 @@ const CountingBanner = () => {
   return (
     <div
       id="counting-banner"
-      className="relative w-full bg-[#399EFD] h-auto md:h-[200px] my-[50px]"
+      className="relative w-full bg-[#399EFD] h-auto md:h-[250px] overflow-hidden"
     >
       <div className="flex flex-col md:flex-row justify-center items-center h-full gap-6 py-6 md:py-0 md:gap-[100px] lg:gap-[205px] md:mx-10">
         <div className="">
@@ -104,14 +104,13 @@ const CountingBanner = () => {
       <Image
         src={leftGroup}
         alt="leftGroup"
-        className="hidden md:block absolute bottom-[-57px] left-0"
-        width={250}
+        className="hidden lg:block w-[400px] absolute bottom-[-100px] left-0"
       />
       <Image
         src={rightGroup}
         alt="rightGroup"
-        className="hidden md:block absolute bottom-[-50px] right-0"
-        width={250}
+        className="hidden lg:block absolute bottom-[-80px] right-0"
+        width={400}
       />
     </div>
   );

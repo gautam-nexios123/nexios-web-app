@@ -17,12 +17,12 @@ const ContactUs = () => {
   return (
     <div className="relative bg-[#EDF5FF] min-h-screen w-full pt-[50px] md:pt-[100px] pb-[80px]">
       <div className="main-container relative">
-        <div className="text-center pb-3 text-[#9BA9B4] font-MuseoSans font-semibold text-[24px]">
+        <h2 className="text-center pb-3 text-[#9BA9B4] font-MuseoSans font-semibold text-[24px]">
           Contact Us
-        </div>
-        <div className="text-center pb-6 text-[#121212] font-MuseoSans font-semibold text-[28px]">
+        </h2>
+        <h1 className="text-center pb-6 text-[#121212] font-MuseoSans font-semibold text-[28px]">
           Lets Get In Touch Now
-        </div>
+        </h1>
         <ContactForm />
       </div>
       <Image

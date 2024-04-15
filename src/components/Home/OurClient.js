@@ -26,7 +26,7 @@ const data = [
   {
     name: "John Doe",
     description:
-      "Most importantly, when pursuing new projects and ideas, we are able to reliably work with Nexios on scaling business goals. I feel assured growing my business with Nexios handling our tech stack and would highly recommend them to any company wanting to have a IT support and development team in meeting their business needs.					",
+      "Most importantly, when pursuing new projects and ideas, we are able to reliably work with Nexios on scaling business goals. I feel assured growing my business with Nexios handling our tech stack and would highly recommend them to any company wanting to have a IT support and development team in meeting their business needs.",
     desgnation: "CEO",
   },
 ];
@@ -91,7 +91,7 @@ const OurClient = () => {
       </AnimationOnScroll>
       <Image
         src={dotImg}
-        alt=""
+        alt="dotImg"
         className="w-[220px] h-[220px] absolute sm:left-[20%] sm:top-[15%] lg:left-[17%] lg:top-[18%]"
       />
       <div className="main-container w-[80%] lg:w-[60%] mx-auto py-[80px]">
@@ -123,13 +123,13 @@ const CarouselCard = ({ item }) => {
       <div className="w-[200px] h-[200px] bg-[#399EFD] relative mr-[30px]">
         <Image
           src={manImg}
-          alt=""
+          alt="manImg"
           className="w-full object-cover ml-[35px] mt-[20px]"
         />
       </div>
       <div className="w-full lg:w-[70%]">
         <Image src={quateIcon} alt="quate" width={45} height={45} />
-        <div className="text-[#121212] mb-2 text-justify font-MuseoSans font-normal text-[21px] py-6 line-clamp-4 italic">
+        <div className="text-[#121212] mb-2 text-justify font-MuseoSans font-normal text-[21px] py-6 italic">
           {item?.description}
         </div>
         <div className="text-[#121212] font-MuseoSans font-semibold text-lg pb-2 italic">

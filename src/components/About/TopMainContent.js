@@ -13,7 +13,7 @@ const TopMainContent = ({ text, banner, page }) => {
     <div className="w-full bg-[#F8FBFF]">
       <div className="main-container px-[40px] flex md:flex-row flex-col">
         <div className="w-full md:w-[50%] relative h-[300px] md:h-[450px]">
-          <p
+          <h2
             className={`font-MuseoSans font-semibold ${
               page === "portfolio"
                 ? "text-[42px]  w-[260px]"
@@ -21,7 +21,7 @@ const TopMainContent = ({ text, banner, page }) => {
             } text-[#121212]  flex items-center h-full`}
           >
             {text}
-          </p>
+          </h2>
           <Image
             draggable={false}
             src={squreImg}

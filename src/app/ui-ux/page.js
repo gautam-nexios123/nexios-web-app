@@ -37,7 +37,7 @@ const UiAndUx = () => {
             <div className="w-full md:w-[50%] ">
               <Image
                 src={mobilePic}
-                alt="pic"
+                alt="mobilePic"
                 className="mx-auto w-[520px] sm:h-[470px]"
               />
             </div>
@@ -62,8 +62,9 @@ const UiAndUx = () => {
           </div>
         </div>
       </div>
-
-      <CountingBanner />
+      <div className="mt-[100px]">
+        <CountingBanner />
+      </div>
     </div>
   );
 };

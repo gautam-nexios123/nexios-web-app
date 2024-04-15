@@ -20,7 +20,9 @@ const About = () => {
       <WelcomeNexios />
       <OurVision />
       <CoreValue />
-      <CountingBanner />
+      <div className="mb-[70px] mt-[70px]">
+        <CountingBanner />
+      </div>
       <MeetOurTeam />
       <ShedualeCall />
     </div>

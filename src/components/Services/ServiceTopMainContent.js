@@ -13,11 +13,11 @@ const ServiceTopMainContent = ({ text, description, banner }) => {
         <div className="w-full flex md:flex-row flex-col">
           <div className="w-full md:w-[55%] my-[30px] sm:my-0 relative h-[300px] md:h-[380px]">
             <div className="flex flex-col justify-center h-full">
-              <p
+              <h1
                 className={`font-MuseoSans font-semibold text-[30px] md:text-[46px] pb-4  text-[#121212]`}
               >
                 {text}
-              </p>
+              </h1>
               <p
                 className={`font-MuseoSans font-normal text-[19px] text-[#9BA9B4] text-justify`}
               >

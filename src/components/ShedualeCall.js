@@ -52,7 +52,7 @@ const ShedualeCall = () => {
     <div className="w-full md:flex">
       <Toaster />
       <div className="w-full md:w-[50%] flex items-center justify-center py-[50px]">
-        <Image src={logo} alt="" className="mx-auto w-[520px] h-[450px]" />
+        <Image src={logo} alt="24hour_logo" className="mx-auto w-[520px] h-[450px]" />
       </div>
       <div className="bg-[#399EFD] w-full md:w-[50%] pl-6 pt-12">
         <div className="text-[#FFFFFF] font-MuseoSans font-semibold underline text-[42px] pb-8">

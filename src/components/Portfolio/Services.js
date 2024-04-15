@@ -49,7 +49,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <div className="main-container px-[40px] mt-10 w-full">
+    <div className="main-container px-[40px] xl:px-[20px] mt-10 w-full">
       {servicesData?.map((service, index) => (
         <div
           key={index}

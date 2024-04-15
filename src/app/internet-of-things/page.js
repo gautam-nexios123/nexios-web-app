@@ -47,7 +47,7 @@ const InternetOfThings = () => {
             <div className="w-full md:w-[50%]">
               <Image
                 src={mobilePic}
-                alt="pic"
+                alt="mobilePic"
                 className="mx-auto w-[540px] sm:h-[510px]"
               />
             </div>
@@ -83,8 +83,9 @@ const InternetOfThings = () => {
           </div>
         </div>
       </div>
-
-      <CountingBanner />
+      <div className="mt-[100px]">
+        <CountingBanner />
+      </div>
     </div>
   );
 };

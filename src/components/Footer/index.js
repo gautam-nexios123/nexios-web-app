@@ -78,11 +78,11 @@ const Footer = () => {
               (Uttran), Surat, Gujarat 394105
             </div>
             <div className="font-MuseoSans flex items-center hover:text-[#399EFD] cursor-pointer gap-2 font-normal text-[16px] text-[#9BA9B4] pb-4">
-              <Image src={phoneImg} alt="location" />
+              <Image src={phoneImg} alt="phoneImg" />
               <a href="tel:+918866856039">+91 88668 56039</a>
             </div>
             <div className="font-MuseoSans hover:text-[#399EFD] cursor-pointer flex items-center gap-2 font-normal text-[16px] text-[#9BA9B4]">
-              <Image src={mailImg} alt="location" />
+              <Image src={mailImg} alt="mailImg" />
               <a href="mailto:info@nexios.in">info@nexios.in</a>
             </div>
           </div>
