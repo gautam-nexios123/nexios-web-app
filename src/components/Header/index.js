@@ -9,6 +9,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { Drawer } from "@mui/material";
 import ServicesDropDown from "./ServicesDropDown";
 import { scrollToBottom } from "@/utils";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const Header = () => {
   const scrollButtonRef = useRef(null);
@@ -162,7 +163,7 @@ const MenuItem = ({
     >
       {isServices ? (
         <>
-          <div>{formattedPath}</div>
+          <div>{formattedPath} <KeyboardArrowDownIcon /></div>
           {isServicesDropdownOpen && (
             <div className="absolute bg-white border border-gray-200 shadow-lg z-50">
               <ServicesDropDown
