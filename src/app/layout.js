@@ -5,6 +5,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
 import { pathDescriptions } from "@/utils";
+import { useEffect } from "react";
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-YESDGWM45W');
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +23,10 @@ export default function RootLayout({ children }) {
   const appTitle = pathName.substring(1)
     .replace(/-/g, " ")
     .replace(/\b\w/g, c => c.toUpperCase());
+
+    useEffect(() => {
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
 
   return (
     <html lang="en">
