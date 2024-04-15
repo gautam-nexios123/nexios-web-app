@@ -12,6 +12,7 @@ import lightCircle from "../../assets/images/contact-us/light-circle.svg";
 import peopleImg from "../../assets/images/contact-us/people-img.svg";
 import downArrow from "../../assets/images/contact-us/down-arrow.svg";
 // import mentop from "../../assets/images/contact-us/men-top.svg";
+
 const ContactUs = () => {
   return (
     <div className="relative bg-[#EDF5FF] min-h-screen w-full pt-[50px] md:pt-[100px] pb-[80px]">
@@ -40,25 +41,25 @@ const ContactUs = () => {
         draggable={false}
         src={girlImg}
         alt="girlImg"
-        className="hidden lg:block h-[200px] absolute bottom-0 left-[10%]"
+        className="hidden lg:block h-[200px] absolute bottom-0 left-[3%] xl:left-[10%]"
       />
       <Image
         draggable={false}
         src={lightCircle}
         alt="lightCircle"
-        className="hidden lg:block w-[130px] absolute bottom-[16%] left-[11.5%]"
+        className="hidden lg:block w-[130px] absolute bottom-[12%] left-[5%] xl:left-[11%]"
       />
       <Image
         draggable={false}
         src={kamla}
         alt="kamla"
-        className="hidden lg:block w-[60px] absolute bottom-0 left-[8%]"
+        className="hidden lg:block w-[60px] absolute bottom-0 left-[2%] xl:left-[8%]"
       />
       <Image
         draggable={false}
         src={peopleImg}
         alt="peopleImg"
-        className="hidden lg:block h-[200px] absolute right-[8%] bottom-0"
+        className="hidden lg:block h-[200px] absolute right-0 xl:right-[8%] bottom-0"
       />
       <Image
         draggable={false}

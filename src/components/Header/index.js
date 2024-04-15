@@ -71,7 +71,7 @@ const Header = () => {
   return (
     <div
       className={`w-full bg-white ${
-        isSticky ? "sticky top-0  z-10 shadow-lg" : ""
+        isSticky ? "sticky top-0  z-[9999] shadow-lg" : ""
       } transition-all duration-500`}
     >
       <div className="main-container px-[40px] flex items-center justify-between py-3">
