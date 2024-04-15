@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
+import { pathDescriptions } from "@/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +15,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   const pathName = usePathname();
+  const description = pathDescriptions[pathName] || "Nexios Technologies LLP";
 
   const appTitle = pathName.substring(1)
     .replace(/-/g, " ")
@@ -23,7 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>{`${pathName === "/" ? "Nexios-Mobile & Web development" : `${appTitle} - Nexios Technologies`}`}</title>
-        <meta name="description" content={"Nexios Technologies LLP"} />
+        <meta name="description" content={description} />
         <link rel="icon" href="/icon.png" sizes="32*32" />
       </head>
       <body className={inter.className}>
