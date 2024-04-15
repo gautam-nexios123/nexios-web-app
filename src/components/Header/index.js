@@ -159,7 +159,7 @@ const MenuItem = ({
       onMouseLeave={() => isServices && setIsServicesDropdownOpen(false)}
       className={`font-MuseoSans font-normal text-[19px] capitalize ${
         currentPath === path ? "text-[#399EFD]" : "text-[#121212]"
-      } cursor-pointer`}
+      } cursor-pointer hover:text-[#399EFD]`}
     >
       {isServices ? (
         <>
