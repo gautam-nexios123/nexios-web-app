@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import serviceOne from "../../assets/images/portfolio/s1.svg";
 import serviceTwo from "../../assets/images/portfolio/s2.svg";
 import serviceThree from "../../assets/images/portfolio/s3.svg";

@@ -11,7 +11,7 @@ import kamla from "../../assets/images/contact-us/kamla.svg";
 import lightCircle from "../../assets/images/contact-us/light-circle.svg";
 import peopleImg from "../../assets/images/contact-us/people-img.svg";
 import downArrow from "../../assets/images/contact-us/down-arrow.svg";
-import mentop from "../../assets/images/contact-us/men-top.svg";
+// import mentop from "../../assets/images/contact-us/men-top.svg";
 const ContactUs = () => {
   return (
     <div className="relative bg-[#EDF5FF] min-h-screen w-full pt-[50px] md:pt-[100px] pb-[80px]">

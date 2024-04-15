@@ -9,7 +9,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CustomDot } from "@/utils";
 import { AnimationOnScroll } from "../Animations";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 const responsive = {
   superLargeDesktop: {

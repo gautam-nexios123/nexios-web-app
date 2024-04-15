@@ -3,9 +3,8 @@ import CustomButton from "@/common/CustomButton";
 import Image from "next/image";
 import frame from "../../assets/images/home/Frame.svg";
 import { scrollToBottom } from "@/utils";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useSpring, animated } from "react-spring";
 import { AnimationOnScroll } from "../Animations";
 const WhoNexios = () => {
   const scrollButtonRef = useRef(null);
