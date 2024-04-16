@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation";
 import { pathDescriptions } from "@/utils";
 import { useEffect } from "react";
 import ReactGA from 'react-ga';
+import Script from "next/script";
+
 ReactGA.initialize('G-YESDGWM45W');
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,7 +27,7 @@ export default function RootLayout({ children }) {
     .replace(/\b\w/g, c => c.toUpperCase());
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.pageview(pathName + window.location.search);
   }, [pathName]);
 
   return (
@@ -34,7 +36,19 @@ export default function RootLayout({ children }) {
         <title>{`${pathName === "/" ? "Nexios-Mobile & Web development" : `${appTitle} - Nexios Technologies`}`}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/icon.png" sizes="32*32" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YESDGWM45W"></script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-YESDGWM45W"></Script>
+        <Script id="google-analytics">
+          {
+            `
+            window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-YESDGWM45W');
+            `
+          }
+        </Script>
+
       </head>
       <body className={inter.className}>
         <Header />
