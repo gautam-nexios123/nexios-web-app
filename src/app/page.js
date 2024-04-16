@@ -12,7 +12,7 @@ import OurClient from "@/components/Home/OurClient";
 import ShedualeCall from "@/components/ShedualeCall";
 import { useEffect, useRef } from "react";
 import { scrollToBottom } from "@/utils";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import ReactGA from 'react-ga';
 
 ReactGA.initialize('G-YESDGWM45W');
@@ -20,9 +20,12 @@ ReactGA.initialize('G-YESDGWM45W');
 export default function Home() {
   const scrollButtonRef = useRef(null);
   const router = useRouter();
+  const pathName = usePathname();
+
+  // console.log("pathName++++",pathName ,window.location.pathname + window.location.search);
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.pageview(pathName + window.location.search);
   }, []);
 
   return (
