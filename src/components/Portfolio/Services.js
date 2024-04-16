@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import serviceOne from "../../assets/images/portfolio/s1.svg";
 import serviceTwo from "../../assets/images/portfolio/s2.svg";
 import serviceThree from "../../assets/images/portfolio/s3.svg";
@@ -7,6 +7,7 @@ import serviceFour from "../../assets/images/portfolio/s4.svg";
 import serviceFive from "../../assets/images/portfolio/s5.svg";
 import serviceSix from "../../assets/images/portfolio/s6.svg";
 import Image from "next/image";
+import { Skeleton } from "@mui/material";
 
 const servicesData = [
   {
@@ -48,22 +49,38 @@ const servicesData = [
 ];
 
 const Services = () => {
+
+  const [loadedImages, setLoadedImages] = useState(Array(servicesData?.length).fill(false));
+
+  const handleImageLoaded = (index) => {
+    setLoadedImages(prev => {
+      const newLoaded = [...prev];
+      newLoaded[index] = true;
+      return newLoaded;
+    });
+  };
+
   return (
     <div className="main-container px-[40px] xl:px-[20px] mt-10 w-full">
       {servicesData?.map((service, index) => (
         <div
           key={index}
-          className="w-[100%] mx-auto flex flex-col md:flex-row lg:flex-row items-center"
+          className="w-[100%] h-full mx-auto flex flex-col md:flex-row lg:flex-row items-center"
         >
           {index % 2 === 0 ? (
             <>
-              <div className="w-full lg:w-[50%] pb-4 md:pb-0 lg:pb-0">
+              <div className="w-full  lg:w-[50%] pb-4 md:pb-0 lg:pb-0 ">
+                {!loadedImages[index] && <Skeleton variant="rectangular" className="w-full h-[241px] lg:h-[378px]" />}
                 <Image
                   src={service.image}
                   alt={service.title}
-                  className="w-fit h-full"
+                  className={`w-fit h-full ${loadedImages[index] ? "visible" : "invisible"}`}
+                  onLoadingComplete={() => handleImageLoaded(index)}
+                  style={{ visibility: loadedImages[index] ? 'visible' : 'hidden' }}
+                  loading="lazy"
                 />
               </div>
+
               <div className="w-full lg:w-[50%] m-auto  pb-4 md:pb-0 lg:pb-0">
                 <div className="font-MuseoSans font-semibold text-[#121212] text-[24px] md:text-[26px] lg:text-[32px] text-center pb-3">
                   {service.title}
@@ -84,10 +101,13 @@ const Services = () => {
                 </div>
               </div>
               <div className="w-full lg:w-[50%] pb-4 md:pb-0 lg:pb-0">
+                {!loadedImages[index] && <Skeleton variant="rectangular" className="w-full h-[241px] lg:h-[378px]" />}
                 <Image
                   src={service.image}
                   alt={service.title}
-                  className="w-fit h-full"
+                  className={`w-fit h-full ${loadedImages[index] ? "visible" : "invisible"}`}
+                  onLoadingComplete={() => handleImageLoaded(index)}
+                  loading="lazy"
                 />
               </div>
             </>

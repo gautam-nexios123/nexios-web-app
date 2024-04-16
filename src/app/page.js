@@ -10,13 +10,20 @@ import DiscoverService from "@/components/Home/DiscoverService";
 import Technology from "@/components/Home/Technology";
 import OurClient from "@/components/Home/OurClient";
 import ShedualeCall from "@/components/ShedualeCall";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { scrollToBottom } from "@/utils";
 import { useRouter } from "next/navigation";
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-YESDGWM45W');
 
 export default function Home() {
   const scrollButtonRef = useRef(null);
   const router = useRouter();
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   return (
     <div className="relative">
