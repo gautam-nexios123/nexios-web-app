@@ -1,3 +1,8 @@
+export const validateEmail = (email) => {
+  const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/;
+  return emailRegex.test(email);
+};
+
 const customDotStyles = {
   width: "10px",
   height: "10px",

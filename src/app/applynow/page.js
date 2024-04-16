@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
 import toast, { Toaster } from "react-hot-toast";
 import CustomButton from "@/common/CustomButton";
+import { validateEmail } from "@/utils";
 const ApplyNow = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -31,10 +32,20 @@ const ApplyNow = () => {
       newErrors.lastName = "Please fill out this field.";
       isValid = true;
     }
+
     if (!formData?.email) {
       newErrors.email = "Please fill out this field.";
       isValid = true;
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = "Enter correct email !";
+      isValid = true;
     }
+
+    if (!file) {
+      newErrors.file = "Please attach your resume.";
+      isValid = true;
+    }
+
     setError(newErrors);
     return isValid;
   };
@@ -46,10 +57,17 @@ const ApplyNow = () => {
   };
 
   const formSubmit = () => {
-    if (handleError()) {
-      console.log("Faillllllllll");
-    } else {
+    if (!handleError()) {
+      const apiFormData = new FormData();
+      apiFormData.append('firstName', formData?.firstName);
+      apiFormData.append('lastName', formData?.lastName);
+      apiFormData.append('email', formData?.email);
+      apiFormData.append('phone', formData?.phone);
+      apiFormData.append('subject', formData?.subject);
+      apiFormData.append('file', file);
+
       toast.success("Successfully Applyed");
+      
     }
   };
 
@@ -115,6 +133,7 @@ const ApplyNow = () => {
               </div>
               <div className="w-full md:w-[50%] mb-4 md:mb-0">
                 <TextField
+                  type="number"
                   label="Phone Number"
                   name="phone"
                   onChange={handleOnChange}
@@ -154,12 +173,21 @@ const ApplyNow = () => {
               <div className="font-MuseoSans font-normal text-[#9BA9B4] text-[16px] pb-2">
                 Attach resume (required)
               </div>
-              <input
-                type="file"
-                accept="application/pdf"
-                onChange={(e) => setFile(e.target.files[0])}
-                className="w-full border-b border-black "
-              />
+              <div className="w-full mb-4 md:mb-0">
+                <input
+                  type="file"
+                  name="file"
+                  accept="application/pdf"
+                  onChange={(e) => { setFile(e.target.files[0]); setError({ ...error, file: "" }); }}
+                  className="w-full border-b border-black "
+                />
+                {error?.file && (
+                  <div className="font-MuseoSans font-normal text-red-600 text-sm">
+                    {error?.file}
+                  </div>
+                )}
+              </div>
+
             </div>
             <div className="mt-10">
               <CustomButton

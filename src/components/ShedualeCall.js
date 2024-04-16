@@ -4,14 +4,17 @@ import logo from "../assets/images/shedule-call.svg";
 import CustomButton from "@/common/CustomButton";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
+import { validateEmail } from "@/utils";
 const ShedualeCall = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    brif: "",
+    brief: "",
   });
   const [error, setError] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const handleError = () => {
     let isValid = false;
@@ -25,7 +28,11 @@ const ShedualeCall = () => {
     if (!formData?.email) {
       newErrors.email = "Email is required*";
       isValid = true;
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = "Enter correct email !";
+      isValid = true;
     }
+    
     if (!formData?.phone) {
       newErrors.phone = "Phone is required*";
       isValid = true;
@@ -40,11 +47,21 @@ const ShedualeCall = () => {
     setError({ ...error, [name]: "" });
   };
 
-  const formSubmit = () => {
-    if (handleError()) {
-      console.log("Faillllllllll");
-    } else {
-      toast.success("Successfully Submited!");
+  const formSubmit = async () => {
+    if (!handleError()) {
+      setLoading(true);
+      await axios.post(`${process.env.NEXT_PUBLIC_API_BASEURL}/add_schedule`, formData).then(res => {
+        if (res?.data?.code === 200) {
+          toast.success(res?.data?.message);
+          setLoading(false);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            brief: "",
+          })
+        }
+      }).catch((err) => { console.log(err); setLoading(false) })
     }
   };
 
@@ -75,11 +92,12 @@ const ShedualeCall = () => {
           </div>
           <div className="mb-8">
             <input
-              type="text"
+              type="email"
               name="email"
               placeholder="Work Email"
               className="bg-transparent w-[80%] lg:w-[65%] text-white text-[20px] border-b outline-none placeholder-white p-2"
               onChange={(e) => handleOnChange(e)}
+              required
             />
             {error?.email && (
               <div className="font-MuseoSans font-normal text-red-600 text-[18px]">
@@ -89,7 +107,7 @@ const ShedualeCall = () => {
           </div>
           <div className="mb-8">
             <input
-              type="text"
+              type="number"
               name="phone"
               placeholder="Phone"
               className="bg-transparent w-[80%] lg:w-[65%] text-white text-[20px] border-b outline-none placeholder-white p-2"
@@ -104,7 +122,7 @@ const ShedualeCall = () => {
           <div className="mb-8">
             <input
               type="text"
-              name="brif"
+              name="brief"
               placeholder="Share your requirements in brief"
               className="bg-transparent w-[80%] lg:w-[65%] text-white text-[20px] border-b outline-none placeholder-white p-2"
               onChange={(e) => handleOnChange(e)}
@@ -117,6 +135,7 @@ const ShedualeCall = () => {
               textColor="#399EFD"
               btnWidth="120px"
               text="Submit"
+              process={loading}
             />
           </div>
         </div>

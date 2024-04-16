@@ -1,9 +1,12 @@
+import { CircularProgress } from "@mui/material";
+
 const CustomButton = ({
   onSubmitButton,
   bgColor,
   textColor,
   btnWidth,
   text,
+  process
 }) => {
   return (
     <button
@@ -17,6 +20,12 @@ const CustomButton = ({
       className={`py-[8px] bg-black font-MuseoSans font-normal text-[18px] shadow-xl`}
     >
       {text}
+      {
+        process && <span className="ml-2">
+        <CircularProgress size={18}  />
+      </span>
+      }
+      
     </button>
   );
 };
