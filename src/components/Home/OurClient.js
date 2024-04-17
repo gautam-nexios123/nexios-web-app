@@ -51,6 +51,10 @@ const OurClient = () => {
         toast.error(res?.data?.message);
       }
     }).catch((err) => { console.log(err); setLoading(false) })
+
+    await axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=1`).then(res => {
+      console.log("res111111111111",res);
+    }).catch((err) => { console.log(err) })
   }
 
   useEffect(() => {
