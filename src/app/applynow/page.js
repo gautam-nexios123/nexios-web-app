@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import TopBanner from "../../assets/images/career/career-banner.svg";
 import CareerTopMain from "@/components/Career/CareerTopMain";
 import TextField from "@mui/material/TextField";
@@ -7,6 +7,7 @@ import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
 import toast, { Toaster } from "react-hot-toast";
 import CustomButton from "@/common/CustomButton";
 import { validateEmail } from "@/utils";
+import axios from "axios";
 const ApplyNow = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -14,10 +15,14 @@ const ApplyNow = () => {
     email: "",
     phone: "",
     subject: "",
-  });
+  }
+  );
 
   const [error, setError] = useState({});
   const [file, setFile] = useState("");
+  const fileInputRef = useRef(null);
+
+  const [loading, setLoading] = useState(false);
 
   const handleError = () => {
     let isValid = false;
@@ -56,8 +61,10 @@ const ApplyNow = () => {
     setError({ ...error, [name]: "" });
   };
 
-  const formSubmit = () => {
+  const formSubmit = async () => {
     if (!handleError()) {
+      setLoading(false);
+
       const apiFormData = new FormData();
       apiFormData.append('firstName', formData?.firstName);
       apiFormData.append('lastName', formData?.lastName);
@@ -66,8 +73,24 @@ const ApplyNow = () => {
       apiFormData.append('subject', formData?.subject);
       apiFormData.append('file', file);
 
-      toast.success("Successfully Applyed");
-      
+      await axios.post(`${process.env.NEXT_PUBLIC_API_BASEURL}/apply_now`, apiFormData).then(res => {
+        if (res?.data?.code === 200) {
+          toast.success(res?.data?.message);
+          setLoading(false);
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            subject: "",
+          }
+          );
+          setFile("");
+          fileInputRef.current.value = "";
+        }else{
+          toast.error(res?.data?.message);
+        }
+      }).catch((err) => { console.log(err); setLoading(false) })
     }
   };
 
@@ -81,7 +104,7 @@ const ApplyNow = () => {
       />
 
       <div className="bg-[#EDF5FF] w-full py-[100px]">
-        <div className="main-container w-[80%] md:w-[70%] lg:w-[50%] bg-white rounded-md shadow p-[35px] mx-auto">
+        <div className="main-container w-[80%] lg:w-[50%] xl:w-[40%] bg-white rounded-md shadow p-[35px] mx-auto">
           <div className="font-MuseoSans font-semibold text-[#121212] text-[30px]">
             Apply Now
           </div>
@@ -89,6 +112,7 @@ const ApplyNow = () => {
             <div className="w-full flex flex-col md:flex-row md:gap-10">
               <div className="w-full md:w-[50%] mb-4 md:mb-0">
                 <TextField
+                  value={formData.firstName}
                   label="First Name"
                   name="firstName"
                   onChange={handleOnChange}
@@ -103,6 +127,7 @@ const ApplyNow = () => {
               </div>
               <div className="w-full md:w-[50%] mb-4 md:mb-0">
                 <TextField
+                  value={formData.lastName}
                   label="Last Name"
                   name="lastName"
                   onChange={handleOnChange}
@@ -119,6 +144,7 @@ const ApplyNow = () => {
             <div className="w-full flex flex-col md:flex-row md:gap-10 md:mt-6">
               <div className="w-full md:w-[50%] mb-4 md:mb-0">
                 <TextField
+                  value={formData.email}
                   label="Email ID"
                   name="email"
                   onChange={handleOnChange}
@@ -133,6 +159,7 @@ const ApplyNow = () => {
               </div>
               <div className="w-full md:w-[50%] mb-4 md:mb-0">
                 <TextField
+                  value={formData.phone}
                   type="number"
                   label="Phone Number"
                   name="phone"
@@ -177,6 +204,7 @@ const ApplyNow = () => {
                 <input
                   type="file"
                   name="file"
+                  ref={fileInputRef}
                   accept="application/pdf"
                   onChange={(e) => { setFile(e.target.files[0]); setError({ ...error, file: "" }); }}
                   className="w-full border-b border-black "
@@ -196,6 +224,7 @@ const ApplyNow = () => {
                 textColor="white"
                 btnWidth="150px"
                 text="Submit Now"
+                process={loading}
               />
             </div>
           </div>

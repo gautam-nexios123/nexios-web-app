@@ -60,6 +60,8 @@ const ShedualeCall = () => {
             phone: "",
             brief: "",
           })
+        }else{
+          toast.error(res?.data?.message);
         }
       }).catch((err) => { console.log(err); setLoading(false) })
     }
@@ -80,6 +82,7 @@ const ShedualeCall = () => {
             <input
               type="text"
               name="name"
+              value={formData.name}
               placeholder="Name*"
               className="bg-transparent w-[80%] lg:w-[65%] text-white text-[20px] border-b outline-none placeholder-white p-2"
               onChange={(e) => handleOnChange(e)}
@@ -94,6 +97,7 @@ const ShedualeCall = () => {
             <input
               type="email"
               name="email"
+              value={formData.email}
               placeholder="Work Email"
               className="bg-transparent w-[80%] lg:w-[65%] text-white text-[20px] border-b outline-none placeholder-white p-2"
               onChange={(e) => handleOnChange(e)}
@@ -109,6 +113,7 @@ const ShedualeCall = () => {
             <input
               type="number"
               name="phone"
+              value={formData.phone}
               placeholder="Phone"
               className="bg-transparent w-[80%] lg:w-[65%] text-white text-[20px] border-b outline-none placeholder-white p-2"
               onChange={(e) => handleOnChange(e)}
@@ -123,6 +128,7 @@ const ShedualeCall = () => {
             <input
               type="text"
               name="brief"
+              value={formData.brief}
               placeholder="Share your requirements in brief"
               className="bg-transparent w-[80%] lg:w-[65%] text-white text-[20px] border-b outline-none placeholder-white p-2"
               onChange={(e) => handleOnChange(e)}

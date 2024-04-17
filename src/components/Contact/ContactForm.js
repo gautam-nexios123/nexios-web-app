@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import CustomButton from "@/common/CustomButton";
 import toast, { Toaster } from "react-hot-toast";
+import { validateEmail } from "@/utils";
+import axios from "axios";
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -12,6 +15,7 @@ const ContactForm = () => {
     message: "",
   });
   const [error, setError] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const handleError = () => {
     let isValid = false;
@@ -29,7 +33,11 @@ const ContactForm = () => {
     if (!formData?.email) {
       newErrors.email = "Please fill out this field.";
       isValid = true;
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = "Enter correct email !";
+      isValid = true;
     }
+
     setError(newErrors);
     return isValid;
   };
@@ -40,11 +48,24 @@ const ContactForm = () => {
     setError({ ...error, [name]: "" });
   };
 
-  const formSubmit = () => {
-    if (handleError()) {
-      console.log("Faillllllllll");
-    } else {
-      toast.success("Successfully Submited!");
+  const formSubmit = async () => {
+    if (!handleError()) {
+      setLoading(true);
+      await axios.post(`${process.env.NEXT_PUBLIC_API_BASEURL}/contact_us` , formData).then(res => {
+        if (res?.data?.code === 200) {
+          toast.success(res?.data?.message);
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            message: "",
+          })
+          setLoading(false);
+        }else{
+          toast.error(res?.data?.message);
+        }
+      }).catch((err) => { console.log(err); setLoading(false) })
     }
   };
 
@@ -57,6 +78,7 @@ const ContactForm = () => {
             <TextField
               label="First Name"
               name="firstName"
+              value={formData?.firstName}
               onChange={handleOnChange}
               variant="standard"
               fullWidth
@@ -71,6 +93,7 @@ const ContactForm = () => {
             <TextField
               label="Last Name"
               name="lastName"
+              value={formData?.lastName}
               onChange={handleOnChange}
               variant="standard"
               fullWidth
@@ -87,6 +110,7 @@ const ContactForm = () => {
             <TextField
               label="Email ID"
               name="email"
+              value={formData?.email}
               onChange={handleOnChange}
               variant="standard"
               fullWidth
@@ -100,6 +124,7 @@ const ContactForm = () => {
           <div className="w-full md:w-[50%] mb-4 md:mb-0">
             <TextField
               label="Phone Number"
+              value={formData?.phone}
               name="phone"
               onChange={handleOnChange}
               variant="standard"
@@ -112,6 +137,7 @@ const ContactForm = () => {
           <textarea
             className="w-full border-b-2 p-2 outline-none"
             name="message"
+            value={formData?.message}
             rows="4"
             cols="50"
             placeholder="Type Your Message"
@@ -126,6 +152,7 @@ const ContactForm = () => {
             textColor="white"
             btnWidth="150px"
             text="Submit Now"
+            process={loading}
           />
         </div>
       </div>

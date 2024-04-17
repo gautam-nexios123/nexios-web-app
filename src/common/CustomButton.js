@@ -22,7 +22,7 @@ const CustomButton = ({
       {text}
       {
         process && <span className="ml-2">
-        <CircularProgress size={18}  />
+        <CircularProgress style={{color : textColor}} size={18}  />
       </span>
       }
       

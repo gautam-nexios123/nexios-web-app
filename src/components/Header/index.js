@@ -117,7 +117,7 @@ const Header = () => {
           height={25}
           onClick={toggleDrawer}
         />
-        <Drawer open={isDrawerOpen} onClose={toggleDrawer}>
+        <Drawer sx={{zIndex:"99999"}} open={isDrawerOpen} onClose={toggleDrawer}>
           <Image
             onClick={toggleDrawer}
             className="ml-auto mr-6 my-6 cursor-pointer"

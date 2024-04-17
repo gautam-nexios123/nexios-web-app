@@ -1,15 +1,13 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
-import teemOne from "../../assets/images/about/team-1.svg";
-import teemtwo from "../../assets/images/about/team-2.svg";
-import teemThree from "../../assets/images/about/team-3.svg";
-import teemFour from "../../assets/images/about/team-4.svg";
-import teemFive from "../../assets/images/about/team-5.svg";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CustomDot } from "@/utils";
 import { AnimationOnScroll } from "../Animations";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { CircularProgress } from "@mui/material";
 
 const responsive = {
   superLargeDesktop: {
@@ -30,46 +28,36 @@ const responsive = {
   },
 };
 
-const caurselData = [
-  {
-    name: "Chetan Jasani",
-    photo: teemOne,
-    designation: "Graphics Designer",
-  },
-  {
-    name: "Mahi",
-    photo: teemtwo,
-    designation: "App developer",
-  },
-  {
-    name: "Aditi",
-    photo: teemThree,
-    designation: "Web developer",
-  },
-  {
-    name: "Shreya",
-    photo: teemFour,
-    designation: "UI/UX Design",
-  },
-  {
-    name: "Bhavik",
-    photo: teemFive,
-    designation: "Software developer",
-  },
-];
-
 const MeetOurTeam = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isHoveredID, setIsHoveredID] = useState();
   const [isVisible, setIsVisible] = useState(false);
 
+  const [teamData, setTeamData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const handleGetClient = async () => {
+    setLoading(true);
+    await axios.get(`${process.env.NEXT_PUBLIC_API_BASEURL}/our_team`).then(res => {
+      if (res?.data?.code === 200) {
+        setLoading(false);
+        setTeamData(res?.data?.data)
+      } else {
+        toast.error(res?.data?.message);
+      }
+    }).catch((err) => { console.log(err); setLoading(false) })
+  }
+
+  useEffect(() => {
+    handleGetClient()
+  }, []);
+
   return (
     <div className="main-container px-[40px] mb-12">
       <AnimationOnScroll id="meet-team" setIsVisible={setIsVisible}>
         <div
-          className={`${
-            isVisible ? "animation-zoomIn" : ""
-          } relative font-MuseoSans font-semibold text-[#121212] text-[32px] sm:text-[48px] text-center`}
+          className={`${isVisible ? "animation-zoomIn" : ""
+            } relative font-MuseoSans font-semibold text-[#121212] text-[32px] sm:text-[48px] text-center`}
         >
           Meet Our Team
           <div className="bg-[#399EFD] opacity-[25%] h-[8px] w-[240px] sm:w-[350px] mx-auto mt-[-16px] sm:mt-[-24px]"></div>
@@ -95,50 +83,56 @@ const MeetOurTeam = () => {
       </div>
 
       <div className="mt-11 mx-auto">
-        <Carousel
-          arrows={true}
-          swipeable={false}
-          draggable={false}
-          showDots={true}
-          responsive={responsive}
-          infinite={true}
-          transitionDuration={500}
-          customDot={<CustomDot />}
-        >
-          {caurselData?.map((item, index) => (
-            <div key={index} className="mb-8 w-full">
-              <div
-                className="relative cursor-pointer h-[340px] sm:mx-[12px]"
-                onMouseEnter={() => {
-                  setIsHovered(true);
-                  setIsHoveredID(index);
-                }}
-                onMouseLeave={() => {
-                  setIsHovered(false);
-                  setIsHoveredID("");
-                }}
-              >
-                <Image
-                  className="h-full w-[100%] object-cover"
-                  src={item?.photo}
-                  alt="teemOne"
-                  draggable={false}
-                />
-                <div className="absolute top-0 w-full h-full bg-transparent hover:bg-[rgba(57,158,253,0.5)] transition-all duration-500"></div>
-                {isHovered && isHoveredID === index && (
-                  <div className="absolute bottom-[30px] w-full">
-                    <div className="text-white text-center font-MuseoSans font-semibold text-lg">
-                      {item?.name}
+        {
+          loading ? <div className="text-center"><CircularProgress style={{ color: "#399EFD" }} size={35} /></div> : teamData?.length > 0 ? <Carousel
+            arrows={true}
+            swipeable={false}
+            draggable={false}
+            showDots={true}
+            responsive={responsive}
+            infinite={true}
+            transitionDuration={500}
+            customDot={<CustomDot />}
+          >
+            {teamData?.map((item, index) => (
+              <div key={index} className="mb-8 w-full">
+                <div
+                  className="relative cursor-pointer h-[340px] sm:mx-[12px]"
+                  onMouseEnter={() => {
+                    setIsHovered(true);
+                    setIsHoveredID(index);
+                  }}
+                  onMouseLeave={() => {
+                    setIsHovered(false);
+                    setIsHoveredID("");
+                  }}
+                >
+                  <Image
+                    width={100}
+                    height={100}
+                    className="!h-full !w-[100%] object-cover"
+                    src={`${process.env.NEXT_PUBLIC_API_BASEURL}/${item?.image}`}
+                    alt="teemOne"
+                    draggable={false}
+                  />
+                  <div className="absolute top-0 w-full h-full bg-transparent hover:bg-[rgba(57,158,253,0.5)] transition-all duration-500"></div>
+                  {isHovered && isHoveredID === index && (
+                    <div className="absolute bottom-[30px] w-full">
+                      <div className="text-white text-center font-MuseoSans font-semibold text-lg">
+                        {item?.name}
+                      </div>
+                      <div className="text-white text-center font-MuseoSans font-semibold text-sm">
+                        {item?.designation}
+                      </div>
                     </div>
-                    <div className="text-white text-center font-MuseoSans font-semibold text-sm">
-                      {item?.designation}
-                    </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
-        </Carousel>
+            ))}
+          </Carousel> : <div className="text-black font-MuseoSans font-semibold text-center text-[26px]">No data available !</div>
+        }
+
+
       </div>
     </div>
   );
