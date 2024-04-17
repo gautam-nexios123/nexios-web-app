@@ -39,11 +39,7 @@ const OurClient = () => {
 
   const handleGetClient = async () => {
     setLoading(true);
-    await axios.get(`${process.env.NEXT_PUBLIC_API_BASEURL}/our_client` , {headers : {
-      "Access-Control-Allow-Origin" : "*",
-      "Access-Control-Allow-Headers" : "*",
-      "Content-Type" : "application/json"
-    }}).then(res => {
+    await axios.get(`${process.env.NEXT_PUBLIC_API_BASEURL}/our_client`).then(res => {
       if (res?.data?.code === 200) {
         setLoading(false);
         setClientData(res?.data?.data)
@@ -51,10 +47,6 @@ const OurClient = () => {
         toast.error(res?.data?.message);
       }
     }).catch((err) => { console.log(err); setLoading(false) })
-
-    await axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=1`).then(res => {
-      console.log("res111111111111",res);
-    }).catch((err) => { console.log(err) })
   }
 
   useEffect(() => {
