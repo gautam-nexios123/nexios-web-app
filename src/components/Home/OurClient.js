@@ -39,7 +39,11 @@ const OurClient = () => {
 
   const handleGetClient = async () => {
     setLoading(true);
-    await axios.get(`${process.env.NEXT_PUBLIC_API_BASEURL}/our_client`).then(res => {
+    await axios.get(`${process.env.NEXT_PUBLIC_API_BASEURL}/our_client` , {headers : {
+      "Access-Control-Allow-Origin" : "*",
+      "Access-Control-Allow-Headers" : "*",
+      "Content-Type" : "application/json"
+    }}).then(res => {
       if (res?.data?.code === 200) {
         setLoading(false);
         setClientData(res?.data?.data)
