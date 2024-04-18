@@ -1,54 +1,14 @@
 "use client";
-import React, { useState } from "react";
-import serviceOne from "../../assets/images/portfolio/s1.svg";
-import serviceTwo from "../../assets/images/portfolio/s2.svg";
-import serviceThree from "../../assets/images/portfolio/s3.svg";
-import serviceFour from "../../assets/images/portfolio/s4.svg";
-import serviceFive from "../../assets/images/portfolio/s5.svg";
-import serviceSix from "../../assets/images/portfolio/s6.svg";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { Skeleton } from "@mui/material";
-
-const servicesData = [
-  {
-    image: serviceOne,
-    title: "Concierge Service App",
-    description:
-      "Your exclusive personal concierge and lifestyle management service, helping improve your work-life balance, connecting you to lifestyle experts and advisors through your mobile device.",
-  },
-  {
-    image: serviceTwo,
-    title: "Courier Delivery App",
-    description:
-      "Designed to improve the consistency of our operations and process efficiency, and add value to the customer through time and cost savings.",
-  },
-  {
-    image: serviceThree,
-    title: "HomeHealth Services App",
-    description:
-      "HOMECARE2GO® is created to connect people seeking help to verified care providers that can serve them...",
-  },
-  {
-    image: serviceFour,
-    title: "Stylist Booking App",
-    description:
-      "This app is a marketplace for beauty and grooming where the customer can easily discover beautician and stylist and book them online at their preferred location.",
-  },
-  {
-    image: serviceFive,
-    title: "Place For Online Car Auctions",
-    description:
-      "Sell Buy Drive Auctions Are Designed To Provide The Best Experience For Buyers And Sellers Alike.",
-  },
-  {
-    image: serviceSix,
-    title: "Care Coordinations App",
-    description:
-      "Care Coordinations is HIPAA secured & AI-powered communication app for Home Health & Hospice Care Organizations...",
-  },
-];
+import { CircularProgress, Skeleton } from "@mui/material";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const Services = () => {
+
+  const [servicesData, setServicesData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const [loadedImages, setLoadedImages] = useState(Array(servicesData?.length).fill(false));
 
@@ -60,62 +20,92 @@ const Services = () => {
     });
   };
 
+  const handleGetServicesData = async () => {
+    setLoading(true);
+    await axios.get(`${process.env.NEXT_PUBLIC_API_BASEURL}/portfolio`).then(res => {
+      if (res?.data?.code === 200) {
+        setLoading(false);
+        setServicesData(res?.data?.data)
+      } else {
+        toast.error(res?.data?.message);
+      }
+    }).catch((err) => { console.log(err); setLoading(false) })
+  }
+
+  useEffect(() => {
+    handleGetServicesData()
+  }, []);
+
   return (
     <div className="main-container px-[40px] xl:px-[20px] mt-10 w-full">
-      {servicesData?.map((service, index) => (
-        <div
-          key={index}
-          className="w-[100%] h-full mx-auto flex flex-col md:flex-row lg:flex-row items-center"
-        >
-          {index % 2 === 0 ? (
-            <>
-              <div className="w-full  lg:w-[50%] pb-4 md:pb-0 lg:pb-0 ">
-                {!loadedImages[index] && <Skeleton variant="rectangular" className="w-full h-[241px] lg:h-[378px]" />}
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  className={`w-fit h-full ${loadedImages[index] ? "visible" : "invisible"}`}
-                  onLoadingComplete={() => handleImageLoaded(index)}
-                  style={{ visibility: loadedImages[index] ? 'visible' : 'hidden' }}
-                  loading="lazy"
-                />
-              </div>
-
-              <div className="w-full lg:w-[50%] m-auto  pb-4 md:pb-0 lg:pb-0">
-                <div className="font-MuseoSans font-semibold text-[#121212] text-[24px] md:text-[26px] lg:text-[32px] text-center pb-3">
-                  {service.title}
-                </div>
-                <div className="sm:px-10 font-MuseoSans font-semibold text-[#9BA9B4] text-[16px] text-justify lg:text-center md:line-clamp-6 lg:line-clamp-none">
-                  {service.description}
-                </div>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="w-full lg:w-[50%] m-auto  pb-4 md:pb-0 lg:pb-0">
-                <div className="font-MuseoSans font-semibold text-[#121212] text-[24px] md:text-[26px] lg:text-[32px] text-center pb-3">
-                  {service.title}
-                </div>
-                <div className="sm:px-10 font-MuseoSans font-semibold text-[#9BA9B4] text-[16px] text-justify lg:text-center md:line-clamp-6 lg:line-clamp-none">
-                  {service.description}
-                </div>
-              </div>
-              <div className="w-full lg:w-[50%] pb-4 md:pb-0 lg:pb-0">
-                {!loadedImages[index] && <Skeleton variant="rectangular" className="w-full h-[241px] lg:h-[378px]" />}
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  className={`w-fit h-full ${loadedImages[index] ? "visible" : "invisible"}`}
-                  onLoadingComplete={() => handleImageLoaded(index)}
-                  loading="lazy"
-                />
-              </div>
-            </>
-          )}
-        </div>
-      ))}
+      {
+        loading ? <div className="text-center"><CircularProgress style={{ color: "#399EFD" }} size={35} /></div> : servicesData?.length > 0 ?
+          servicesData?.map((service, index) => (
+            <ServicesContent service={service} index={index} loadedImages={loadedImages} handleImageLoaded={handleImageLoaded} />
+          )) : <div className="text-black font-MuseoSans font-semibold text-center text-[26px]">No data available !</div>
+      }
     </div>
   );
 };
 
 export default Services;
+
+const ServicesContent = ({ service, index, loadedImages, handleImageLoaded }) => {
+  return (
+    <div
+      key={index}
+      className="w-[100%] h-full mx-auto flex flex-col md:flex-row lg:flex-row items-center"
+    >
+      {index % 2 === 0 ? (
+        <>
+          <div className="w-full  lg:w-[50%] pb-4 md:pb-0 lg:pb-0 ">
+            {!loadedImages[index] && <Skeleton variant="rectangular" className="w-full h-[241px] lg:h-[378px]" />}
+            <Image
+              src={`${process.env.NEXT_PUBLIC_API_BASEURL}/${service?.image}`}
+              alt={service.title}
+              width={100}
+              height={100}
+              className={`!w-fit !h-full ${loadedImages[index] ? "visible" : "invisible"}`}
+              onLoadingComplete={() => handleImageLoaded(index)}
+              style={{ visibility: loadedImages[index] ? 'visible' : 'hidden' }}
+              loading="lazy"
+            />
+          </div>
+
+          <div className="w-full lg:w-[50%] m-auto  pb-4 md:pb-0 lg:pb-0">
+            <div className="font-MuseoSans font-semibold text-[#121212] text-[24px] md:text-[26px] lg:text-[32px] text-center pb-3">
+              {service.title}
+            </div>
+            <div className="sm:px-10 font-MuseoSans font-semibold text-[#9BA9B4] text-[16px] text-justify lg:text-center md:line-clamp-6 lg:line-clamp-none">
+              {service.description}
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="w-full lg:w-[50%] m-auto  pb-4 md:pb-0 lg:pb-0">
+            <div className="font-MuseoSans font-semibold text-[#121212] text-[24px] md:text-[26px] lg:text-[32px] text-center pb-3">
+              {service.title}
+            </div>
+            <div className="sm:px-10 font-MuseoSans font-semibold text-[#9BA9B4] text-[16px] text-justify lg:text-center md:line-clamp-6 lg:line-clamp-none">
+              {service.description}
+            </div>
+          </div>
+          <div className="w-full lg:w-[50%] pb-4 md:pb-0 lg:pb-0">
+            {!loadedImages[index] && <Skeleton variant="rectangular" className="w-full h-[241px] lg:h-[378px]" />}
+            <Image
+              src={`${process.env.NEXT_PUBLIC_API_BASEURL}/${service?.image}`}
+              alt={service.title}
+              width={100}
+              height={100}
+              className={`!w-fit !h-full ${loadedImages[index] ? "visible" : "invisible"}`}
+              onLoadingComplete={() => handleImageLoaded(index)}
+              loading="lazy"
+            />
+          </div>
+        </>
+      )
+      }
+    </div>
+  )
+}
