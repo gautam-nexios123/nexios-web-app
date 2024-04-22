@@ -7,4 +7,3 @@ Host: https://nexios-web-app.vercel.app
 
 # Sitemaps
 Sitemap: https://nexios-web-app.vercel.app/sitemap.xml
-Sitemap: https://nexios-web-app.vercel.app/sitemap-0.xml
