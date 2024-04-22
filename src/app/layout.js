@@ -35,6 +35,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>{`${pathName === "/" ? "Nexios-Mobile & Web development" : `${appTitle} - Nexios Technologies`}`}</title>
         <meta name="description" content={description} />
+        <meta name="google-site-verification" content="2RotKNz-4bf_xmgnkcyTQgZoNy-_g5TL6-pfXo_vBgI" />
         <link rel="icon" href="/icon.png" sizes="32*32" />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-YESDGWM45W"></Script>
         <Script id="google-analytics">
