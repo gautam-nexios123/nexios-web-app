@@ -19,14 +19,14 @@
      <loc>https://nexios-web-app.vercel.app/portfolio</loc>
       <lastmod>2024-04-22</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+      <priority>0.5</priority>
    </url>
 
    <url>
      <loc>https://nexios-web-app.vercel.app/mobile-app-development</loc>
       <lastmod>2024-04-22</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+      <priority>0.3</priority>
    </url>
 
    <url>
@@ -47,14 +47,14 @@
      <loc>https://nexios-web-app.vercel.app/internet-of-things</loc>
       <lastmod>2024-04-22</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+      <priority>0.3</priority>
    </url>
 
    <url>
      <loc>https://nexios-web-app.vercel.app/qa</loc>
       <lastmod>2024-04-22</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+      <priority>0.3</priority>
    </url>
 
    <url>
