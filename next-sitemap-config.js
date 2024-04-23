@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://nexios-web-app.vercel.app',
+    siteUrl: process.env.NEXT_PUBLIC_FRONTEND_LIVE_URL,
     generateRobotsTxt: true, 
     outDir: './public',
   }

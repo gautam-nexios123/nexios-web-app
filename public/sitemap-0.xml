@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://nexios-web-app.vercel.app/career</loc><lastmod>2024-04-22T05:46:55.822Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://nexios-web-app.vercel.app/about-us</loc><lastmod>2024-04-22T05:46:55.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://nexios-web-app.vercel.app/contact-us</loc><lastmod>2024-04-22T05:46:55.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://nexios-web-app.vercel.app/internet-of-things</loc><lastmod>2024-04-22T05:46:55.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://nexios-web-app.vercel.app/applynow</loc><lastmod>2024-04-22T05:46:55.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://nexios-web-app.vercel.app/mobile-app-development</loc><lastmod>2024-04-22T05:46:55.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://nexios-web-app.vercel.app</loc><lastmod>2024-04-22T05:46:55.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://nexios-web-app.vercel.app/ui-ux</loc><lastmod>2024-04-22T05:46:55.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://nexios-web-app.vercel.app/qa</loc><lastmod>2024-04-22T05:46:55.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://nexios-web-app.vercel.app/portfolio</loc><lastmod>2024-04-22T05:46:55.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://nexios-web-app.vercel.app/web-development</loc><lastmod>2024-04-22T05:46:55.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nexios-web-app.vercel.app/career</loc><lastmod>2024-04-23T12:42:12.039Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nexios-web-app.vercel.app/contact-us</loc><lastmod>2024-04-23T12:42:12.040Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nexios-web-app.vercel.app/internet-of-things</loc><lastmod>2024-04-23T12:42:12.040Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nexios-web-app.vercel.app/mobile-app-development</loc><lastmod>2024-04-23T12:42:12.040Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nexios-web-app.vercel.app</loc><lastmod>2024-04-23T12:42:12.040Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nexios-web-app.vercel.app/portfolio</loc><lastmod>2024-04-23T12:42:12.040Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nexios-web-app.vercel.app/qa</loc><lastmod>2024-04-23T12:42:12.040Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nexios-web-app.vercel.app/ui-ux</loc><lastmod>2024-04-23T12:42:12.040Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nexios-web-app.vercel.app/web-development</loc><lastmod>2024-04-23T12:42:12.040Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nexios-web-app.vercel.app/about-us</loc><lastmod>2024-04-23T12:42:12.040Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://nexios-web-app.vercel.app/applynow</loc><lastmod>2024-04-23T12:42:12.040Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
