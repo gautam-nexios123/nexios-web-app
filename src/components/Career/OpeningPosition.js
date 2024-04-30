@@ -15,7 +15,7 @@ const OpeningPosition = () => {
   const handleGetPositionData = async () => {
     setLoading(true);
     await axios.get(`${process.env.NEXT_PUBLIC_API_BASEURL}/open_position`).then(res => {
-      if (res?.data?.code === 200) {
+      if (res?.data?.statusCode === 200) {
         setLoading(false);
         setPositionData(res?.data?.data)
       } else {

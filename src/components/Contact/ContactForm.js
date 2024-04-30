@@ -52,7 +52,7 @@ const ContactForm = () => {
     if (!handleError()) {
       setLoading(true);
       await axios.post(`${process.env.NEXT_PUBLIC_API_BASEURL}/contact_us` , formData).then(res => {
-        if (res?.data?.code === 200) {
+        if (res?.data?.statusCode === 200) {
           toast.success(res?.data?.message);
           setFormData({
             firstName: "",

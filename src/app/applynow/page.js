@@ -74,7 +74,7 @@ const ApplyNow = () => {
       apiFormData.append('file', file);
 
       await axios.post(`${process.env.NEXT_PUBLIC_API_BASEURL}/apply_now`, apiFormData).then(res => {
-        if (res?.data?.code === 200) {
+        if (res?.data?.statusCode === 200) {
           toast.success(res?.data?.message);
           setLoading(false);
           setFormData({

@@ -40,7 +40,7 @@ const OurClient = () => {
   const handleGetClient = async () => {
     setLoading(true);
     await axios.get(`${process.env.NEXT_PUBLIC_API_BASEURL}/our_client`).then(res => {
-      if (res?.data?.code === 200) {
+      if (res?.data?.statusCode === 200) {
         setLoading(false);
         setClientData(res?.data?.data)
       } else {
@@ -124,7 +124,7 @@ const CarouselCard = ({ item }) => {
     <div className="flex lg:flex-row flex-col items-center gap-[40px] w-full mb-[45px] cursor-pointer">
       <div className="w-[200px] h-[200px] bg-[#399EFD] relative mr-[30px]">
         <Image
-          src={`${process.env.NEXT_PUBLIC_API_BASEURL}/${item?.image}`}
+          src={`${process.env.NEXT_PUBLIC_API_BASEURL_IMAGE}/${item?.image}`}
           alt="manImg"
           width={100}
           height={100}

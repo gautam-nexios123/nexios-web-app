@@ -23,7 +23,7 @@ const Services = () => {
   const handleGetServicesData = async () => {
     setLoading(true);
     await axios.get(`${process.env.NEXT_PUBLIC_API_BASEURL}/portfolio`).then(res => {
-      if (res?.data?.code === 200) {
+      if (res?.data?.statusCode === 200) {
         setLoading(false);
         setServicesData(res?.data?.data)
       } else {
@@ -61,7 +61,7 @@ const ServicesContent = ({ service, index, loadedImages, handleImageLoaded }) =>
           <div className="w-full  lg:w-[50%] pb-4 md:pb-0 lg:pb-0 ">
             {!loadedImages[index] && <Skeleton variant="rectangular" className="w-full h-[241px] lg:h-[378px]" />}
             <Image
-              src={`${process.env.NEXT_PUBLIC_API_BASEURL}/${service?.image}`}
+              src={`${process.env.NEXT_PUBLIC_API_BASEURL_IMAGE}/${service?.image}`}
               alt={service.title}
               width={100}
               height={100}
@@ -94,7 +94,7 @@ const ServicesContent = ({ service, index, loadedImages, handleImageLoaded }) =>
           <div className="w-full lg:w-[50%] pb-4 md:pb-0 lg:pb-0">
             {!loadedImages[index] && <Skeleton variant="rectangular" className="w-full h-[241px] lg:h-[378px]" />}
             <Image
-              src={`${process.env.NEXT_PUBLIC_API_BASEURL}/${service?.image}`}
+              src={`${process.env.NEXT_PUBLIC_API_BASEURL_IMAGE}/${service?.image}`}
               alt={service.title}
               width={100}
               height={100}

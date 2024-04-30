@@ -39,7 +39,7 @@ const MeetOurTeam = () => {
   const handleGetClient = async () => {
     setLoading(true);
     await axios.get(`${process.env.NEXT_PUBLIC_API_BASEURL}/our_team`).then(res => {
-      if (res?.data?.code === 200) {
+      if (res?.data?.statusCode === 200) {
         setLoading(false);
         setTeamData(res?.data?.data)
       } else {
@@ -111,7 +111,7 @@ const MeetOurTeam = () => {
                     width={100}
                     height={100}
                     className="!h-full !w-[100%] object-cover"
-                    src={`${process.env.NEXT_PUBLIC_API_BASEURL}/${item?.image}`}
+                    src={`${process.env.NEXT_PUBLIC_API_BASEURL_IMAGE}/${item?.image}`}
                     alt="teemOne"
                     draggable={false}
                   />
